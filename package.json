@@ -1,0 +1,29 @@
+{
+  "name": "abacuslearninglab",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "meteor-node-stubs": "~0.2.0",
+    "react": "^15.0.1",
+    "react-addons-css-transition-group": "^15.0.1",    
+    "react-addons-pure-render-mixin": "^15.0.1",
+    "react-dom": "^15.0.1",
+    "react-mounter": "^1.2.0"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Nobuyuki Fujioka",
+  "license": "ISC",
+  "description": "13 April: # building an app following LEVELUP Tutorial Meteor and React",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nfabacus/meteor-react-resolutionsApp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nfabacus/meteor-react-resolutionsApp/issues"
+  },
+  "homepage": "https://github.com/nfabacus/meteor-react-resolutionsApp#readme"
+}
