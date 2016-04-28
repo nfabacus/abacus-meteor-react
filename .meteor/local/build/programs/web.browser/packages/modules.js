@@ -189,24 +189,26 @@ install("meteortoys:hotreload");                                                
 install("meteortoys:allthings");                                                                                       // 96
 install("ultimatejs:tracker-react");                                                                                   // 97
 install("stolinski:stylus-multi");                                                                                     // 98
-install("service-configuration");                                                                                      // 99
-install("npm-bcrypt");                                                                                                 // 100
-install("sha");                                                                                                        // 101
-install("srp");                                                                                                        // 102
-install("accounts-password");                                                                                          // 103
-install("less");                                                                                                       // 104
-install("accounts-ui-unstyled");                                                                                       // 105
-install("accounts-ui");                                                                                                // 106
-install("fourseven:scss");                                                                                             // 107
-install("fortawesome:fontawesome");                                                                                    // 108
-install("themeteorchef:bert");                                                                                         // 109
-install("webapp");                                                                                                     // 110
-install("livedata");                                                                                                   // 111
-install("hot-code-push");                                                                                              // 112
-install("launch-screen");                                                                                              // 113
-install("ui");                                                                                                         // 114
-install("autoupdate");                                                                                                 // 115
-                                                                                                                       // 116
+install("npm-bcrypt");                                                                                                 // 99
+install("sha");                                                                                                        // 100
+install("srp");                                                                                                        // 101
+install("accounts-password");                                                                                          // 102
+install("useraccounts:core");                                                                                          // 103
+install("coffeescript");                                                                                               // 104
+install("softwarerero:accounts-t9n");                                                                                  // 105
+install("useraccounts:unstyled");                                                                                      // 106
+install("ui");                                                                                                         // 107
+install("raix:handlebar-helpers");                                                                                     // 108
+install("fourseven:scss");                                                                                             // 109
+install("fortawesome:fontawesome");                                                                                    // 110
+install("themeteorchef:bert");                                                                                         // 111
+install("webapp");                                                                                                     // 112
+install("livedata");                                                                                                   // 113
+install("hot-code-push");                                                                                              // 114
+install("launch-screen");                                                                                              // 115
+install("autoupdate");                                                                                                 // 116
+install("service-configuration");                                                                                      // 117
+                                                                                                                       // 118
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 },"process.js":["process",function(require,exports,module){
@@ -3453,649 +3455,6 @@ function onlyChild(children) {                                                  
 }                                                                                                                      // 31
                                                                                                                        // 32
 module.exports = onlyChild;                                                                                            // 33
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-}],"ReactCSSTransitionGroup.js":["object-assign","./React","./ReactTransitionGroup","./ReactCSSTransitionGroupChild",function(require,exports,module){
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//                                                                                                                     //
-// node_modules/react/lib/ReactCSSTransitionGroup.js                                                                   //
-//                                                                                                                     //
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                                                                                                                       //
-/**                                                                                                                    // 1
- * Copyright 2013-present, Facebook, Inc.                                                                              // 2
- * All rights reserved.                                                                                                // 3
- *                                                                                                                     // 4
- * This source code is licensed under the BSD-style license found in the                                               // 5
- * LICENSE file in the root directory of this source tree. An additional grant                                         // 6
- * of patent rights can be found in the PATENTS file in the same directory.                                            // 7
- *                                                                                                                     // 8
- * @providesModule ReactCSSTransitionGroup                                                                             // 9
- */                                                                                                                    // 10
-                                                                                                                       // 11
-'use strict';                                                                                                          // 12
-                                                                                                                       // 13
-var _assign = require('object-assign');                                                                                // 14
-                                                                                                                       // 15
-var React = require('./React');                                                                                        // 16
-                                                                                                                       // 17
-var ReactTransitionGroup = require('./ReactTransitionGroup');                                                          // 18
-var ReactCSSTransitionGroupChild = require('./ReactCSSTransitionGroupChild');                                          // 19
-                                                                                                                       // 20
-function createTransitionTimeoutPropValidator(transitionType) {                                                        // 21
-  var timeoutPropName = 'transition' + transitionType + 'Timeout';                                                     // 22
-  var enabledPropName = 'transition' + transitionType;                                                                 // 23
-                                                                                                                       // 24
-  return function (props) {                                                                                            // 25
-    // If the transition is enabled                                                                                    // 26
-    if (props[enabledPropName]) {                                                                                      // 27
-      // If no timeout duration is provided                                                                            // 28
-      if (props[timeoutPropName] == null) {                                                                            // 29
-        return new Error(timeoutPropName + ' wasn\'t supplied to ReactCSSTransitionGroup: ' + 'this can cause unreliable animations and won\'t be supported in ' + 'a future version of React. See ' + 'https://fb.me/react-animation-transition-group-timeout for more ' + 'information.');
-                                                                                                                       // 31
-        // If the duration isn't a number                                                                              // 32
-      } else if (typeof props[timeoutPropName] !== 'number') {                                                         // 33
-          return new Error(timeoutPropName + ' must be a number (in milliseconds)');                                   // 34
-        }                                                                                                              // 35
-    }                                                                                                                  // 36
-  };                                                                                                                   // 37
-}                                                                                                                      // 38
-                                                                                                                       // 39
-var ReactCSSTransitionGroup = React.createClass({                                                                      // 40
-  displayName: 'ReactCSSTransitionGroup',                                                                              // 41
-                                                                                                                       // 42
-  propTypes: {                                                                                                         // 43
-    transitionName: ReactCSSTransitionGroupChild.propTypes.name,                                                       // 44
-                                                                                                                       // 45
-    transitionAppear: React.PropTypes.bool,                                                                            // 46
-    transitionEnter: React.PropTypes.bool,                                                                             // 47
-    transitionLeave: React.PropTypes.bool,                                                                             // 48
-    transitionAppearTimeout: createTransitionTimeoutPropValidator('Appear'),                                           // 49
-    transitionEnterTimeout: createTransitionTimeoutPropValidator('Enter'),                                             // 50
-    transitionLeaveTimeout: createTransitionTimeoutPropValidator('Leave')                                              // 51
-  },                                                                                                                   // 52
-                                                                                                                       // 53
-  getDefaultProps: function () {                                                                                       // 54
-    return {                                                                                                           // 55
-      transitionAppear: false,                                                                                         // 56
-      transitionEnter: true,                                                                                           // 57
-      transitionLeave: true                                                                                            // 58
-    };                                                                                                                 // 59
-  },                                                                                                                   // 60
-                                                                                                                       // 61
-  _wrapChild: function (child) {                                                                                       // 62
-    // We need to provide this childFactory so that                                                                    // 63
-    // ReactCSSTransitionGroupChild can receive updates to name, enter, and                                            // 64
-    // leave while it is leaving.                                                                                      // 65
-    return React.createElement(ReactCSSTransitionGroupChild, {                                                         // 66
-      name: this.props.transitionName,                                                                                 // 67
-      appear: this.props.transitionAppear,                                                                             // 68
-      enter: this.props.transitionEnter,                                                                               // 69
-      leave: this.props.transitionLeave,                                                                               // 70
-      appearTimeout: this.props.transitionAppearTimeout,                                                               // 71
-      enterTimeout: this.props.transitionEnterTimeout,                                                                 // 72
-      leaveTimeout: this.props.transitionLeaveTimeout                                                                  // 73
-    }, child);                                                                                                         // 74
-  },                                                                                                                   // 75
-                                                                                                                       // 76
-  render: function () {                                                                                                // 77
-    return React.createElement(ReactTransitionGroup, _assign({}, this.props, { childFactory: this._wrapChild }));      // 78
-  }                                                                                                                    // 79
-});                                                                                                                    // 80
-                                                                                                                       // 81
-module.exports = ReactCSSTransitionGroup;                                                                              // 82
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-}],"ReactTransitionGroup.js":["object-assign","./React","./ReactTransitionChildMapping","fbjs/lib/emptyFunction",function(require,exports,module){
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//                                                                                                                     //
-// node_modules/react/lib/ReactTransitionGroup.js                                                                      //
-//                                                                                                                     //
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                                                                                                                       //
-/**                                                                                                                    // 1
- * Copyright 2013-present, Facebook, Inc.                                                                              // 2
- * All rights reserved.                                                                                                // 3
- *                                                                                                                     // 4
- * This source code is licensed under the BSD-style license found in the                                               // 5
- * LICENSE file in the root directory of this source tree. An additional grant                                         // 6
- * of patent rights can be found in the PATENTS file in the same directory.                                            // 7
- *                                                                                                                     // 8
- * @providesModule ReactTransitionGroup                                                                                // 9
- */                                                                                                                    // 10
-                                                                                                                       // 11
-'use strict';                                                                                                          // 12
-                                                                                                                       // 13
-var _assign = require('object-assign');                                                                                // 14
-                                                                                                                       // 15
-var React = require('./React');                                                                                        // 16
-var ReactTransitionChildMapping = require('./ReactTransitionChildMapping');                                            // 17
-                                                                                                                       // 18
-var emptyFunction = require('fbjs/lib/emptyFunction');                                                                 // 19
-                                                                                                                       // 20
-var ReactTransitionGroup = React.createClass({                                                                         // 21
-  displayName: 'ReactTransitionGroup',                                                                                 // 22
-                                                                                                                       // 23
-  propTypes: {                                                                                                         // 24
-    component: React.PropTypes.any,                                                                                    // 25
-    childFactory: React.PropTypes.func                                                                                 // 26
-  },                                                                                                                   // 27
-                                                                                                                       // 28
-  getDefaultProps: function () {                                                                                       // 29
-    return {                                                                                                           // 30
-      component: 'span',                                                                                               // 31
-      childFactory: emptyFunction.thatReturnsArgument                                                                  // 32
-    };                                                                                                                 // 33
-  },                                                                                                                   // 34
-                                                                                                                       // 35
-  getInitialState: function () {                                                                                       // 36
-    return {                                                                                                           // 37
-      children: ReactTransitionChildMapping.getChildMapping(this.props.children)                                       // 38
-    };                                                                                                                 // 39
-  },                                                                                                                   // 40
-                                                                                                                       // 41
-  componentWillMount: function () {                                                                                    // 42
-    this.currentlyTransitioningKeys = {};                                                                              // 43
-    this.keysToEnter = [];                                                                                             // 44
-    this.keysToLeave = [];                                                                                             // 45
-  },                                                                                                                   // 46
-                                                                                                                       // 47
-  componentDidMount: function () {                                                                                     // 48
-    var initialChildMapping = this.state.children;                                                                     // 49
-    for (var key in initialChildMapping) {                                                                             // 50
-      if (initialChildMapping[key]) {                                                                                  // 51
-        this.performAppear(key);                                                                                       // 52
-      }                                                                                                                // 53
-    }                                                                                                                  // 54
-  },                                                                                                                   // 55
-                                                                                                                       // 56
-  componentWillReceiveProps: function (nextProps) {                                                                    // 57
-    var nextChildMapping = ReactTransitionChildMapping.getChildMapping(nextProps.children);                            // 58
-    var prevChildMapping = this.state.children;                                                                        // 59
-                                                                                                                       // 60
-    this.setState({                                                                                                    // 61
-      children: ReactTransitionChildMapping.mergeChildMappings(prevChildMapping, nextChildMapping)                     // 62
-    });                                                                                                                // 63
-                                                                                                                       // 64
-    var key;                                                                                                           // 65
-                                                                                                                       // 66
-    for (key in nextChildMapping) {                                                                                    // 67
-      var hasPrev = prevChildMapping && prevChildMapping.hasOwnProperty(key);                                          // 68
-      if (nextChildMapping[key] && !hasPrev && !this.currentlyTransitioningKeys[key]) {                                // 69
-        this.keysToEnter.push(key);                                                                                    // 70
-      }                                                                                                                // 71
-    }                                                                                                                  // 72
-                                                                                                                       // 73
-    for (key in prevChildMapping) {                                                                                    // 74
-      var hasNext = nextChildMapping && nextChildMapping.hasOwnProperty(key);                                          // 75
-      if (prevChildMapping[key] && !hasNext && !this.currentlyTransitioningKeys[key]) {                                // 76
-        this.keysToLeave.push(key);                                                                                    // 77
-      }                                                                                                                // 78
-    }                                                                                                                  // 79
-                                                                                                                       // 80
-    // If we want to someday check for reordering, we could do it here.                                                // 81
-  },                                                                                                                   // 82
-                                                                                                                       // 83
-  componentDidUpdate: function () {                                                                                    // 84
-    var keysToEnter = this.keysToEnter;                                                                                // 85
-    this.keysToEnter = [];                                                                                             // 86
-    keysToEnter.forEach(this.performEnter);                                                                            // 87
-                                                                                                                       // 88
-    var keysToLeave = this.keysToLeave;                                                                                // 89
-    this.keysToLeave = [];                                                                                             // 90
-    keysToLeave.forEach(this.performLeave);                                                                            // 91
-  },                                                                                                                   // 92
-                                                                                                                       // 93
-  performAppear: function (key) {                                                                                      // 94
-    this.currentlyTransitioningKeys[key] = true;                                                                       // 95
-                                                                                                                       // 96
-    var component = this.refs[key];                                                                                    // 97
-                                                                                                                       // 98
-    if (component.componentWillAppear) {                                                                               // 99
-      component.componentWillAppear(this._handleDoneAppearing.bind(this, key));                                        // 100
-    } else {                                                                                                           // 101
-      this._handleDoneAppearing(key);                                                                                  // 102
-    }                                                                                                                  // 103
-  },                                                                                                                   // 104
-                                                                                                                       // 105
-  _handleDoneAppearing: function (key) {                                                                               // 106
-    var component = this.refs[key];                                                                                    // 107
-    if (component.componentDidAppear) {                                                                                // 108
-      component.componentDidAppear();                                                                                  // 109
-    }                                                                                                                  // 110
-                                                                                                                       // 111
-    delete this.currentlyTransitioningKeys[key];                                                                       // 112
-                                                                                                                       // 113
-    var currentChildMapping = ReactTransitionChildMapping.getChildMapping(this.props.children);                        // 114
-                                                                                                                       // 115
-    if (!currentChildMapping || !currentChildMapping.hasOwnProperty(key)) {                                            // 116
-      // This was removed before it had fully appeared. Remove it.                                                     // 117
-      this.performLeave(key);                                                                                          // 118
-    }                                                                                                                  // 119
-  },                                                                                                                   // 120
-                                                                                                                       // 121
-  performEnter: function (key) {                                                                                       // 122
-    this.currentlyTransitioningKeys[key] = true;                                                                       // 123
-                                                                                                                       // 124
-    var component = this.refs[key];                                                                                    // 125
-                                                                                                                       // 126
-    if (component.componentWillEnter) {                                                                                // 127
-      component.componentWillEnter(this._handleDoneEntering.bind(this, key));                                          // 128
-    } else {                                                                                                           // 129
-      this._handleDoneEntering(key);                                                                                   // 130
-    }                                                                                                                  // 131
-  },                                                                                                                   // 132
-                                                                                                                       // 133
-  _handleDoneEntering: function (key) {                                                                                // 134
-    var component = this.refs[key];                                                                                    // 135
-    if (component.componentDidEnter) {                                                                                 // 136
-      component.componentDidEnter();                                                                                   // 137
-    }                                                                                                                  // 138
-                                                                                                                       // 139
-    delete this.currentlyTransitioningKeys[key];                                                                       // 140
-                                                                                                                       // 141
-    var currentChildMapping = ReactTransitionChildMapping.getChildMapping(this.props.children);                        // 142
-                                                                                                                       // 143
-    if (!currentChildMapping || !currentChildMapping.hasOwnProperty(key)) {                                            // 144
-      // This was removed before it had fully entered. Remove it.                                                      // 145
-      this.performLeave(key);                                                                                          // 146
-    }                                                                                                                  // 147
-  },                                                                                                                   // 148
-                                                                                                                       // 149
-  performLeave: function (key) {                                                                                       // 150
-    this.currentlyTransitioningKeys[key] = true;                                                                       // 151
-                                                                                                                       // 152
-    var component = this.refs[key];                                                                                    // 153
-    if (component.componentWillLeave) {                                                                                // 154
-      component.componentWillLeave(this._handleDoneLeaving.bind(this, key));                                           // 155
-    } else {                                                                                                           // 156
-      // Note that this is somewhat dangerous b/c it calls setState()                                                  // 157
-      // again, effectively mutating the component before all the work                                                 // 158
-      // is done.                                                                                                      // 159
-      this._handleDoneLeaving(key);                                                                                    // 160
-    }                                                                                                                  // 161
-  },                                                                                                                   // 162
-                                                                                                                       // 163
-  _handleDoneLeaving: function (key) {                                                                                 // 164
-    var component = this.refs[key];                                                                                    // 165
-                                                                                                                       // 166
-    if (component.componentDidLeave) {                                                                                 // 167
-      component.componentDidLeave();                                                                                   // 168
-    }                                                                                                                  // 169
-                                                                                                                       // 170
-    delete this.currentlyTransitioningKeys[key];                                                                       // 171
-                                                                                                                       // 172
-    var currentChildMapping = ReactTransitionChildMapping.getChildMapping(this.props.children);                        // 173
-                                                                                                                       // 174
-    if (currentChildMapping && currentChildMapping.hasOwnProperty(key)) {                                              // 175
-      // This entered again before it fully left. Add it again.                                                        // 176
-      this.performEnter(key);                                                                                          // 177
-    } else {                                                                                                           // 178
-      this.setState(function (state) {                                                                                 // 179
-        var newChildren = _assign({}, state.children);                                                                 // 180
-        delete newChildren[key];                                                                                       // 181
-        return { children: newChildren };                                                                              // 182
-      });                                                                                                              // 183
-    }                                                                                                                  // 184
-  },                                                                                                                   // 185
-                                                                                                                       // 186
-  render: function () {                                                                                                // 187
-    // TODO: we could get rid of the need for the wrapper node                                                         // 188
-    // by cloning a single child                                                                                       // 189
-    var childrenToRender = [];                                                                                         // 190
-    for (var key in this.state.children) {                                                                             // 191
-      var child = this.state.children[key];                                                                            // 192
-      if (child) {                                                                                                     // 193
-        // You may need to apply reactive updates to a child as it is leaving.                                         // 194
-        // The normal React way to do it won't work since the child will have                                          // 195
-        // already been removed. In case you need this behavior you can provide                                        // 196
-        // a childFactory function to wrap every child, even the ones that are                                         // 197
-        // leaving.                                                                                                    // 198
-        childrenToRender.push(React.cloneElement(this.props.childFactory(child), { ref: key, key: key }));             // 199
-      }                                                                                                                // 200
-    }                                                                                                                  // 201
-    return React.createElement(this.props.component, this.props, childrenToRender);                                    // 202
-  }                                                                                                                    // 203
-});                                                                                                                    // 204
-                                                                                                                       // 205
-module.exports = ReactTransitionGroup;                                                                                 // 206
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-}],"ReactTransitionChildMapping.js":["./flattenChildren",function(require,exports,module){
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//                                                                                                                     //
-// node_modules/react/lib/ReactTransitionChildMapping.js                                                               //
-//                                                                                                                     //
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                                                                                                                       //
-/**                                                                                                                    // 1
- * Copyright 2013-present, Facebook, Inc.                                                                              // 2
- * All rights reserved.                                                                                                // 3
- *                                                                                                                     // 4
- * This source code is licensed under the BSD-style license found in the                                               // 5
- * LICENSE file in the root directory of this source tree. An additional grant                                         // 6
- * of patent rights can be found in the PATENTS file in the same directory.                                            // 7
- *                                                                                                                     // 8
- * @providesModule ReactTransitionChildMapping                                                                         // 9
- */                                                                                                                    // 10
-                                                                                                                       // 11
-'use strict';                                                                                                          // 12
-                                                                                                                       // 13
-var flattenChildren = require('./flattenChildren');                                                                    // 14
-                                                                                                                       // 15
-var ReactTransitionChildMapping = {                                                                                    // 16
-  /**                                                                                                                  // 17
-   * Given `this.props.children`, return an object mapping key to child. Just                                          // 18
-   * simple syntactic sugar around flattenChildren().                                                                  // 19
-   *                                                                                                                   // 20
-   * @param {*} children `this.props.children`                                                                         // 21
-   * @return {object} Mapping of key to child                                                                          // 22
-   */                                                                                                                  // 23
-  getChildMapping: function (children) {                                                                               // 24
-    if (!children) {                                                                                                   // 25
-      return children;                                                                                                 // 26
-    }                                                                                                                  // 27
-    return flattenChildren(children);                                                                                  // 28
-  },                                                                                                                   // 29
-                                                                                                                       // 30
-  /**                                                                                                                  // 31
-   * When you're adding or removing children some may be added or removed in the                                       // 32
-   * same render pass. We want to show *both* since we want to simultaneously                                          // 33
-   * animate elements in and out. This function takes a previous set of keys                                           // 34
-   * and a new set of keys and merges them with its best guess of the correct                                          // 35
-   * ordering. In the future we may expose some of the utilities in                                                    // 36
-   * ReactMultiChild to make this easy, but for now React itself does not                                              // 37
-   * directly have this concept of the union of prevChildren and nextChildren                                          // 38
-   * so we implement it here.                                                                                          // 39
-   *                                                                                                                   // 40
-   * @param {object} prev prev children as returned from                                                               // 41
-   * `ReactTransitionChildMapping.getChildMapping()`.                                                                  // 42
-   * @param {object} next next children as returned from                                                               // 43
-   * `ReactTransitionChildMapping.getChildMapping()`.                                                                  // 44
-   * @return {object} a key set that contains all keys in `prev` and all keys                                          // 45
-   * in `next` in a reasonable order.                                                                                  // 46
-   */                                                                                                                  // 47
-  mergeChildMappings: function (prev, next) {                                                                          // 48
-    prev = prev || {};                                                                                                 // 49
-    next = next || {};                                                                                                 // 50
-                                                                                                                       // 51
-    function getValueForKey(key) {                                                                                     // 52
-      if (next.hasOwnProperty(key)) {                                                                                  // 53
-        return next[key];                                                                                              // 54
-      } else {                                                                                                         // 55
-        return prev[key];                                                                                              // 56
-      }                                                                                                                // 57
-    }                                                                                                                  // 58
-                                                                                                                       // 59
-    // For each key of `next`, the list of keys to insert before that key in                                           // 60
-    // the combined list                                                                                               // 61
-    var nextKeysPending = {};                                                                                          // 62
-                                                                                                                       // 63
-    var pendingKeys = [];                                                                                              // 64
-    for (var prevKey in prev) {                                                                                        // 65
-      if (next.hasOwnProperty(prevKey)) {                                                                              // 66
-        if (pendingKeys.length) {                                                                                      // 67
-          nextKeysPending[prevKey] = pendingKeys;                                                                      // 68
-          pendingKeys = [];                                                                                            // 69
-        }                                                                                                              // 70
-      } else {                                                                                                         // 71
-        pendingKeys.push(prevKey);                                                                                     // 72
-      }                                                                                                                // 73
-    }                                                                                                                  // 74
-                                                                                                                       // 75
-    var i;                                                                                                             // 76
-    var childMapping = {};                                                                                             // 77
-    for (var nextKey in next) {                                                                                        // 78
-      if (nextKeysPending.hasOwnProperty(nextKey)) {                                                                   // 79
-        for (i = 0; i < nextKeysPending[nextKey].length; i++) {                                                        // 80
-          var pendingNextKey = nextKeysPending[nextKey][i];                                                            // 81
-          childMapping[nextKeysPending[nextKey][i]] = getValueForKey(pendingNextKey);                                  // 82
-        }                                                                                                              // 83
-      }                                                                                                                // 84
-      childMapping[nextKey] = getValueForKey(nextKey);                                                                 // 85
-    }                                                                                                                  // 86
-                                                                                                                       // 87
-    // Finally, add the keys which didn't appear before any key in `next`                                              // 88
-    for (i = 0; i < pendingKeys.length; i++) {                                                                         // 89
-      childMapping[pendingKeys[i]] = getValueForKey(pendingKeys[i]);                                                   // 90
-    }                                                                                                                  // 91
-                                                                                                                       // 92
-    return childMapping;                                                                                               // 93
-  }                                                                                                                    // 94
-};                                                                                                                     // 95
-                                                                                                                       // 96
-module.exports = ReactTransitionChildMapping;                                                                          // 97
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-}],"flattenChildren.js":["./traverseAllChildren","fbjs/lib/warning",function(require,exports,module){
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//                                                                                                                     //
-// node_modules/react/lib/flattenChildren.js                                                                           //
-//                                                                                                                     //
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                                                                                                                       //
-/**                                                                                                                    // 1
- * Copyright 2013-present, Facebook, Inc.                                                                              // 2
- * All rights reserved.                                                                                                // 3
- *                                                                                                                     // 4
- * This source code is licensed under the BSD-style license found in the                                               // 5
- * LICENSE file in the root directory of this source tree. An additional grant                                         // 6
- * of patent rights can be found in the PATENTS file in the same directory.                                            // 7
- *                                                                                                                     // 8
- * @providesModule flattenChildren                                                                                     // 9
- */                                                                                                                    // 10
-                                                                                                                       // 11
-'use strict';                                                                                                          // 12
-                                                                                                                       // 13
-var traverseAllChildren = require('./traverseAllChildren');                                                            // 14
-var warning = require('fbjs/lib/warning');                                                                             // 15
-                                                                                                                       // 16
-/**                                                                                                                    // 17
- * @param {function} traverseContext Context passed through traversal.                                                 // 18
- * @param {?ReactComponent} child React child component.                                                               // 19
- * @param {!string} name String name of key path to child.                                                             // 20
- */                                                                                                                    // 21
-function flattenSingleChildIntoContext(traverseContext, child, name) {                                                 // 22
-  // We found a component instance.                                                                                    // 23
-  var result = traverseContext;                                                                                        // 24
-  var keyUnique = result[name] === undefined;                                                                          // 25
-  if (process.env.NODE_ENV !== 'production') {                                                                         // 26
-    process.env.NODE_ENV !== 'production' ? warning(keyUnique, 'flattenChildren(...): Encountered two children with the same key, ' + '`%s`. Child keys must be unique; when two children share a key, only ' + 'the first child will be used.', name) : void 0;
-  }                                                                                                                    // 28
-  if (keyUnique && child != null) {                                                                                    // 29
-    result[name] = child;                                                                                              // 30
-  }                                                                                                                    // 31
-}                                                                                                                      // 32
-                                                                                                                       // 33
-/**                                                                                                                    // 34
- * Flattens children that are typically specified as `props.children`. Any null                                        // 35
- * children will not be included in the resulting object.                                                              // 36
- * @return {!object} flattened children keyed by name.                                                                 // 37
- */                                                                                                                    // 38
-function flattenChildren(children) {                                                                                   // 39
-  if (children == null) {                                                                                              // 40
-    return children;                                                                                                   // 41
-  }                                                                                                                    // 42
-  var result = {};                                                                                                     // 43
-  traverseAllChildren(children, flattenSingleChildIntoContext, result);                                                // 44
-  return result;                                                                                                       // 45
-}                                                                                                                      // 46
-                                                                                                                       // 47
-module.exports = flattenChildren;                                                                                      // 48
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-}],"ReactCSSTransitionGroupChild.js":["./React","./ReactDOM","fbjs/lib/CSSCore","./ReactTransitionEvents","./onlyChild",function(require,exports,module){
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//                                                                                                                     //
-// node_modules/react/lib/ReactCSSTransitionGroupChild.js                                                              //
-//                                                                                                                     //
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                                                                                                                       //
-/**                                                                                                                    // 1
- * Copyright 2013-present, Facebook, Inc.                                                                              // 2
- * All rights reserved.                                                                                                // 3
- *                                                                                                                     // 4
- * This source code is licensed under the BSD-style license found in the                                               // 5
- * LICENSE file in the root directory of this source tree. An additional grant                                         // 6
- * of patent rights can be found in the PATENTS file in the same directory.                                            // 7
- *                                                                                                                     // 8
- * @providesModule ReactCSSTransitionGroupChild                                                                        // 9
- */                                                                                                                    // 10
-                                                                                                                       // 11
-'use strict';                                                                                                          // 12
-                                                                                                                       // 13
-var React = require('./React');                                                                                        // 14
-var ReactDOM = require('./ReactDOM');                                                                                  // 15
-                                                                                                                       // 16
-var CSSCore = require('fbjs/lib/CSSCore');                                                                             // 17
-var ReactTransitionEvents = require('./ReactTransitionEvents');                                                        // 18
-                                                                                                                       // 19
-var onlyChild = require('./onlyChild');                                                                                // 20
-                                                                                                                       // 21
-var TICK = 17;                                                                                                         // 22
-                                                                                                                       // 23
-var ReactCSSTransitionGroupChild = React.createClass({                                                                 // 24
-  displayName: 'ReactCSSTransitionGroupChild',                                                                         // 25
-                                                                                                                       // 26
-  propTypes: {                                                                                                         // 27
-    name: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.shape({                                   // 28
-      enter: React.PropTypes.string,                                                                                   // 29
-      leave: React.PropTypes.string,                                                                                   // 30
-      active: React.PropTypes.string                                                                                   // 31
-    }), React.PropTypes.shape({                                                                                        // 32
-      enter: React.PropTypes.string,                                                                                   // 33
-      enterActive: React.PropTypes.string,                                                                             // 34
-      leave: React.PropTypes.string,                                                                                   // 35
-      leaveActive: React.PropTypes.string,                                                                             // 36
-      appear: React.PropTypes.string,                                                                                  // 37
-      appearActive: React.PropTypes.string                                                                             // 38
-    })]).isRequired,                                                                                                   // 39
-                                                                                                                       // 40
-    // Once we require timeouts to be specified, we can remove the                                                     // 41
-    // boolean flags (appear etc.) and just accept a number                                                            // 42
-    // or a bool for the timeout flags (appearTimeout etc.)                                                            // 43
-    appear: React.PropTypes.bool,                                                                                      // 44
-    enter: React.PropTypes.bool,                                                                                       // 45
-    leave: React.PropTypes.bool,                                                                                       // 46
-    appearTimeout: React.PropTypes.number,                                                                             // 47
-    enterTimeout: React.PropTypes.number,                                                                              // 48
-    leaveTimeout: React.PropTypes.number                                                                               // 49
-  },                                                                                                                   // 50
-                                                                                                                       // 51
-  transition: function (animationType, finishCallback, userSpecifiedDelay) {                                           // 52
-    var node = ReactDOM.findDOMNode(this);                                                                             // 53
-                                                                                                                       // 54
-    if (!node) {                                                                                                       // 55
-      if (finishCallback) {                                                                                            // 56
-        finishCallback();                                                                                              // 57
-      }                                                                                                                // 58
-      return;                                                                                                          // 59
-    }                                                                                                                  // 60
-                                                                                                                       // 61
-    var className = this.props.name[animationType] || this.props.name + '-' + animationType;                           // 62
-    var activeClassName = this.props.name[animationType + 'Active'] || className + '-active';                          // 63
-    var timeout = null;                                                                                                // 64
-                                                                                                                       // 65
-    var endListener = function (e) {                                                                                   // 66
-      if (e && e.target !== node) {                                                                                    // 67
-        return;                                                                                                        // 68
-      }                                                                                                                // 69
-                                                                                                                       // 70
-      clearTimeout(timeout);                                                                                           // 71
-                                                                                                                       // 72
-      CSSCore.removeClass(node, className);                                                                            // 73
-      CSSCore.removeClass(node, activeClassName);                                                                      // 74
-                                                                                                                       // 75
-      ReactTransitionEvents.removeEndEventListener(node, endListener);                                                 // 76
-                                                                                                                       // 77
-      // Usually this optional callback is used for informing an owner of                                              // 78
-      // a leave animation and telling it to remove the child.                                                         // 79
-      if (finishCallback) {                                                                                            // 80
-        finishCallback();                                                                                              // 81
-      }                                                                                                                // 82
-    };                                                                                                                 // 83
-                                                                                                                       // 84
-    CSSCore.addClass(node, className);                                                                                 // 85
-                                                                                                                       // 86
-    // Need to do this to actually trigger a transition.                                                               // 87
-    this.queueClass(activeClassName);                                                                                  // 88
-                                                                                                                       // 89
-    // If the user specified a timeout delay.                                                                          // 90
-    if (userSpecifiedDelay) {                                                                                          // 91
-      // Clean-up the animation after the specified delay                                                              // 92
-      timeout = setTimeout(endListener, userSpecifiedDelay);                                                           // 93
-      this.transitionTimeouts.push(timeout);                                                                           // 94
-    } else {                                                                                                           // 95
-      // DEPRECATED: this listener will be removed in a future version of react                                        // 96
-      ReactTransitionEvents.addEndEventListener(node, endListener);                                                    // 97
-    }                                                                                                                  // 98
-  },                                                                                                                   // 99
-                                                                                                                       // 100
-  queueClass: function (className) {                                                                                   // 101
-    this.classNameQueue.push(className);                                                                               // 102
-                                                                                                                       // 103
-    if (!this.timeout) {                                                                                               // 104
-      this.timeout = setTimeout(this.flushClassNameQueue, TICK);                                                       // 105
-    }                                                                                                                  // 106
-  },                                                                                                                   // 107
-                                                                                                                       // 108
-  flushClassNameQueue: function () {                                                                                   // 109
-    if (this.isMounted()) {                                                                                            // 110
-      this.classNameQueue.forEach(CSSCore.addClass.bind(CSSCore, ReactDOM.findDOMNode(this)));                         // 111
-    }                                                                                                                  // 112
-    this.classNameQueue.length = 0;                                                                                    // 113
-    this.timeout = null;                                                                                               // 114
-  },                                                                                                                   // 115
-                                                                                                                       // 116
-  componentWillMount: function () {                                                                                    // 117
-    this.classNameQueue = [];                                                                                          // 118
-    this.transitionTimeouts = [];                                                                                      // 119
-  },                                                                                                                   // 120
-                                                                                                                       // 121
-  componentWillUnmount: function () {                                                                                  // 122
-    if (this.timeout) {                                                                                                // 123
-      clearTimeout(this.timeout);                                                                                      // 124
-    }                                                                                                                  // 125
-    this.transitionTimeouts.forEach(function (timeout) {                                                               // 126
-      clearTimeout(timeout);                                                                                           // 127
-    });                                                                                                                // 128
-  },                                                                                                                   // 129
-                                                                                                                       // 130
-  componentWillAppear: function (done) {                                                                               // 131
-    if (this.props.appear) {                                                                                           // 132
-      this.transition('appear', done, this.props.appearTimeout);                                                       // 133
-    } else {                                                                                                           // 134
-      done();                                                                                                          // 135
-    }                                                                                                                  // 136
-  },                                                                                                                   // 137
-                                                                                                                       // 138
-  componentWillEnter: function (done) {                                                                                // 139
-    if (this.props.enter) {                                                                                            // 140
-      this.transition('enter', done, this.props.enterTimeout);                                                         // 141
-    } else {                                                                                                           // 142
-      done();                                                                                                          // 143
-    }                                                                                                                  // 144
-  },                                                                                                                   // 145
-                                                                                                                       // 146
-  componentWillLeave: function (done) {                                                                                // 147
-    if (this.props.leave) {                                                                                            // 148
-      this.transition('leave', done, this.props.leaveTimeout);                                                         // 149
-    } else {                                                                                                           // 150
-      done();                                                                                                          // 151
-    }                                                                                                                  // 152
-  },                                                                                                                   // 153
-                                                                                                                       // 154
-  render: function () {                                                                                                // 155
-    return onlyChild(this.props.children);                                                                             // 156
-  }                                                                                                                    // 157
-});                                                                                                                    // 158
-                                                                                                                       // 159
-module.exports = ReactCSSTransitionGroupChild;                                                                         // 160
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 }],"ReactDOM.js":["./ReactDOMComponentTree","./ReactDefaultInjection","./ReactMount","./ReactPerf","./ReactReconciler","./ReactUpdates","./ReactVersion","./findDOMNode","./getNativeComponentFromComposite","./renderSubtreeIntoContainer","fbjs/lib/warning","fbjs/lib/ExecutionEnvironment",function(require,exports,module){
@@ -15157,6 +14516,64 @@ var ReactNativeComponent = {                                                    
 module.exports = ReactNativeComponent;                                                                                 // 95
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+}],"flattenChildren.js":["./traverseAllChildren","fbjs/lib/warning",function(require,exports,module){
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                                     //
+// node_modules/react/lib/flattenChildren.js                                                                           //
+//                                                                                                                     //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                                                                                       //
+/**                                                                                                                    // 1
+ * Copyright 2013-present, Facebook, Inc.                                                                              // 2
+ * All rights reserved.                                                                                                // 3
+ *                                                                                                                     // 4
+ * This source code is licensed under the BSD-style license found in the                                               // 5
+ * LICENSE file in the root directory of this source tree. An additional grant                                         // 6
+ * of patent rights can be found in the PATENTS file in the same directory.                                            // 7
+ *                                                                                                                     // 8
+ * @providesModule flattenChildren                                                                                     // 9
+ */                                                                                                                    // 10
+                                                                                                                       // 11
+'use strict';                                                                                                          // 12
+                                                                                                                       // 13
+var traverseAllChildren = require('./traverseAllChildren');                                                            // 14
+var warning = require('fbjs/lib/warning');                                                                             // 15
+                                                                                                                       // 16
+/**                                                                                                                    // 17
+ * @param {function} traverseContext Context passed through traversal.                                                 // 18
+ * @param {?ReactComponent} child React child component.                                                               // 19
+ * @param {!string} name String name of key path to child.                                                             // 20
+ */                                                                                                                    // 21
+function flattenSingleChildIntoContext(traverseContext, child, name) {                                                 // 22
+  // We found a component instance.                                                                                    // 23
+  var result = traverseContext;                                                                                        // 24
+  var keyUnique = result[name] === undefined;                                                                          // 25
+  if (process.env.NODE_ENV !== 'production') {                                                                         // 26
+    process.env.NODE_ENV !== 'production' ? warning(keyUnique, 'flattenChildren(...): Encountered two children with the same key, ' + '`%s`. Child keys must be unique; when two children share a key, only ' + 'the first child will be used.', name) : void 0;
+  }                                                                                                                    // 28
+  if (keyUnique && child != null) {                                                                                    // 29
+    result[name] = child;                                                                                              // 30
+  }                                                                                                                    // 31
+}                                                                                                                      // 32
+                                                                                                                       // 33
+/**                                                                                                                    // 34
+ * Flattens children that are typically specified as `props.children`. Any null                                        // 35
+ * children will not be included in the resulting object.                                                              // 36
+ * @return {!object} flattened children keyed by name.                                                                 // 37
+ */                                                                                                                    // 38
+function flattenChildren(children) {                                                                                   // 39
+  if (children == null) {                                                                                              // 40
+    return children;                                                                                                   // 41
+  }                                                                                                                    // 42
+  var result = {};                                                                                                     // 43
+  traverseAllChildren(children, flattenSingleChildIntoContext, result);                                                // 44
+  return result;                                                                                                       // 45
+}                                                                                                                      // 46
+                                                                                                                       // 47
+module.exports = flattenChildren;                                                                                      // 48
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 }],"validateDOMNesting.js":["object-assign","fbjs/lib/emptyFunction","fbjs/lib/warning",function(require,exports,module){
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -19957,6 +19374,591 @@ var ReactMount = require('./ReactMount');                                       
 module.exports = ReactMount.renderSubtreeIntoContainer;                                                                // 16
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+}],"ReactCSSTransitionGroup.js":["object-assign","./React","./ReactTransitionGroup","./ReactCSSTransitionGroupChild",function(require,exports,module){
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                                     //
+// node_modules/react/lib/ReactCSSTransitionGroup.js                                                                   //
+//                                                                                                                     //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                                                                                       //
+/**                                                                                                                    // 1
+ * Copyright 2013-present, Facebook, Inc.                                                                              // 2
+ * All rights reserved.                                                                                                // 3
+ *                                                                                                                     // 4
+ * This source code is licensed under the BSD-style license found in the                                               // 5
+ * LICENSE file in the root directory of this source tree. An additional grant                                         // 6
+ * of patent rights can be found in the PATENTS file in the same directory.                                            // 7
+ *                                                                                                                     // 8
+ * @providesModule ReactCSSTransitionGroup                                                                             // 9
+ */                                                                                                                    // 10
+                                                                                                                       // 11
+'use strict';                                                                                                          // 12
+                                                                                                                       // 13
+var _assign = require('object-assign');                                                                                // 14
+                                                                                                                       // 15
+var React = require('./React');                                                                                        // 16
+                                                                                                                       // 17
+var ReactTransitionGroup = require('./ReactTransitionGroup');                                                          // 18
+var ReactCSSTransitionGroupChild = require('./ReactCSSTransitionGroupChild');                                          // 19
+                                                                                                                       // 20
+function createTransitionTimeoutPropValidator(transitionType) {                                                        // 21
+  var timeoutPropName = 'transition' + transitionType + 'Timeout';                                                     // 22
+  var enabledPropName = 'transition' + transitionType;                                                                 // 23
+                                                                                                                       // 24
+  return function (props) {                                                                                            // 25
+    // If the transition is enabled                                                                                    // 26
+    if (props[enabledPropName]) {                                                                                      // 27
+      // If no timeout duration is provided                                                                            // 28
+      if (props[timeoutPropName] == null) {                                                                            // 29
+        return new Error(timeoutPropName + ' wasn\'t supplied to ReactCSSTransitionGroup: ' + 'this can cause unreliable animations and won\'t be supported in ' + 'a future version of React. See ' + 'https://fb.me/react-animation-transition-group-timeout for more ' + 'information.');
+                                                                                                                       // 31
+        // If the duration isn't a number                                                                              // 32
+      } else if (typeof props[timeoutPropName] !== 'number') {                                                         // 33
+          return new Error(timeoutPropName + ' must be a number (in milliseconds)');                                   // 34
+        }                                                                                                              // 35
+    }                                                                                                                  // 36
+  };                                                                                                                   // 37
+}                                                                                                                      // 38
+                                                                                                                       // 39
+var ReactCSSTransitionGroup = React.createClass({                                                                      // 40
+  displayName: 'ReactCSSTransitionGroup',                                                                              // 41
+                                                                                                                       // 42
+  propTypes: {                                                                                                         // 43
+    transitionName: ReactCSSTransitionGroupChild.propTypes.name,                                                       // 44
+                                                                                                                       // 45
+    transitionAppear: React.PropTypes.bool,                                                                            // 46
+    transitionEnter: React.PropTypes.bool,                                                                             // 47
+    transitionLeave: React.PropTypes.bool,                                                                             // 48
+    transitionAppearTimeout: createTransitionTimeoutPropValidator('Appear'),                                           // 49
+    transitionEnterTimeout: createTransitionTimeoutPropValidator('Enter'),                                             // 50
+    transitionLeaveTimeout: createTransitionTimeoutPropValidator('Leave')                                              // 51
+  },                                                                                                                   // 52
+                                                                                                                       // 53
+  getDefaultProps: function () {                                                                                       // 54
+    return {                                                                                                           // 55
+      transitionAppear: false,                                                                                         // 56
+      transitionEnter: true,                                                                                           // 57
+      transitionLeave: true                                                                                            // 58
+    };                                                                                                                 // 59
+  },                                                                                                                   // 60
+                                                                                                                       // 61
+  _wrapChild: function (child) {                                                                                       // 62
+    // We need to provide this childFactory so that                                                                    // 63
+    // ReactCSSTransitionGroupChild can receive updates to name, enter, and                                            // 64
+    // leave while it is leaving.                                                                                      // 65
+    return React.createElement(ReactCSSTransitionGroupChild, {                                                         // 66
+      name: this.props.transitionName,                                                                                 // 67
+      appear: this.props.transitionAppear,                                                                             // 68
+      enter: this.props.transitionEnter,                                                                               // 69
+      leave: this.props.transitionLeave,                                                                               // 70
+      appearTimeout: this.props.transitionAppearTimeout,                                                               // 71
+      enterTimeout: this.props.transitionEnterTimeout,                                                                 // 72
+      leaveTimeout: this.props.transitionLeaveTimeout                                                                  // 73
+    }, child);                                                                                                         // 74
+  },                                                                                                                   // 75
+                                                                                                                       // 76
+  render: function () {                                                                                                // 77
+    return React.createElement(ReactTransitionGroup, _assign({}, this.props, { childFactory: this._wrapChild }));      // 78
+  }                                                                                                                    // 79
+});                                                                                                                    // 80
+                                                                                                                       // 81
+module.exports = ReactCSSTransitionGroup;                                                                              // 82
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+}],"ReactTransitionGroup.js":["object-assign","./React","./ReactTransitionChildMapping","fbjs/lib/emptyFunction",function(require,exports,module){
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                                     //
+// node_modules/react/lib/ReactTransitionGroup.js                                                                      //
+//                                                                                                                     //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                                                                                       //
+/**                                                                                                                    // 1
+ * Copyright 2013-present, Facebook, Inc.                                                                              // 2
+ * All rights reserved.                                                                                                // 3
+ *                                                                                                                     // 4
+ * This source code is licensed under the BSD-style license found in the                                               // 5
+ * LICENSE file in the root directory of this source tree. An additional grant                                         // 6
+ * of patent rights can be found in the PATENTS file in the same directory.                                            // 7
+ *                                                                                                                     // 8
+ * @providesModule ReactTransitionGroup                                                                                // 9
+ */                                                                                                                    // 10
+                                                                                                                       // 11
+'use strict';                                                                                                          // 12
+                                                                                                                       // 13
+var _assign = require('object-assign');                                                                                // 14
+                                                                                                                       // 15
+var React = require('./React');                                                                                        // 16
+var ReactTransitionChildMapping = require('./ReactTransitionChildMapping');                                            // 17
+                                                                                                                       // 18
+var emptyFunction = require('fbjs/lib/emptyFunction');                                                                 // 19
+                                                                                                                       // 20
+var ReactTransitionGroup = React.createClass({                                                                         // 21
+  displayName: 'ReactTransitionGroup',                                                                                 // 22
+                                                                                                                       // 23
+  propTypes: {                                                                                                         // 24
+    component: React.PropTypes.any,                                                                                    // 25
+    childFactory: React.PropTypes.func                                                                                 // 26
+  },                                                                                                                   // 27
+                                                                                                                       // 28
+  getDefaultProps: function () {                                                                                       // 29
+    return {                                                                                                           // 30
+      component: 'span',                                                                                               // 31
+      childFactory: emptyFunction.thatReturnsArgument                                                                  // 32
+    };                                                                                                                 // 33
+  },                                                                                                                   // 34
+                                                                                                                       // 35
+  getInitialState: function () {                                                                                       // 36
+    return {                                                                                                           // 37
+      children: ReactTransitionChildMapping.getChildMapping(this.props.children)                                       // 38
+    };                                                                                                                 // 39
+  },                                                                                                                   // 40
+                                                                                                                       // 41
+  componentWillMount: function () {                                                                                    // 42
+    this.currentlyTransitioningKeys = {};                                                                              // 43
+    this.keysToEnter = [];                                                                                             // 44
+    this.keysToLeave = [];                                                                                             // 45
+  },                                                                                                                   // 46
+                                                                                                                       // 47
+  componentDidMount: function () {                                                                                     // 48
+    var initialChildMapping = this.state.children;                                                                     // 49
+    for (var key in initialChildMapping) {                                                                             // 50
+      if (initialChildMapping[key]) {                                                                                  // 51
+        this.performAppear(key);                                                                                       // 52
+      }                                                                                                                // 53
+    }                                                                                                                  // 54
+  },                                                                                                                   // 55
+                                                                                                                       // 56
+  componentWillReceiveProps: function (nextProps) {                                                                    // 57
+    var nextChildMapping = ReactTransitionChildMapping.getChildMapping(nextProps.children);                            // 58
+    var prevChildMapping = this.state.children;                                                                        // 59
+                                                                                                                       // 60
+    this.setState({                                                                                                    // 61
+      children: ReactTransitionChildMapping.mergeChildMappings(prevChildMapping, nextChildMapping)                     // 62
+    });                                                                                                                // 63
+                                                                                                                       // 64
+    var key;                                                                                                           // 65
+                                                                                                                       // 66
+    for (key in nextChildMapping) {                                                                                    // 67
+      var hasPrev = prevChildMapping && prevChildMapping.hasOwnProperty(key);                                          // 68
+      if (nextChildMapping[key] && !hasPrev && !this.currentlyTransitioningKeys[key]) {                                // 69
+        this.keysToEnter.push(key);                                                                                    // 70
+      }                                                                                                                // 71
+    }                                                                                                                  // 72
+                                                                                                                       // 73
+    for (key in prevChildMapping) {                                                                                    // 74
+      var hasNext = nextChildMapping && nextChildMapping.hasOwnProperty(key);                                          // 75
+      if (prevChildMapping[key] && !hasNext && !this.currentlyTransitioningKeys[key]) {                                // 76
+        this.keysToLeave.push(key);                                                                                    // 77
+      }                                                                                                                // 78
+    }                                                                                                                  // 79
+                                                                                                                       // 80
+    // If we want to someday check for reordering, we could do it here.                                                // 81
+  },                                                                                                                   // 82
+                                                                                                                       // 83
+  componentDidUpdate: function () {                                                                                    // 84
+    var keysToEnter = this.keysToEnter;                                                                                // 85
+    this.keysToEnter = [];                                                                                             // 86
+    keysToEnter.forEach(this.performEnter);                                                                            // 87
+                                                                                                                       // 88
+    var keysToLeave = this.keysToLeave;                                                                                // 89
+    this.keysToLeave = [];                                                                                             // 90
+    keysToLeave.forEach(this.performLeave);                                                                            // 91
+  },                                                                                                                   // 92
+                                                                                                                       // 93
+  performAppear: function (key) {                                                                                      // 94
+    this.currentlyTransitioningKeys[key] = true;                                                                       // 95
+                                                                                                                       // 96
+    var component = this.refs[key];                                                                                    // 97
+                                                                                                                       // 98
+    if (component.componentWillAppear) {                                                                               // 99
+      component.componentWillAppear(this._handleDoneAppearing.bind(this, key));                                        // 100
+    } else {                                                                                                           // 101
+      this._handleDoneAppearing(key);                                                                                  // 102
+    }                                                                                                                  // 103
+  },                                                                                                                   // 104
+                                                                                                                       // 105
+  _handleDoneAppearing: function (key) {                                                                               // 106
+    var component = this.refs[key];                                                                                    // 107
+    if (component.componentDidAppear) {                                                                                // 108
+      component.componentDidAppear();                                                                                  // 109
+    }                                                                                                                  // 110
+                                                                                                                       // 111
+    delete this.currentlyTransitioningKeys[key];                                                                       // 112
+                                                                                                                       // 113
+    var currentChildMapping = ReactTransitionChildMapping.getChildMapping(this.props.children);                        // 114
+                                                                                                                       // 115
+    if (!currentChildMapping || !currentChildMapping.hasOwnProperty(key)) {                                            // 116
+      // This was removed before it had fully appeared. Remove it.                                                     // 117
+      this.performLeave(key);                                                                                          // 118
+    }                                                                                                                  // 119
+  },                                                                                                                   // 120
+                                                                                                                       // 121
+  performEnter: function (key) {                                                                                       // 122
+    this.currentlyTransitioningKeys[key] = true;                                                                       // 123
+                                                                                                                       // 124
+    var component = this.refs[key];                                                                                    // 125
+                                                                                                                       // 126
+    if (component.componentWillEnter) {                                                                                // 127
+      component.componentWillEnter(this._handleDoneEntering.bind(this, key));                                          // 128
+    } else {                                                                                                           // 129
+      this._handleDoneEntering(key);                                                                                   // 130
+    }                                                                                                                  // 131
+  },                                                                                                                   // 132
+                                                                                                                       // 133
+  _handleDoneEntering: function (key) {                                                                                // 134
+    var component = this.refs[key];                                                                                    // 135
+    if (component.componentDidEnter) {                                                                                 // 136
+      component.componentDidEnter();                                                                                   // 137
+    }                                                                                                                  // 138
+                                                                                                                       // 139
+    delete this.currentlyTransitioningKeys[key];                                                                       // 140
+                                                                                                                       // 141
+    var currentChildMapping = ReactTransitionChildMapping.getChildMapping(this.props.children);                        // 142
+                                                                                                                       // 143
+    if (!currentChildMapping || !currentChildMapping.hasOwnProperty(key)) {                                            // 144
+      // This was removed before it had fully entered. Remove it.                                                      // 145
+      this.performLeave(key);                                                                                          // 146
+    }                                                                                                                  // 147
+  },                                                                                                                   // 148
+                                                                                                                       // 149
+  performLeave: function (key) {                                                                                       // 150
+    this.currentlyTransitioningKeys[key] = true;                                                                       // 151
+                                                                                                                       // 152
+    var component = this.refs[key];                                                                                    // 153
+    if (component.componentWillLeave) {                                                                                // 154
+      component.componentWillLeave(this._handleDoneLeaving.bind(this, key));                                           // 155
+    } else {                                                                                                           // 156
+      // Note that this is somewhat dangerous b/c it calls setState()                                                  // 157
+      // again, effectively mutating the component before all the work                                                 // 158
+      // is done.                                                                                                      // 159
+      this._handleDoneLeaving(key);                                                                                    // 160
+    }                                                                                                                  // 161
+  },                                                                                                                   // 162
+                                                                                                                       // 163
+  _handleDoneLeaving: function (key) {                                                                                 // 164
+    var component = this.refs[key];                                                                                    // 165
+                                                                                                                       // 166
+    if (component.componentDidLeave) {                                                                                 // 167
+      component.componentDidLeave();                                                                                   // 168
+    }                                                                                                                  // 169
+                                                                                                                       // 170
+    delete this.currentlyTransitioningKeys[key];                                                                       // 171
+                                                                                                                       // 172
+    var currentChildMapping = ReactTransitionChildMapping.getChildMapping(this.props.children);                        // 173
+                                                                                                                       // 174
+    if (currentChildMapping && currentChildMapping.hasOwnProperty(key)) {                                              // 175
+      // This entered again before it fully left. Add it again.                                                        // 176
+      this.performEnter(key);                                                                                          // 177
+    } else {                                                                                                           // 178
+      this.setState(function (state) {                                                                                 // 179
+        var newChildren = _assign({}, state.children);                                                                 // 180
+        delete newChildren[key];                                                                                       // 181
+        return { children: newChildren };                                                                              // 182
+      });                                                                                                              // 183
+    }                                                                                                                  // 184
+  },                                                                                                                   // 185
+                                                                                                                       // 186
+  render: function () {                                                                                                // 187
+    // TODO: we could get rid of the need for the wrapper node                                                         // 188
+    // by cloning a single child                                                                                       // 189
+    var childrenToRender = [];                                                                                         // 190
+    for (var key in this.state.children) {                                                                             // 191
+      var child = this.state.children[key];                                                                            // 192
+      if (child) {                                                                                                     // 193
+        // You may need to apply reactive updates to a child as it is leaving.                                         // 194
+        // The normal React way to do it won't work since the child will have                                          // 195
+        // already been removed. In case you need this behavior you can provide                                        // 196
+        // a childFactory function to wrap every child, even the ones that are                                         // 197
+        // leaving.                                                                                                    // 198
+        childrenToRender.push(React.cloneElement(this.props.childFactory(child), { ref: key, key: key }));             // 199
+      }                                                                                                                // 200
+    }                                                                                                                  // 201
+    return React.createElement(this.props.component, this.props, childrenToRender);                                    // 202
+  }                                                                                                                    // 203
+});                                                                                                                    // 204
+                                                                                                                       // 205
+module.exports = ReactTransitionGroup;                                                                                 // 206
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+}],"ReactTransitionChildMapping.js":["./flattenChildren",function(require,exports,module){
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                                     //
+// node_modules/react/lib/ReactTransitionChildMapping.js                                                               //
+//                                                                                                                     //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                                                                                       //
+/**                                                                                                                    // 1
+ * Copyright 2013-present, Facebook, Inc.                                                                              // 2
+ * All rights reserved.                                                                                                // 3
+ *                                                                                                                     // 4
+ * This source code is licensed under the BSD-style license found in the                                               // 5
+ * LICENSE file in the root directory of this source tree. An additional grant                                         // 6
+ * of patent rights can be found in the PATENTS file in the same directory.                                            // 7
+ *                                                                                                                     // 8
+ * @providesModule ReactTransitionChildMapping                                                                         // 9
+ */                                                                                                                    // 10
+                                                                                                                       // 11
+'use strict';                                                                                                          // 12
+                                                                                                                       // 13
+var flattenChildren = require('./flattenChildren');                                                                    // 14
+                                                                                                                       // 15
+var ReactTransitionChildMapping = {                                                                                    // 16
+  /**                                                                                                                  // 17
+   * Given `this.props.children`, return an object mapping key to child. Just                                          // 18
+   * simple syntactic sugar around flattenChildren().                                                                  // 19
+   *                                                                                                                   // 20
+   * @param {*} children `this.props.children`                                                                         // 21
+   * @return {object} Mapping of key to child                                                                          // 22
+   */                                                                                                                  // 23
+  getChildMapping: function (children) {                                                                               // 24
+    if (!children) {                                                                                                   // 25
+      return children;                                                                                                 // 26
+    }                                                                                                                  // 27
+    return flattenChildren(children);                                                                                  // 28
+  },                                                                                                                   // 29
+                                                                                                                       // 30
+  /**                                                                                                                  // 31
+   * When you're adding or removing children some may be added or removed in the                                       // 32
+   * same render pass. We want to show *both* since we want to simultaneously                                          // 33
+   * animate elements in and out. This function takes a previous set of keys                                           // 34
+   * and a new set of keys and merges them with its best guess of the correct                                          // 35
+   * ordering. In the future we may expose some of the utilities in                                                    // 36
+   * ReactMultiChild to make this easy, but for now React itself does not                                              // 37
+   * directly have this concept of the union of prevChildren and nextChildren                                          // 38
+   * so we implement it here.                                                                                          // 39
+   *                                                                                                                   // 40
+   * @param {object} prev prev children as returned from                                                               // 41
+   * `ReactTransitionChildMapping.getChildMapping()`.                                                                  // 42
+   * @param {object} next next children as returned from                                                               // 43
+   * `ReactTransitionChildMapping.getChildMapping()`.                                                                  // 44
+   * @return {object} a key set that contains all keys in `prev` and all keys                                          // 45
+   * in `next` in a reasonable order.                                                                                  // 46
+   */                                                                                                                  // 47
+  mergeChildMappings: function (prev, next) {                                                                          // 48
+    prev = prev || {};                                                                                                 // 49
+    next = next || {};                                                                                                 // 50
+                                                                                                                       // 51
+    function getValueForKey(key) {                                                                                     // 52
+      if (next.hasOwnProperty(key)) {                                                                                  // 53
+        return next[key];                                                                                              // 54
+      } else {                                                                                                         // 55
+        return prev[key];                                                                                              // 56
+      }                                                                                                                // 57
+    }                                                                                                                  // 58
+                                                                                                                       // 59
+    // For each key of `next`, the list of keys to insert before that key in                                           // 60
+    // the combined list                                                                                               // 61
+    var nextKeysPending = {};                                                                                          // 62
+                                                                                                                       // 63
+    var pendingKeys = [];                                                                                              // 64
+    for (var prevKey in prev) {                                                                                        // 65
+      if (next.hasOwnProperty(prevKey)) {                                                                              // 66
+        if (pendingKeys.length) {                                                                                      // 67
+          nextKeysPending[prevKey] = pendingKeys;                                                                      // 68
+          pendingKeys = [];                                                                                            // 69
+        }                                                                                                              // 70
+      } else {                                                                                                         // 71
+        pendingKeys.push(prevKey);                                                                                     // 72
+      }                                                                                                                // 73
+    }                                                                                                                  // 74
+                                                                                                                       // 75
+    var i;                                                                                                             // 76
+    var childMapping = {};                                                                                             // 77
+    for (var nextKey in next) {                                                                                        // 78
+      if (nextKeysPending.hasOwnProperty(nextKey)) {                                                                   // 79
+        for (i = 0; i < nextKeysPending[nextKey].length; i++) {                                                        // 80
+          var pendingNextKey = nextKeysPending[nextKey][i];                                                            // 81
+          childMapping[nextKeysPending[nextKey][i]] = getValueForKey(pendingNextKey);                                  // 82
+        }                                                                                                              // 83
+      }                                                                                                                // 84
+      childMapping[nextKey] = getValueForKey(nextKey);                                                                 // 85
+    }                                                                                                                  // 86
+                                                                                                                       // 87
+    // Finally, add the keys which didn't appear before any key in `next`                                              // 88
+    for (i = 0; i < pendingKeys.length; i++) {                                                                         // 89
+      childMapping[pendingKeys[i]] = getValueForKey(pendingKeys[i]);                                                   // 90
+    }                                                                                                                  // 91
+                                                                                                                       // 92
+    return childMapping;                                                                                               // 93
+  }                                                                                                                    // 94
+};                                                                                                                     // 95
+                                                                                                                       // 96
+module.exports = ReactTransitionChildMapping;                                                                          // 97
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+}],"ReactCSSTransitionGroupChild.js":["./React","./ReactDOM","fbjs/lib/CSSCore","./ReactTransitionEvents","./onlyChild",function(require,exports,module){
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                                     //
+// node_modules/react/lib/ReactCSSTransitionGroupChild.js                                                              //
+//                                                                                                                     //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                                                                                       //
+/**                                                                                                                    // 1
+ * Copyright 2013-present, Facebook, Inc.                                                                              // 2
+ * All rights reserved.                                                                                                // 3
+ *                                                                                                                     // 4
+ * This source code is licensed under the BSD-style license found in the                                               // 5
+ * LICENSE file in the root directory of this source tree. An additional grant                                         // 6
+ * of patent rights can be found in the PATENTS file in the same directory.                                            // 7
+ *                                                                                                                     // 8
+ * @providesModule ReactCSSTransitionGroupChild                                                                        // 9
+ */                                                                                                                    // 10
+                                                                                                                       // 11
+'use strict';                                                                                                          // 12
+                                                                                                                       // 13
+var React = require('./React');                                                                                        // 14
+var ReactDOM = require('./ReactDOM');                                                                                  // 15
+                                                                                                                       // 16
+var CSSCore = require('fbjs/lib/CSSCore');                                                                             // 17
+var ReactTransitionEvents = require('./ReactTransitionEvents');                                                        // 18
+                                                                                                                       // 19
+var onlyChild = require('./onlyChild');                                                                                // 20
+                                                                                                                       // 21
+var TICK = 17;                                                                                                         // 22
+                                                                                                                       // 23
+var ReactCSSTransitionGroupChild = React.createClass({                                                                 // 24
+  displayName: 'ReactCSSTransitionGroupChild',                                                                         // 25
+                                                                                                                       // 26
+  propTypes: {                                                                                                         // 27
+    name: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.shape({                                   // 28
+      enter: React.PropTypes.string,                                                                                   // 29
+      leave: React.PropTypes.string,                                                                                   // 30
+      active: React.PropTypes.string                                                                                   // 31
+    }), React.PropTypes.shape({                                                                                        // 32
+      enter: React.PropTypes.string,                                                                                   // 33
+      enterActive: React.PropTypes.string,                                                                             // 34
+      leave: React.PropTypes.string,                                                                                   // 35
+      leaveActive: React.PropTypes.string,                                                                             // 36
+      appear: React.PropTypes.string,                                                                                  // 37
+      appearActive: React.PropTypes.string                                                                             // 38
+    })]).isRequired,                                                                                                   // 39
+                                                                                                                       // 40
+    // Once we require timeouts to be specified, we can remove the                                                     // 41
+    // boolean flags (appear etc.) and just accept a number                                                            // 42
+    // or a bool for the timeout flags (appearTimeout etc.)                                                            // 43
+    appear: React.PropTypes.bool,                                                                                      // 44
+    enter: React.PropTypes.bool,                                                                                       // 45
+    leave: React.PropTypes.bool,                                                                                       // 46
+    appearTimeout: React.PropTypes.number,                                                                             // 47
+    enterTimeout: React.PropTypes.number,                                                                              // 48
+    leaveTimeout: React.PropTypes.number                                                                               // 49
+  },                                                                                                                   // 50
+                                                                                                                       // 51
+  transition: function (animationType, finishCallback, userSpecifiedDelay) {                                           // 52
+    var node = ReactDOM.findDOMNode(this);                                                                             // 53
+                                                                                                                       // 54
+    if (!node) {                                                                                                       // 55
+      if (finishCallback) {                                                                                            // 56
+        finishCallback();                                                                                              // 57
+      }                                                                                                                // 58
+      return;                                                                                                          // 59
+    }                                                                                                                  // 60
+                                                                                                                       // 61
+    var className = this.props.name[animationType] || this.props.name + '-' + animationType;                           // 62
+    var activeClassName = this.props.name[animationType + 'Active'] || className + '-active';                          // 63
+    var timeout = null;                                                                                                // 64
+                                                                                                                       // 65
+    var endListener = function (e) {                                                                                   // 66
+      if (e && e.target !== node) {                                                                                    // 67
+        return;                                                                                                        // 68
+      }                                                                                                                // 69
+                                                                                                                       // 70
+      clearTimeout(timeout);                                                                                           // 71
+                                                                                                                       // 72
+      CSSCore.removeClass(node, className);                                                                            // 73
+      CSSCore.removeClass(node, activeClassName);                                                                      // 74
+                                                                                                                       // 75
+      ReactTransitionEvents.removeEndEventListener(node, endListener);                                                 // 76
+                                                                                                                       // 77
+      // Usually this optional callback is used for informing an owner of                                              // 78
+      // a leave animation and telling it to remove the child.                                                         // 79
+      if (finishCallback) {                                                                                            // 80
+        finishCallback();                                                                                              // 81
+      }                                                                                                                // 82
+    };                                                                                                                 // 83
+                                                                                                                       // 84
+    CSSCore.addClass(node, className);                                                                                 // 85
+                                                                                                                       // 86
+    // Need to do this to actually trigger a transition.                                                               // 87
+    this.queueClass(activeClassName);                                                                                  // 88
+                                                                                                                       // 89
+    // If the user specified a timeout delay.                                                                          // 90
+    if (userSpecifiedDelay) {                                                                                          // 91
+      // Clean-up the animation after the specified delay                                                              // 92
+      timeout = setTimeout(endListener, userSpecifiedDelay);                                                           // 93
+      this.transitionTimeouts.push(timeout);                                                                           // 94
+    } else {                                                                                                           // 95
+      // DEPRECATED: this listener will be removed in a future version of react                                        // 96
+      ReactTransitionEvents.addEndEventListener(node, endListener);                                                    // 97
+    }                                                                                                                  // 98
+  },                                                                                                                   // 99
+                                                                                                                       // 100
+  queueClass: function (className) {                                                                                   // 101
+    this.classNameQueue.push(className);                                                                               // 102
+                                                                                                                       // 103
+    if (!this.timeout) {                                                                                               // 104
+      this.timeout = setTimeout(this.flushClassNameQueue, TICK);                                                       // 105
+    }                                                                                                                  // 106
+  },                                                                                                                   // 107
+                                                                                                                       // 108
+  flushClassNameQueue: function () {                                                                                   // 109
+    if (this.isMounted()) {                                                                                            // 110
+      this.classNameQueue.forEach(CSSCore.addClass.bind(CSSCore, ReactDOM.findDOMNode(this)));                         // 111
+    }                                                                                                                  // 112
+    this.classNameQueue.length = 0;                                                                                    // 113
+    this.timeout = null;                                                                                               // 114
+  },                                                                                                                   // 115
+                                                                                                                       // 116
+  componentWillMount: function () {                                                                                    // 117
+    this.classNameQueue = [];                                                                                          // 118
+    this.transitionTimeouts = [];                                                                                      // 119
+  },                                                                                                                   // 120
+                                                                                                                       // 121
+  componentWillUnmount: function () {                                                                                  // 122
+    if (this.timeout) {                                                                                                // 123
+      clearTimeout(this.timeout);                                                                                      // 124
+    }                                                                                                                  // 125
+    this.transitionTimeouts.forEach(function (timeout) {                                                               // 126
+      clearTimeout(timeout);                                                                                           // 127
+    });                                                                                                                // 128
+  },                                                                                                                   // 129
+                                                                                                                       // 130
+  componentWillAppear: function (done) {                                                                               // 131
+    if (this.props.appear) {                                                                                           // 132
+      this.transition('appear', done, this.props.appearTimeout);                                                       // 133
+    } else {                                                                                                           // 134
+      done();                                                                                                          // 135
+    }                                                                                                                  // 136
+  },                                                                                                                   // 137
+                                                                                                                       // 138
+  componentWillEnter: function (done) {                                                                                // 139
+    if (this.props.enter) {                                                                                            // 140
+      this.transition('enter', done, this.props.enterTimeout);                                                         // 141
+    } else {                                                                                                           // 142
+      done();                                                                                                          // 143
+    }                                                                                                                  // 144
+  },                                                                                                                   // 145
+                                                                                                                       // 146
+  componentWillLeave: function (done) {                                                                                // 147
+    if (this.props.leave) {                                                                                            // 148
+      this.transition('leave', done, this.props.leaveTimeout);                                                         // 149
+    } else {                                                                                                           // 150
+      done();                                                                                                          // 151
+    }                                                                                                                  // 152
+  },                                                                                                                   // 153
+                                                                                                                       // 154
+  render: function () {                                                                                                // 155
+    return onlyChild(this.props.children);                                                                             // 156
+  }                                                                                                                    // 157
+});                                                                                                                    // 158
+                                                                                                                       // 159
+module.exports = ReactCSSTransitionGroupChild;                                                                         // 160
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 }],"ReactTransitionEvents.js":["fbjs/lib/ExecutionEnvironment","./getVendorPrefixedEventName",function(require,exports,module){
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -21908,32 +21910,7 @@ var CSSCore = {                                                                 
 module.exports = CSSCore;                                                                                              // 121
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-}]}}}},"react-addons-css-transition-group":{"package.json":function(require,exports){
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//                                                                                                                     //
-// node_modules/react-addons-css-transition-group/package.json                                                         //
-//                                                                                                                     //
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                                                                                                                       //
-exports.name = "react-addons-css-transition-group";                                                                    // 1
-exports.version = "15.0.1";                                                                                            // 2
-exports.main = "index.js";                                                                                             // 3
-                                                                                                                       // 4
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-},"index.js":["react/lib/ReactCSSTransitionGroup",function(require,exports,module){
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//                                                                                                                     //
-// node_modules/react-addons-css-transition-group/index.js                                                             //
-//                                                                                                                     //
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                                                                                                                       //
-module.exports = require('react/lib/ReactCSSTransitionGroup');                                                         // 1
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-}]},"react-dom":{"package.json":function(require,exports){
+}]}}}},"react-dom":{"package.json":function(require,exports){
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                                                     //
@@ -21973,6 +21950,31 @@ module.exports = require('react/lib/ReactDOM');                                 
                                                                                                                        // 2
 module.exports = require('react/lib/ReactDOMServer');                                                                  // 3
                                                                                                                        // 4
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+}]},"react-addons-css-transition-group":{"package.json":function(require,exports){
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                                     //
+// node_modules/react-addons-css-transition-group/package.json                                                         //
+//                                                                                                                     //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                                                                                       //
+exports.name = "react-addons-css-transition-group";                                                                    // 1
+exports.version = "15.0.1";                                                                                            // 2
+exports.main = "index.js";                                                                                             // 3
+                                                                                                                       // 4
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+},"index.js":["react/lib/ReactCSSTransitionGroup",function(require,exports,module){
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                                     //
+// node_modules/react-addons-css-transition-group/index.js                                                             //
+//                                                                                                                     //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                                                                                       //
+module.exports = require('react/lib/ReactCSSTransitionGroup');                                                         // 1
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 }]},"react-mounter":{"package.json":function(require,exports){

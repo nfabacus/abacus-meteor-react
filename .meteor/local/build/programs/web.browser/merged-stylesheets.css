@@ -2658,398 +2658,78 @@ MeteorToys_result_button
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAQAAABIkb+zAAADuUlEQVR4Ae3aA5D02AIF4PvbWNu27d23tm3bVmlt27Zt23y23xv905rum29t7yaZSVW+Vqm7c+LknpCWUqlUKpVKpVKpVDKNLR3vNm/7r0Qi0fB/b7vL6bYye+wX+qbYzzLO81uJqKmuqlunDt0qqqoamqLEP11mfUNCX2JCR/uDqKVHm2ddZE8rmDR8zBizWtUBzvWQf6pqitqca47QF5jUSbpENX91qaUMCN/DEAs73W9UtUR3WyT0JgPtqV1Lxf3WMir8SIZawi3aNEU3mT70DnN5RVRzmznDz2AGl+kUVRxgQMib7VVFf7Jo+AXM6SEN0TOmDvkxwEWiuisNSOG3tvBP0f+tFPJhuDtEbTYxILUdwX1aWnbIZ/IflfhbujtB/R2vITo4+5XnDtGvTRtSpr99VCRfjgAhXS6S+KsJQibsrSbaIbMAtpdoN3PIjEP0qFs6kwDmUtXIekNzrpZ/myT1AAZ6RXSB/iFTRnlZ4q7YL+0Ae4neNSJkzrQ6RFunGsCk2tUtE3JhV03/NDrNACeJ7gg5MdRbomNTC2BCXSoWCrmxnrrO9AIcLXrKoJAbw7wiQjoXi3/QtE7IlG+RUgDLSPwrhOIGOF/LmSEzxn72+c1HKhf//qpmuVBUZhb9y/BQVLbS8mQoLqfqcXIoLveo2j4Ul/eMs1QoLv/VaZpQXGg3rNgBekLvKgN0hyLzXxWTFXs3WrV0sQ9kDVsU/VTinFBcthK9FIrLzKI2g0Nx+atasc+GztdyaSguy4j+aVTIFVghrTH4P2hYN+elzl/0DyHFG1u5DiK+Kzo6zSpBl6o5Q06so0fFhCE9TtJyf8iFkV4VnZZ2I6JDPZ+RXNupazdRSJc987k/ZCJ/FB2QRbHjFdGNBoZMuUn0Yib/Yi4VDduGDNldU92c2RU8El3ZDXT4lapop5AdF0n8x2whA+b2X4mLsq8aJP6cfjnGgv4jcbfBeZQ9on9bIKTIav4v8ajh+fRVbpfodLABqW26VYm7Dc+z8JRouO2XH+5N4S5N0cUG90bl7PfWCL+APfxPVLdT75X+Gp7wq58zlmUpr2tKvGzO3qtd7qVdVPOaLX/8OLIJbOcNDVG7Aw3q/eLrOFFThxtsaMIfmPQN3OrfGqJup5m4L1WPE1Hd/73mKkdYz4KmMdJYU5jT2g52tVf8V01T9GdHm7Dvlb/P91tRS1NNRZcOHdp06NKtrkeU+KNzrKB/367fH+fWL9Xv6/7nDXc5xWZmDKVSqVQqlUqlUqmUkg8A7Xfu66+Q6OYAAAAASUVORK5CYII=');
 }
 
-#login-buttons {
-  display: inline-block;
-  margin-right: 0.2px;
-  line-height: 1;
-}
-
-#login-buttons .login-button {
-  position: relative;
-}
-
-#login-buttons .login-buttons-with-only-one-button {
-  display: inline-block;
-}
-
-#login-buttons .login-buttons-with-only-one-button .login-button {
-  display: inline-block;
-}
-
-#login-buttons .login-buttons-with-only-one-button .login-text-and-button {
-  display: inline-block;
-}
-
-#login-buttons .login-display-name {
-  display: inline-block;
-  padding-right: 2px;
-  line-height: 1.5;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-#login-buttons .loading {
-  line-height: 1;
-  background-image: url(data:image/gif;base64,R0lGODlhEAALAPQAAP///wAAANra2tDQ0Orq6gYGBgAAAC4uLoKCgmBgYLq6uiIiIkpKSoqKimRkZL6+viYmJgQEBE5OTubm5tjY2PT09Dg4ONzc3PLy8ra2tqCgoMrKyu7u7gAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCwAAACwAAAAAEAALAAAFLSAgjmRpnqSgCuLKAq5AEIM4zDVw03ve27ifDgfkEYe04kDIDC5zrtYKRa2WQgAh+QQJCwAAACwAAAAAEAALAAAFJGBhGAVgnqhpHIeRvsDawqns0qeN5+y967tYLyicBYE7EYkYAgAh+QQJCwAAACwAAAAAEAALAAAFNiAgjothLOOIJAkiGgxjpGKiKMkbz7SN6zIawJcDwIK9W/HISxGBzdHTuBNOmcJVCyoUlk7CEAAh+QQJCwAAACwAAAAAEAALAAAFNSAgjqQIRRFUAo3jNGIkSdHqPI8Tz3V55zuaDacDyIQ+YrBH+hWPzJFzOQQaeavWi7oqnVIhACH5BAkLAAAALAAAAAAQAAsAAAUyICCOZGme1rJY5kRRk7hI0mJSVUXJtF3iOl7tltsBZsNfUegjAY3I5sgFY55KqdX1GgIAIfkECQsAAAAsAAAAABAACwAABTcgII5kaZ4kcV2EqLJipmnZhWGXaOOitm2aXQ4g7P2Ct2ER4AMul00kj5g0Al8tADY2y6C+4FIIACH5BAkLAAAALAAAAAAQAAsAAAUvICCOZGme5ERRk6iy7qpyHCVStA3gNa/7txxwlwv2isSacYUc+l4tADQGQ1mvpBAAIfkECQsAAAAsAAAAABAACwAABS8gII5kaZ7kRFGTqLLuqnIcJVK0DeA1r/u3HHCXC/aKxJpxhRz6Xi0ANAZDWa+kEAA7AAAAAAAAAAAA);
-  width: 16px;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-
-#login-buttons .login-button,
-.accounts-dialog .login-button {
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-  padding: 4px 8px;
-  font-size: 80%;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  text-align: center;
+#at-facebook {
+  background: #3B5998;
   color: #fff;
-  background: #596595;
-  border: 1px solid #464f75;
-  border-radius: 4px;
 }
 
-#login-buttons .login-button:hover,
-.accounts-dialog .login-button:hover {
-  background: #7580ac;
-}
-
-#login-buttons .login-button:active,
-.accounts-dialog .login-button:active {
-  background: #7580ac;
-  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2) inset;
-  -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2) inset;
-}
-
-#login-buttons .login-button.login-button-disabled,
-.accounts-dialog .login-button.login-button-disabled,
-#login-buttons .login-button.login-button-disabled:active,
-.accounts-dialog .login-button.login-button-disabled:active {
+#at-facebook.disabled {
   color: #ddd;
-  background: #aaa;
-  border: 1px solid #c3c3c3;
-  box-shadow: none;
-  -webkit-box-shadow: none;
+  background: #666666;
 }
 
-.accounts-dialog * {
-  padding: 0;
-  margin: 0;
-  line-height: inherit;
-  color: inherit;
-  font: inherit;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+#at-facebook:hover {
+  background: #2C4780;
 }
 
-.accounts-dialog .login-button {
-  width: auto;
-  margin-bottom: 4px;
+#at-linkedin {
+  background: #338AB0;
+  color: #fff;
 }
 
-#login-buttons .login-buttons-padding {
-  display: inline-block;
-  width: 30px;
+#at-linkedin.disabled {
+  color: #ddd;
+  background: #666666;
 }
 
-#login-buttons .login-display-name {
-  margin-right: 4px;
+#at-linkedin:hover {
+  background: #0571A6;
 }
 
-#login-buttons .configure-button {
-  background: #ff2a00;
-  border-color: #cc2200;
+#at-twitter {
+  background: #4099FF;
+  color: #fff;
 }
 
-#login-buttons .configure-button:active,
-#login-buttons .configure-button:hover {
-  background: #ff5533;
-  border-color: #ff2a00;
+#at-twitter.disabled {
+  color: #ddd;
+  background: #666666;
 }
 
-#login-buttons .login-image {
-  display: inline-block;
-  position: absolute;
-  left: 6px;
-  top: 6px;
-  width: 16px;
-  height: 16px;
+#at-twitter:hover {
+  background: #3288EB;
 }
 
-#login-buttons .text-besides-image {
-  margin-left: 18px;
+#at-google {
+  background: #db5a3c;
+  color: #fff;
 }
 
-#login-buttons .no-services {
-  color: red;
+#at-google.disabled {
+  color: #ddd;
+  background: #666666;
 }
 
-#login-buttons .login-link-and-dropdown-list {
-  position: relative;
+#at-google:hover {
+  background: #CA4C2E;
 }
 
-#login-buttons .login-close-text {
-  float: left;
-  position: relative;
-  padding-bottom: 8px;
+#at-github {
+  background: #666;
+  color: #fff;
 }
 
-#login-buttons .login-text-and-button .loading,
-#login-buttons .login-link-and-dropdown-list .loading {
-  display: inline-block;
+#at-github.disabled {
+  color: #ddd;
+  background: #666666;
 }
 
-#login-buttons.login-buttons-dropdown-align-left #login-dropdown-list .loading {
-  float: right;
+#at-github:hover {
+  background: #555;
 }
 
-#login-buttons.login-buttons-dropdown-align-right #login-dropdown-list .loading {
-  float: left;
-}
-
-#login-buttons .login-close-text-clear {
-  clear: both;
-}
-
-#login-buttons .or {
-  text-align: center;
-}
-
-#login-buttons .hline {
-  text-decoration: line-through;
-  color: lightgrey;
-}
-
-#login-buttons .or-text {
-  font-weight: bold;
-}
-
-#login-buttons #signup-link {
-  float: right;
-}
-
-#login-buttons #forgot-password-link {
-  float: left;
-}
-
-#login-buttons #back-to-login-link {
-  float: right;
-}
-
-#login-buttons a,
-.accounts-dialog a {
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-#login-buttons.login-buttons-dropdown-align-right .login-close-text {
-  float: right;
-}
-
-.accounts-dialog {
-  border: 1px solid #cccccc;
-  z-index: 1000;
-  background: white;
-  border-radius: 4px;
-  padding: 8px 12px;
-  margin: -8px -12px 0 -12px;
-  width: 250px;
-  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
-  font-size: 16px;
-  color: #333;
-}
-
-.accounts-dialog > * {
-  line-height: 1.6;
-}
-
-.accounts-dialog > .login-close-text {
-  line-height: inherit;
-  font-size: inherit;
-  font-family: inherit;
-}
-
-.accounts-dialog label,
-.accounts-dialog .title {
-  font-size: 80%;
-  margin-top: 7px;
-  margin-bottom: -2px;
-}
-
-.accounts-dialog label {
-  display: inline;
-}
-
-.accounts-dialog input[type=text],
-.accounts-dialog input[type=email],
-.accounts-dialog input[type=password] {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 100%;
-}
-
-.accounts-dialog input[type=text][type],
-.accounts-dialog input[type=email][type],
-.accounts-dialog input[type=password][type] {
-  height: auto;
-}
-
-.accounts-dialog .login-button-form-submit {
-  margin-top: 8px;
-}
-
-.accounts-dialog .message {
-  font-size: 80%;
-  margin-top: 8px;
-  line-height: 1.3;
-}
-
-.accounts-dialog .error-message {
-  color: red;
-}
-
-.accounts-dialog .info-message {
-  color: green;
-}
-
-.accounts-dialog .additional-link {
-  font-size: 75%;
-}
-
-.accounts-dialog .accounts-close {
-  position: absolute;
-  top: 0;
-  right: 5px;
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 20px;
-  text-decoration: none;
-  color: #000;
-  opacity: 0.4;
-}
-
-.accounts-dialog .accounts-close:hover {
-  opacity: 0.8;
-}
-
-.accounts-dialog #login-buttons-cancel-reset-password {
-  float: right;
-}
-
-.accounts-dialog #login-buttons-cancel-enroll-account {
-  float: right;
-}
-
-#login-dropdown-list {
-  position: absolute;
-  top: -1px;
-  left: -1px;
-}
-
-#login-buttons.login-buttons-dropdown-align-right #login-dropdown-list {
-  left: auto;
-  right: -1px;
-}
-
-#login-buttons-message-dialog .message {
-  /* we intentionally want it bigger on this dialog since it's the only thing displayed */
-  font-size: 100%;
-}
-
-.accounts-centered-dialog {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  z-index: 1001;
-  position: fixed;
-  left: 50%;
-  margin-left: -129px;
-  top: 50%;
-  margin-top: -40px;
-  /* = approximately -height/2, though height can change */
-}
-
-#configure-login-service-dialog {
-  width: 530px;
-  margin-left: -269px;
-  margin-top: -300px;
-  /* = approximately -height/2, though height can change */
-}
-
-#configure-login-service-dialog table {
-  width: 100%;
-}
-
-#configure-login-service-dialog input[type=text] {
-  width: 100%;
-  font-family: "Courier New", Courier, monospace;
-}
-
-#configure-login-service-dialog ol {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-#configure-login-service-dialog ol li {
-  margin-left: 30px;
-}
-
-#configure-login-service-dialog .configuration_labels {
-  width: 30%;
-}
-
-#configure-login-service-dialog .configuration_inputs {
-  width: 70%;
-}
-
-#configure-login-service-dialog .new-section {
-  margin-top: 10px;
-}
-
-#configure-login-service-dialog .url {
-  font-family: "Courier New", Courier, monospace;
-}
-
-#configure-login-service-dialog-save-configuration {
-  float: right;
-}
-
-.configure-login-service-dismiss-button {
-  float: left;
-}
-
-#just-verified-dismiss-button,
-#messages-dialog-dismiss-button {
-  margin-top: 8px;
-}
-
-.hide-background {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 999;
-  /* XXX consider replacing with DXImageTransform */
-  background-color: #000000;
-  /* fallback for IE7-8 */
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-#login-buttons input[type=text],
-.accounts-dialog input[type=text],
-#login-buttons input[type=email],
-.accounts-dialog input[type=email],
-#login-buttons input[type=password],
-.accounts-dialog input[type=password] {
-  padding: 4px;
-  border: 1px solid #aaa;
-  border-radius: 3px;
-  line-height: 1;
+.at-input.validating * {
+  cursor: progress;
 }
 
 @font-face {

@@ -22,10 +22,14 @@ ultimatejs:tracker-react
 
 stolinski:stylus-multi
 
-accounts-ui
+accounts-base
 accounts-password
+useraccounts:unstyled
+raix:handlebar-helpers
+
 session
 
 themeteorchef:bert
 
 check
+fortawesome:fontawesome

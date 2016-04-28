@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import NavButton from './NavButton.jsx';
-import AccountsUI from '../AccountsUI.jsx';
+import AccountsUI from '../accounts/AccountsUI.jsx';
 import NavSideBar from './NavSideBar.jsx';
 import MainContentSection from './MainContentSection.jsx';
-
+import Footer from './Footer.jsx';
 
 export default class MainLayoutWrapper extends Component {
 		constructor(props, context) {
@@ -20,7 +20,6 @@ export default class MainLayoutWrapper extends Component {
     
 
 	render(){
-	console.log(this.state.navButtonOn);
 
 		return (
 			<div className="main-layout">
@@ -36,11 +35,13 @@ export default class MainLayoutWrapper extends Component {
 
 			            {/* Horizontal Nav */}
 						<nav className="horizontal_nav">
-							<a href="/">Home</a>
+						    <a href="/">Home</a>
 							<a href="/resolutions">Resolutions</a>
 							<a href="/about">About</a>
-							<AccountsUI />
+							<button className="login-toggle">Login/Sign-up</button>
+
 						</nav>
+						
 					</header>
 
 					{/* Menu Sidebar */}
@@ -49,32 +50,10 @@ export default class MainLayoutWrapper extends Component {
 					{/* Main Content Section */}
 					<MainContentSection navSideBarOn = {this.state.navButtonOn} content={this.props.content}/>
 
+					<AccountsUI />
+					
 			      {/* Footer on the bottom of the page */}
-			      <footer id="footer" className="footerNoNav">
-			        <ul>
-			          <li><a href="https://www.youtube.com/user/abacuslearning?feature=watch" className="fa fa-youtube"></a>
-			          </li>
-			          {/* <li><a href="#" className="icon fa-instagram"><span className="label">Instagram</span></a></li> 
-			          <li><a href="#" className="icon fa-dribbble"><span className="label">Dribbble</span></a></li> */}
-			          <li>
-			          <a href="https://www.facebook.com/Abacus-Maths-Learning-Course-211119545628882/timeline/" className="fa fa-facebook"></a>
-			          </li>
-			          <li><a href="https://plus.google.com/+AbacusmathsInfo/about" className="fa fa-google-plus"></a>
-			          </li>
-			          <li>
-			          <a href="https://twitter.com/abacusmaths" target="_blank" className="fa fa-twitter"></a>
-			          </li>
-			          <li>
-			          <a href="https://www.linkedin.com/in/noby-fujioka-6741656" target="_blank" className="fa fa-linkedin"></a>
-			          </li>
-			          <li>
-			          <a href="mailto:contact@abacusmaths.info" target="_blank" className="fa fa-envelope-o"></a>
-			          </li>
-			        </ul>
-			        <ul>
-			          <li className="copyright">&copy; Abacus Learning Lab</li>
-			        </ul>
-			      </footer>
+					<Footer navSideBarOn = {this.state.navButtonOn} />
 				</div>
 
 			</div>
