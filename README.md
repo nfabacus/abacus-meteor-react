@@ -14,3 +14,8 @@ Update 27 April, 2016
 I am trying to make Parent component (MainLayoutWrapper) to listen to a child component (navButton), but I am not succeeding at the moment.  Error cannot read property 'navButtonOn' of undefined...
 
 Problem solved: I just needed to add .bind(this) in some places.
+
+1 May, 2016
+localhost:3000/testpage
+I am testing communication between parent and child components
+Issue: Child component (TestChild3) does not pick up the state change made in the parent component (change is sent to the child component via props to its state).

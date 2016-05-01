@@ -1,7 +1,18 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+import TrackerReact from 'meteor/ultimatejs:tracker-react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
 
 export default class AccountsUI extends Component {
+
+	constructor(props, context) {
+		super(props, context);
+		this._toggleLoginPanel = this._toggleLoginPanel.bind(this);
+		this.state = {
+			loginPanelOn: this.props.loginPanelOn
+		};
+	}
 
 	componentDidMount() {
 		this.view = Blaze.render(Template.LoginModal,
@@ -12,37 +23,35 @@ export default class AccountsUI extends Component {
 		Blaze.remove(this.view);
 	}
 
-	constructor(props, context) {
-		super(props, context);
 
-		this.state = {
-			loginPanelOn: true
-		};
-	}
+    _toggleLoginPanel() {
+      var newState = !this.state.loginPanelOn;
+      this.setState({
+      	loginPanelOn: newState
+      });
+      
+      this.props.callBackLogin(newState);
 
-    _cancelLoginPanel(){
-    	console.log('Cancel Button clicked! loginPanelOn? ', this.state.loginPanelOn);
-    	var newLoginPanelState = !this.state.loginPanelOn;
+    }
 
-    	this.setState({
-        	loginPanelOn: newLoginPanelState
-    	});
-    	this.props.callbackParent(newLoginPanelState);
-    }   
 
 	render() {
-		console.log('LoginPanelOn? ', this.state.loginPanelOn);
+		console.log('State for LoginPanel in Account UI is :', this.state.loginPanelOn);
 		if (this.state.loginPanelOn) {
 			var loginPanelClass = "";
-			console.log('Displaying loginPanel');
 		} else {
-			var loginPanelClass = "hideLoginPanel";
-			console.log('Hiding loginPanel');
+			var loginPanelClass = "hidden";
 		}
 
 
-
-		return <span ref="container" loginPanelClass="loginPanelClass" />
+       return (
+       	<div id="loginPanel" className={loginPanelClass}>
+	       	<center>
+	       	<span ref="container" />
+	       	<button className="cancel_action input_style ghost-button red_back" onClick={this._toggleLoginPanel}>Cancel</button>
+	       	</center>
+       	</div>
+       	)
 	}
 
 }

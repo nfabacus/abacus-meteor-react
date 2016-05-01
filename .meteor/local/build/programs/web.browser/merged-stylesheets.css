@@ -5712,6 +5712,10 @@ MeteorToys_result_button
 
 
 
+.hidden {
+  visibility: none;
+}
+
 html,
 body {
   background-image: url("/images/banner.jpg");

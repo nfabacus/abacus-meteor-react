@@ -400,6 +400,10 @@
       "path": "packages/raix_handlebar-helpers.js"
     },
     {
+      "sourceMap": "packages/alanning_roles.js.map",
+      "path": "packages/alanning_roles.js"
+    },
+    {
       "path": "packages/session.js"
     },
     {

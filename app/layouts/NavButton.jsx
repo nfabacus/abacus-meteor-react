@@ -3,9 +3,9 @@ import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 export default class NavButton extends Component {
-		constructor(props, context) {
-			super(props, context);
-
+		constructor(props) {
+			super(props);
+			this._toggleNavSideBar = this._toggleNavSideBar.bind(this);
 			this.state = {
 				navButtonOn: this.props.initialNavOn
 			};
@@ -18,22 +18,19 @@ export default class NavButton extends Component {
         	this.setState({
             	navButtonOn: newState
         	});
-        	this.props.callbackParent(newState);
+        	this.props.callBack(newState);
         }        
 
 	render() {
-		console.log('navComponent state', this.state.navButtonOn);
 		if (this.state.navButtonOn) {
 			var menuButtonClass = "";
-			console.log('menu-bottn is on');
 		} else {
 			var menuButtonClass = "menu-button-off";
-			console.log('menu-bottn is off');
 		}
 
 		return (
 
-		        <div id="menu-button" className={menuButtonClass} onClick={this._toggleNavSideBar.bind(this)}>
+		        <div id="menu-button" className={menuButtonClass} onClick={this._toggleNavSideBar}>
 		          <div id="line1" className="hamburger-lines1"></div>
 		          <div id="line2" className="hamburger-lines2"></div>
 		          <div id="line3" className="hamburger-lines3"></div>

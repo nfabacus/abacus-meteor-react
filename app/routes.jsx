@@ -5,6 +5,7 @@ import ResolutionsWrapper from './resolutions/ResolutionsWrapper.jsx';
 import About from './About.jsx';
 import Welcome from './Welcome.jsx';
 import ResolutionDetail from './resolutions/ResolutionDetail.jsx';
+import TestPage from './testpage/Testpage.jsx';
 
 FlowRouter.route('/', {
 	action() {
@@ -26,6 +27,15 @@ FlowRouter.route('/about', {
 	action() {
 		mount(MainLayout, {
 			content: (<About />)
+		})
+	}
+
+});
+
+FlowRouter.route('/testpage', {
+	action() {
+		mount(MainLayout, {
+			content: (<TestPage />)
 		})
 	}
 

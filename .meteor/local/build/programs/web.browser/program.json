@@ -130,11 +130,11 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/packages/modules.js?hash=e1ff9343e787cac93d81d6435fea926625eb47f7",
+      "url": "/packages/modules.js?hash=34ee11a62b6e27e63bc9de88368d605de87cc122",
       "sourceMap": "packages/modules.js.map",
-      "sourceMapUrl": "/packages/e1ff9343e787cac93d81d6435fea926625eb47f7.map",
-      "size": 2912442,
-      "hash": "e1ff9343e787cac93d81d6435fea926625eb47f7"
+      "sourceMapUrl": "/packages/34ee11a62b6e27e63bc9de88368d605de87cc122.map",
+      "size": 2912568,
+      "hash": "34ee11a62b6e27e63bc9de88368d605de87cc122"
     },
     {
       "path": "packages/es5-shim.js",
@@ -905,6 +905,17 @@
       "hash": "d4495494d785afb74c9d9e9d9ed76f895ef03f70"
     },
     {
+      "path": "packages/alanning_roles.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/alanning_roles.js?hash=903a1f148ed6ac8183cb12ec77aa3940396190e6",
+      "sourceMap": "packages/alanning_roles.js.map",
+      "sourceMapUrl": "/packages/903a1f148ed6ac8183cb12ec77aa3940396190e6.map",
+      "size": 102236,
+      "hash": "903a1f148ed6ac8183cb12ec77aa3940396190e6"
+    },
+    {
       "path": "packages/fourseven_scss.js",
       "where": "client",
       "type": "js",
@@ -989,20 +1000,20 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/packages/global-imports.js?hash=9cd0b679a61bcb7e608de730b01b77c58543331e",
-      "size": 1545,
-      "hash": "9cd0b679a61bcb7e608de730b01b77c58543331e"
+      "url": "/packages/global-imports.js?hash=97081fdc1822d34f4ec4b2aca16afa5f663460c6",
+      "size": 1586,
+      "hash": "97081fdc1822d34f4ec4b2aca16afa5f663460c6"
     },
     {
       "path": "app/app.js",
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/app/app.js?hash=3e44db29c3b0dfe6d2ffa4361f56ec86357e2ad2",
+      "url": "/app/app.js?hash=3930a4f4432359d7069620da937d2442af744c52",
       "sourceMap": "app/app.js.map",
-      "sourceMapUrl": "/app/3e44db29c3b0dfe6d2ffa4361f56ec86357e2ad2.map",
-      "size": 167429,
-      "hash": "3e44db29c3b0dfe6d2ffa4361f56ec86357e2ad2"
+      "sourceMapUrl": "/app/3930a4f4432359d7069620da937d2442af744c52.map",
+      "size": 239873,
+      "hash": "3930a4f4432359d7069620da937d2442af744c52"
     },
     {
       "path": "packages/service-configuration.js",
@@ -1020,11 +1031,11 @@
       "where": "client",
       "type": "css",
       "cacheable": true,
-      "url": "/merged-stylesheets.css?hash=910c6daf85e1302f6162f38a16c385182fd785d5",
+      "url": "/merged-stylesheets.css?hash=8c5a0bad4c98dd8f325b172f7b1547f754e80374",
       "sourceMap": "merged-stylesheets.css.map",
-      "sourceMapUrl": "/910c6daf85e1302f6162f38a16c385182fd785d5.map",
-      "size": 274684,
-      "hash": "910c6daf85e1302f6162f38a16c385182fd785d5"
+      "sourceMapUrl": "/8c5a0bad4c98dd8f325b172f7b1547f754e80374.map",
+      "size": 274717,
+      "hash": "8c5a0bad4c98dd8f325b172f7b1547f754e80374"
     },
     {
       "path": "packages/meteortoys_blueprint/config/icon.png",

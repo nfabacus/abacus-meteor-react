@@ -165,6 +165,7 @@ install("coffeescript");
 install("softwarerero:accounts-t9n");
 install("useraccounts:unstyled");
 install("raix:handlebar-helpers");
+install("alanning:roles");
 install("session");
 install("themeteorchef:bert");
 install("fortawesome:fontawesome");

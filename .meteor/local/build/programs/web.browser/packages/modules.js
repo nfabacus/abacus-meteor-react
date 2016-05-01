@@ -199,16 +199,17 @@ install("softwarerero:accounts-t9n");                                           
 install("useraccounts:unstyled");                                                                                      // 106
 install("ui");                                                                                                         // 107
 install("raix:handlebar-helpers");                                                                                     // 108
-install("fourseven:scss");                                                                                             // 109
-install("fortawesome:fontawesome");                                                                                    // 110
-install("themeteorchef:bert");                                                                                         // 111
-install("webapp");                                                                                                     // 112
-install("livedata");                                                                                                   // 113
-install("hot-code-push");                                                                                              // 114
-install("launch-screen");                                                                                              // 115
-install("autoupdate");                                                                                                 // 116
-install("service-configuration");                                                                                      // 117
-                                                                                                                       // 118
+install("alanning:roles");                                                                                             // 109
+install("fourseven:scss");                                                                                             // 110
+install("fortawesome:fontawesome");                                                                                    // 111
+install("themeteorchef:bert");                                                                                         // 112
+install("webapp");                                                                                                     // 113
+install("livedata");                                                                                                   // 114
+install("hot-code-push");                                                                                              // 115
+install("launch-screen");                                                                                              // 116
+install("autoupdate");                                                                                                 // 117
+install("service-configuration");                                                                                      // 118
+                                                                                                                       // 119
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 },"process.js":["process",function(require,exports,module){
