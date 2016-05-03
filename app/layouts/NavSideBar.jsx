@@ -5,20 +5,21 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 export default class NavSideBar extends Component {
 	constructor(props, context) {
 		super(props, context);
-		this._callBackLogin = this._callBackLogin.bind(this);
 		
 		this.state = {
 			loginPanelOn: this.props.loginPanelOn
 		};
 	}
 
-	_callBackLogin(data){
+	_callBackLoginPanel(data){
 		var newState = !this.state.loginPanelOn;
 		this.setState({ loginPanelOn: newState });
-		this.props.callBackLogin(newState);
+		this.props.callBackLoginPanel(newState);
 	}
 
 	render() {
+		this.state.loginPanelOn = this.props.loginPanelOn;
+		
 	    if(this.props.navSideBarOn) {
 	    	navSideBarClass = "";
 	    } else {
@@ -35,7 +36,7 @@ export default class NavSideBar extends Component {
 	          <li><a href="section_3">News</a></li>
 	          <li><a href="section_4">Creativity</a></li>
 	          <li><a href="section_5">Contact</a></li>
-	          <li><button onClick={this._callBackLogin}>Login/Signin</button></li>
+	          <li><button onClick={this._callBackLoginPanel.bind(this)}>Login/Signin</button></li>
 	           
 	        </ul>
 	     </nav>

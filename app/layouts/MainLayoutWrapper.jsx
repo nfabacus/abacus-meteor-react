@@ -8,8 +8,12 @@ import Footer from './Footer.jsx';
 export default class MainLayoutWrapper extends Component {
 		constructor(props, context) {
 			super(props, context);
-			this._callBackNav = this._callBackNav.bind(this);
-			this._callBackLogin = this._callBackLogin.bind(this);
+
+			if(Meteor.user()) {
+				var loggedIn = true;
+			} else {
+				var loggedIn = false;
+			}
 			this.state = {
 				navButtonOn: false,
 				loginPanelOn: false
@@ -21,11 +25,12 @@ export default class MainLayoutWrapper extends Component {
         this.setState({ navButtonOn: newState });
     }
     
-    _callBackLogin(data) {
+    _callBackLoginPanel(data) {
     	var newState = data;
         this.setState({ loginPanelOn: newState });
         console.log('response from child on LoginPanel', newState);
     }
+
 
 	render(){
 
@@ -35,20 +40,22 @@ export default class MainLayoutWrapper extends Component {
 					<Header 
 						navButtonOn = {this.state.navButtonOn} 
 						loginPanelOn = {this.state.loginPanelOn}
-						callBackNav = {this._callBackNav} 
-						callBackLogin = {this._callBackLogin} />
+						callBackNav = {this._callBackNav.bind(this)} 
+						callBackLoginPanel = {this._callBackLoginPanel.bind(this)} />
 
 					{/* Menu Sidebar */}
 					<NavSideBar 
 						navSideBarOn = {this.state.navButtonOn} 
-						callBackLogin = {this._callBackLogin} />
+						callBackLoginPanel = {this._callBackLoginPanel.bind(this)} />
+
+					<AccountsUI 
+						loginPanelOn = {this.state.loginPanelOn} 
+						callBackLoginPanel = {this._callBackLoginPanel.bind(this)} />
 
 					{/* Main Content Section */}
 					<MainContentSection navSideBarOn = {this.state.navButtonOn} content={this.props.content} />
 
-					<AccountsUI 
-						loginPanelOn = {this.state.loginPanelOn} 
-						callBackLogin = {this._callBackLogin} />
+
 					
 			      {/* Footer on the bottom of the page */}
 					<Footer navSideBarOn = {this.state.navButtonOn} />

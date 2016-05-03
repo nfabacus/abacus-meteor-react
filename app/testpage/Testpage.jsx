@@ -4,6 +4,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import TestPageChild1 from './TestPageChild1.jsx';
 import TestPageChild2 from './TestPageChild2.jsx';
 import TestPageChild3 from './TestPageChild3.jsx';
+import SessionTestSection from './SessionTestSection.jsx';
 export default class TestPage extends Component {
 	constructor(props) {
 		super(props);
@@ -49,14 +50,11 @@ export default class TestPage extends Component {
 					<p>Mustache typewriter tote bag lo-fi. Viral typewriter synth cray, listicle four dollar toast cardigan 90s ethical seitan fanny pack. Man bun small batch tote bag hella, health goth lumbersexual pitchfork pour-over banjo shabby chic DIY everyday carry banh mi skateboard. Hashtag 
 					</p>
 				</div>
-				<div>
-					<h1>Test Page (Panel3)</h1>
-					<p>Mustache typewriter tote bag lo-fi. Viral typewriter synth cray, listicle four dollar toast cardigan 90s ethical seitan fanny pack. Man bun small batch tote bag hella, health goth lumbersexual pitchfork pour-over banjo shabby chic DIY everyday carry banh mi skateboard. Hashtag 
-					</p>
-				</div>
+
 				<TestPageChild1 initialPanelState = {this.state.panelOn} callBack = {this._callBackFunc}/>
 				<TestPageChild2 initialPanelState = {this.state.panel2On} callBack2 = {this._callBack2Func}/>
 				<TestPageChild3 initialPanelState = {this.state.panel2On} />
+				<SessionTestSection />
 			</div>
 
 		)

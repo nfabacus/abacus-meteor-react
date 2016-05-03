@@ -20,11 +20,10 @@ kadira:dochead
 meteortoys:allthings
 ultimatejs:tracker-react
 
-stolinski:stylus-multi
-
+aldeed:template-extension
 accounts-base
 accounts-password
-useraccounts:unstyled
+useraccounts:unstyled-manually-modified
 raix:handlebar-helpers
 alanning:roles
 
@@ -34,3 +33,6 @@ themeteorchef:bert
 
 check
 fortawesome:fontawesome
+fourseven:scss
+
+thereactivestack:blazetoreact

@@ -188,7 +188,7 @@ install("meteortoys:status");                                                   
 install("meteortoys:hotreload");                                                                                       // 95
 install("meteortoys:allthings");                                                                                       // 96
 install("ultimatejs:tracker-react");                                                                                   // 97
-install("stolinski:stylus-multi");                                                                                     // 98
+install("aldeed:template-extension");                                                                                  // 98
 install("npm-bcrypt");                                                                                                 // 99
 install("sha");                                                                                                        // 100
 install("srp");                                                                                                        // 101
@@ -196,20 +196,23 @@ install("accounts-password");                                                   
 install("useraccounts:core");                                                                                          // 103
 install("coffeescript");                                                                                               // 104
 install("softwarerero:accounts-t9n");                                                                                  // 105
-install("useraccounts:unstyled");                                                                                      // 106
+install("useraccounts:unstyled-manually-modified");                                                                    // 106
 install("ui");                                                                                                         // 107
 install("raix:handlebar-helpers");                                                                                     // 108
 install("alanning:roles");                                                                                             // 109
 install("fourseven:scss");                                                                                             // 110
 install("fortawesome:fontawesome");                                                                                    // 111
 install("themeteorchef:bert");                                                                                         // 112
-install("webapp");                                                                                                     // 113
-install("livedata");                                                                                                   // 114
-install("hot-code-push");                                                                                              // 115
-install("launch-screen");                                                                                              // 116
-install("autoupdate");                                                                                                 // 117
-install("service-configuration");                                                                                      // 118
-                                                                                                                       // 119
+install("tmeasday:check-npm-versions");                                                                                // 113
+install("jsx");                                                                                                        // 114
+install("thereactivestack:blazetoreact");                                                                              // 115
+install("webapp");                                                                                                     // 116
+install("livedata");                                                                                                   // 117
+install("hot-code-push");                                                                                              // 118
+install("launch-screen");                                                                                              // 119
+install("autoupdate");                                                                                                 // 120
+install("service-configuration");                                                                                      // 121
+                                                                                                                       // 122
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 },"process.js":["process",function(require,exports,module){

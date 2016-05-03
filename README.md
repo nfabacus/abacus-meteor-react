@@ -19,3 +19,10 @@ Problem solved: I just needed to add .bind(this) in some places.
 localhost:3000/testpage
 I am testing communication between parent and child components
 Issue: Child component (TestChild3) does not pick up the state change made in the parent component (change is sent to the child component via props to its state).
+Now this issue is solved.
+
+3 May, 2016
+I am stuck with below issues with loginPanel.
+1) When a user login, I want the login panel to hide. Difficulty due to the use of blaze in react.
+2) I cannot make username only (with password) without email, but I don't know how to do it with the AccountsTemplate and its configuration.
+3) While I need to solve issue 2, registration panel has to have email input.

@@ -14,6 +14,7 @@ Roles = Package['alanning:roles'].Roles;
 Bert = Package['themeteorchef:bert'].Bert;
 check = Package.check.check;
 Match = Package.check.Match;
+BlazeToReact = Package['thereactivestack:blazetoreact'].BlazeToReact;
 Meteor = Package.meteor.Meteor;
 global = Package.meteor.global;
 meteorEnv = Package.meteor.meteorEnv;

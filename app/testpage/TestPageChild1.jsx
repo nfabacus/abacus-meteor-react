@@ -7,7 +7,7 @@ export default class TestPageChild1 extends Component {
 		super(props);
 		this._toggle = this._toggle.bind(this);
 		this.state = {
-			switchOn: this.props.initialPenelState
+			switchOn: this.props.initialPanelState
 		};
 	}
 

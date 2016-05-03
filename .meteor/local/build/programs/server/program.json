@@ -353,7 +353,7 @@
       "path": "packages/ultimatejs_tracker-react.js"
     },
     {
-      "path": "packages/stolinski_stylus-multi.js"
+      "path": "packages/aldeed_template-extension.js"
     },
     {
       "node_modules": "npm/node_modules/meteor/npm-bcrypt/node_modules",
@@ -393,7 +393,7 @@
       "path": "packages/softwarerero_accounts-t9n.js"
     },
     {
-      "path": "packages/useraccounts_unstyled.js"
+      "path": "packages/useraccounts_unstyled-manually-modified.js"
     },
     {
       "sourceMap": "packages/raix_handlebar-helpers.js.map",
@@ -411,6 +411,21 @@
     },
     {
       "path": "packages/fortawesome_fontawesome.js"
+    },
+    {
+      "path": "packages/fourseven_scss.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/tmeasday_check-npm-versions/node_modules",
+      "sourceMap": "packages/tmeasday_check-npm-versions.js.map",
+      "path": "packages/tmeasday_check-npm-versions.js"
+    },
+    {
+      "path": "packages/jsx.js"
+    },
+    {
+      "sourceMap": "packages/thereactivestack_blazetoreact.js.map",
+      "path": "packages/thereactivestack_blazetoreact.js"
     },
     {
       "path": "packages/hot-code-push.js"

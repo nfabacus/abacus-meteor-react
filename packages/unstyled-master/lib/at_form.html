@@ -1,0 +1,45 @@
+<template name="atForm">
+  {{#unless hide}}
+    <div class="at-form">
+    {{#if currentUser}}
+        <button id="logout" class="input_style ghost-button red_back">Logout</button>
+      {{else}}
+
+      {{#if showTitle}}
+        {{> atTitle}}
+      {{/if}}
+      {{#if showOauthServices}}
+        {{> atOauth}}
+      {{/if}}
+      {{#if showServicesSeparator}}
+        {{> atSep}}
+      {{/if}}
+      {{#if showError}}
+        {{> atError}}
+      {{/if}}
+      {{#if showResult}}
+        {{> atResult}}
+      {{/if}}
+      {{#if showMessage}}
+        {{> atMessage}}
+      {{/if}}
+      {{#if showPwdForm}}
+        {{> atPwdForm}}
+      {{/if}}
+      {{#if showTermsLink}}
+        {{> atTermsLink}}
+      {{/if}}
+      {{#if showSignInLink}}
+        {{> atSigninLink}}
+      {{/if}}
+      {{#if showSignUpLink}}
+        {{> atSignupLink}}
+      {{/if}}
+      {{#if showResendVerificationEmailLink}}
+        {{> atResendVerificationEmailLink}}
+      {{/if}}
+
+    {{/if}}
+    </div>
+  {{/unless}}
+</template>

@@ -26,5 +26,25 @@ Meteor.methods({
 			throw new Meteor.Error('not-authorised');
 		}
 		Resolutions.remove(resolution._id);
-	}
+	},
+
+	// registerUserInfo(data) {
+	// 	check(data, Object);
+	// 	if(Meteor.email) {
+	// 		throw new Meteor.Error('Email already registered');
+	// 	}
+
+	// 	Accounts.createUser({
+	// 		email: data.email,
+	// 		password: data.password
+	// 	}, function(err) {
+	// 	  if (err)
+	// 	    console.log(err);
+	// 	  else
+	// 	    console.log('success!');
+	// 	});
+	// 	alert('form submitted!');
+	// 	return false;
+	// }
+
 });

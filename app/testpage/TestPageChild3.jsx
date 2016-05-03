@@ -6,12 +6,12 @@ export default class TestPageChild3 extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			switchOn: this.props.initialPenelState
+			switchOn: this.props.initialPanelState
 		};
 	}
 
 	render() {
-        if (this.state.switchOn) {
+        if (this.props.initialPanelState) {
         	var switchResponse = "lightblue_back";
         } else {
         	var switchResponse = "red_back";

@@ -1,10 +1,10 @@
+
 var myLogoutFunc = function() {
-	FlowRouter.go('/');
+    FlowRouter.go('/');
 }
 
 AccountsTemplates.configure({
  // Behavior
-    onLogoutHook: myLogoutFunc,
     confirmPassword: false,
     enablePasswordChange: true,
     forbidClientAccountCreation: false,
@@ -14,7 +14,7 @@ AccountsTemplates.configure({
     focusFirstInput: true,
 
     // Appearance
-    showAddRemoveServices: false,
+    showAddRemoveServices: true,
     showForgotPasswordLink: true,
     showLabels: true,
     showPlaceholders: true,
@@ -30,10 +30,23 @@ AccountsTemplates.configure({
 
     // Privacy Policy and Terms of Use
     privacyUrl: 'privacy',
-    termsUrl: 'terms-of-use'
-
+    termsUrl: 'terms-of-use',
+    onLogoutHook: myLogoutFunc
 
 });
+
+var pwd = AccountsTemplates.removeField('password');
+
+AccountsTemplates.addFields([
+  {
+      _id: "username",
+      type: "text",
+      displayName: "username",
+      required: true,
+      minLength: 5,
+  },
+  pwd
+]);
 
 AccountsTemplates.addFields([
 	{
@@ -47,8 +60,6 @@ AccountsTemplates.addFields([
 		type: 'text',
 		displayName: 'Surname',
 		required: true
-	},
-
-
+	}
 
 ]);

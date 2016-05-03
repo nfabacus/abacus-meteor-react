@@ -5716,6 +5716,41 @@ MeteorToys_result_button
   visibility: none;
 }
 
+#loginPanel {
+  position: absolute;
+  right: 5%;
+  left: 5%;
+  top: 10%;
+  background-color: #FF9800;
+  z-index: 2000;
+  margin: auto;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+input {
+  font-size: 30px;
+  max-width: 250px;
+  padding: 5px;
+  color: white;
+  border: 2px solid #66d8ed;
+  background-color: transparent;
+  outline: none;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+}
+
+form label {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+
+
 html,
 body {
   background-image: url("/images/banner.jpg");
@@ -6157,7 +6192,7 @@ input {
 }
 
 .signup_form {
-  max-width: 850px;
+  max-width: 600px;
 }
 
 #profile_pic {
@@ -6624,4 +6659,6 @@ input {
   border-style: outset;
   border-style: outset;
 }
+
+
 

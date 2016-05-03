@@ -6,13 +6,12 @@ import NavButton from './NavButton.jsx';
 export default class Header extends Component {
 	constructor(props, context) {
 		super(props, context);
-		this._callBackNav = this._callBackNav.bind(this);
-		this._callBackLogin = this._callBackLogin.bind(this);
-		
+			
 		this.state = {
 			navButtonOn: this.props.navButtonOn,
 			loginPanelOn: this.props.loginPanelOn
 		};
+		
 	}
 
 	_callBackNav(data){
@@ -20,15 +19,21 @@ export default class Header extends Component {
 		this.setState({ navButtonOn: newState });
 		this.props.callBackNav(newState);
 	}
-	_callBackLogin(){
+	_callBackLoginPanel(){
 		var newState = !this.state.loginPanelOn;
 		this.setState({ loginPanelOn: newState });
 		console.log('LoginNewstate in Header(origin)', newState);
-		this.props.callBackLogin(newState);
+		this.props.callBackLoginPanel(newState);
+		
 	}
 
 	render() {
-
+	    this.state.loginPanelOn = this.props.loginPanelOn;
+	    if(Meteor.user()) {
+	    	var loginLink = "Logout";
+	    } else {
+	    	var loginLink = "Login/Signup";
+	    }
 		return (
 			<header id="nav_header">
 		        <span className="header_title"><a href="/">ABACUS LEARNING LAB</a></span>
@@ -37,7 +42,7 @@ export default class Header extends Component {
 		        <button id="save" className="transparent-button smallBtn">Save content</button>
 		        
 		        {/* Nav Menu Hamburger Icon */}
-		        <NavButton initialNavOn = {this.props.navButtonOn} callBack ={this._callBackNav} />
+		        <NavButton initialNavOn = {this.props.navButtonOn} callBack ={this._callBackNav.bind(this)} />
 
 	            {/* Horizontal Nav */}
 				<nav className="horizontal_nav">
@@ -45,7 +50,7 @@ export default class Header extends Component {
 					<a href="/resolutions">Resolutions</a>
 					<a href="/about">About</a>
 					<a href="/testpage">Test Page</a>
-					<button onClick={this._callBackLogin}>Login/Signin</button>
+					<button id="loginToggleBtn" className="transparent-button smallBtn" onClick={this._callBackLoginPanel.bind(this)}>{loginLink}</button>
 				</nav>
 				
 			</header>
