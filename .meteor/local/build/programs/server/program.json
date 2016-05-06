@@ -373,29 +373,6 @@
       "path": "packages/accounts-password.js"
     },
     {
-      "sourceMap": "packages/url.js.map",
-      "path": "packages/url.js"
-    },
-    {
-      "node_modules": "npm/node_modules/meteor/http/node_modules",
-      "sourceMap": "packages/http.js.map",
-      "path": "packages/http.js"
-    },
-    {
-      "sourceMap": "packages/useraccounts_core.js.map",
-      "path": "packages/useraccounts_core.js"
-    },
-    {
-      "path": "packages/coffeescript.js"
-    },
-    {
-      "sourceMap": "packages/softwarerero_accounts-t9n.js.map",
-      "path": "packages/softwarerero_accounts-t9n.js"
-    },
-    {
-      "path": "packages/useraccounts_unstyled-manually-modified.js"
-    },
-    {
       "sourceMap": "packages/raix_handlebar-helpers.js.map",
       "path": "packages/raix_handlebar-helpers.js"
     },
@@ -414,18 +391,6 @@
     },
     {
       "path": "packages/fourseven_scss.js"
-    },
-    {
-      "node_modules": "npm/node_modules/meteor/tmeasday_check-npm-versions/node_modules",
-      "sourceMap": "packages/tmeasday_check-npm-versions.js.map",
-      "path": "packages/tmeasday_check-npm-versions.js"
-    },
-    {
-      "path": "packages/jsx.js"
-    },
-    {
-      "sourceMap": "packages/thereactivestack_blazetoreact.js.map",
-      "path": "packages/thereactivestack_blazetoreact.js"
     },
     {
       "path": "packages/hot-code-push.js"

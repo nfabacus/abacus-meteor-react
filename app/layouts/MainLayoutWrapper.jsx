@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Header from './Header.jsx';
-import AccountsUI from '../accounts/AccountsUI.jsx';
 import NavSideBar from './NavSideBar.jsx';
 import MainContentSection from './MainContentSection.jsx';
 import Footer from './Footer.jsx';
@@ -9,11 +8,6 @@ export default class MainLayoutWrapper extends Component {
 		constructor(props, context) {
 			super(props, context);
 
-			if(Meteor.user()) {
-				var loggedIn = true;
-			} else {
-				var loggedIn = false;
-			}
 			this.state = {
 				navButtonOn: false,
 				loginPanelOn: false
@@ -45,15 +39,16 @@ export default class MainLayoutWrapper extends Component {
 
 					{/* Menu Sidebar */}
 					<NavSideBar 
-						navSideBarOn = {this.state.navButtonOn} 
-						callBackLoginPanel = {this._callBackLoginPanel.bind(this)} />
-
-					<AccountsUI 
-						loginPanelOn = {this.state.loginPanelOn} 
+						navSideBarOn = {this.state.navButtonOn}
+						loginPanelOn = {this.state.loginPanelOn}
 						callBackLoginPanel = {this._callBackLoginPanel.bind(this)} />
 
 					{/* Main Content Section */}
-					<MainContentSection navSideBarOn = {this.state.navButtonOn} content={this.props.content} />
+					<MainContentSection 
+						navSideBarOn = {this.state.navButtonOn}
+						loginPanelOn = {this.state.loginPanelOn}
+						callBackLoginPanel = {this._callBackLoginPanel.bind(this)}
+						content={this.props.content} />
 
 
 					

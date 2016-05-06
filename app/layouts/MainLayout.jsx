@@ -1,6 +1,6 @@
 import React from 'react';
 import MainLayoutWrapper from './MainLayoutWrapper.jsx';
 
-export const MainLayout = ({content}) => (
+export const MainLayout = ({content, props}) => (
 	<MainLayoutWrapper content={content}/>
 )

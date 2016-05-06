@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import NavButton from './NavButton.jsx';
+import LoginLogoutButton from '../accounts/LoginLogoutButton.jsx';
 
 export default class Header extends Component {
 	constructor(props, context) {
@@ -14,26 +15,22 @@ export default class Header extends Component {
 		
 	}
 
+	_callBackLoginPanel(data){
+		var newState = data;
+		this.setState({ loginPanelOn: newState });
+		this.props.callBackLoginPanel(newState);
+	}
+
 	_callBackNav(data){
 		var newState = data;
 		this.setState({ navButtonOn: newState });
 		this.props.callBackNav(newState);
 	}
-	_callBackLoginPanel(){
-		var newState = !this.state.loginPanelOn;
-		this.setState({ loginPanelOn: newState });
-		console.log('LoginNewstate in Header(origin)', newState);
-		this.props.callBackLoginPanel(newState);
-		
-	}
 
 	render() {
+
 	    this.state.loginPanelOn = this.props.loginPanelOn;
-	    if(Meteor.user()) {
-	    	var loginLink = "Logout";
-	    } else {
-	    	var loginLink = "Login/Signup";
-	    }
+
 		return (
 			<header id="nav_header">
 		        <span className="header_title"><a href="/">ABACUS LEARNING LAB</a></span>
@@ -50,9 +47,12 @@ export default class Header extends Component {
 					<a href="/resolutions">Resolutions</a>
 					<a href="/about">About</a>
 					<a href="/testpage">Test Page</a>
-					<button id="loginToggleBtn" className="transparent-button smallBtn" onClick={this._callBackLoginPanel.bind(this)}>{loginLink}</button>
+					<a href="javascript:void(0);" className="transparent-button smallBtn" >
+						<LoginLogoutButton 
+							loginPanelOn = {this.state.loginPanelOn} 
+	              			callBackLoginPanel = {this._callBackLoginPanel.bind(this)} />
+	              	</a>
 				</nav>
-				
 			</header>
 
 		)

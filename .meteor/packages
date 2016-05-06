@@ -23,7 +23,7 @@ ultimatejs:tracker-react
 aldeed:template-extension
 accounts-base
 accounts-password
-useraccounts:unstyled-manually-modified
+
 raix:handlebar-helpers
 alanning:roles
 
@@ -35,4 +35,4 @@ check
 fortawesome:fontawesome
 fourseven:scss
 
-thereactivestack:blazetoreact
+

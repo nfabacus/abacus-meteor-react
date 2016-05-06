@@ -1,18 +1,20 @@
 import React, {Component} from 'react';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import LoginLogoutButton from '../accounts/LoginLogoutButton.jsx';
 
 export default class NavSideBar extends Component {
 	constructor(props, context) {
 		super(props, context);
 		
 		this.state = {
-			loginPanelOn: this.props.loginPanelOn
+			loginPanelOn: this.props.loginPanelOn,
+			navSideBarOn: this.props.navSideBarOn
 		};
 	}
 
 	_callBackLoginPanel(data){
-		var newState = !this.state.loginPanelOn;
+		var newState = data;
 		this.setState({ loginPanelOn: newState });
 		this.props.callBackLoginPanel(newState);
 	}
@@ -36,8 +38,10 @@ export default class NavSideBar extends Component {
 	          <li><a href="section_3">News</a></li>
 	          <li><a href="section_4">Creativity</a></li>
 	          <li><a href="section_5">Contact</a></li>
-	          <li><button onClick={this._callBackLoginPanel.bind(this)}>Login/Signin</button></li>
-	           
+	          <li><a href="javascript:void(0);" ><LoginLogoutButton
+		          loginPanelOn = {this.state.loginPanelOn} 
+	              callBackLoginPanel = {this._callBackLoginPanel.bind(this)} /></a></li>
+           
 	        </ul>
 	     </nav>
 

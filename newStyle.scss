@@ -3,21 +3,13 @@
 }
 
 #loginPanel {
-position: absolute;
-    right: 5%;
-    left: 5%;
-    top: 10%;
-    background-color: #FF9800;
+    max-width: 800px;
     z-index: 2000;
     margin: auto;
     padding: 20px;
     border-radius: 5px;
-}
 
-.at-form {
-	
 }
-
 
 input {
 	font-size: 30px;
@@ -38,4 +30,17 @@ top:auto;
 width:1px;
 height:1px;
 overflow:hidden;
+}
+
+.underlinedLink {
+    text-decoration: underline !important;
+    font-weight: bold;
+}
+
+.bert-alert[class*="growl-"] .bert-content p {
+    font-size: 20px !important;
+}
+
+.bert-alert .bert-content > p {
+    font-size: 20px !important;
 }

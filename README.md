@@ -26,3 +26,8 @@ I am stuck with below issues with loginPanel.
 1) When a user login, I want the login panel to hide. Difficulty due to the use of blaze in react.
 2) I cannot make username only (with password) without email, but I don't know how to do it with the AccountsTemplate and its configuration.
 3) While I need to solve issue 2, registration panel has to have email input.
+
+6 May, 2016
+The above issue is mostly solved using just react without using blaze.
+But, now too many states(component) to communicate with each other.  I wonder if I am doing right.
+also, I cannot pass and call back props in the Welcome component (content) to from its parent component.  I am trying to make the login button in the Welcome page to work....

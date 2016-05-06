@@ -14,7 +14,6 @@ Roles = Package['alanning:roles'].Roles;
 Bert = Package['themeteorchef:bert'].Bert;
 check = Package.check.check;
 Match = Package.check.Match;
-BlazeToReact = Package['thereactivestack:blazetoreact'].BlazeToReact;
 Meteor = Package.meteor.Meteor;
 global = Package.meteor.global;
 meteorEnv = Package.meteor.meteorEnv;
@@ -37,8 +36,6 @@ Map = Package['ecmascript-runtime'].Map;
 Set = Package['ecmascript-runtime'].Set;
 meteorBabelHelpers = Package['babel-runtime'].meteorBabelHelpers;
 Promise = Package.promise.Promise;
-AccountsTemplates = Package['useraccounts:core'].AccountsTemplates;
 Autoupdate = Package.autoupdate.Autoupdate;
 HTML = Package.htmljs.HTML;
-T9n = Package['softwarerero:accounts-t9n'].T9n;
 

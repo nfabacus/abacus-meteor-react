@@ -2658,80 +2658,6 @@ MeteorToys_result_button
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAQAAABIkb+zAAADuUlEQVR4Ae3aA5D02AIF4PvbWNu27d23tm3bVmlt27Zt23y23xv905rum29t7yaZSVW+Vqm7c+LknpCWUqlUKpVKpVKpVDKNLR3vNm/7r0Qi0fB/b7vL6bYye+wX+qbYzzLO81uJqKmuqlunDt0qqqoamqLEP11mfUNCX2JCR/uDqKVHm2ddZE8rmDR8zBizWtUBzvWQf6pqitqca47QF5jUSbpENX91qaUMCN/DEAs73W9UtUR3WyT0JgPtqV1Lxf3WMir8SIZawi3aNEU3mT70DnN5RVRzmznDz2AGl+kUVRxgQMib7VVFf7Jo+AXM6SEN0TOmDvkxwEWiuisNSOG3tvBP0f+tFPJhuDtEbTYxILUdwX1aWnbIZ/IflfhbujtB/R2vITo4+5XnDtGvTRtSpr99VCRfjgAhXS6S+KsJQibsrSbaIbMAtpdoN3PIjEP0qFs6kwDmUtXIekNzrpZ/myT1AAZ6RXSB/iFTRnlZ4q7YL+0Ae4neNSJkzrQ6RFunGsCk2tUtE3JhV03/NDrNACeJ7gg5MdRbomNTC2BCXSoWCrmxnrrO9AIcLXrKoJAbw7wiQjoXi3/QtE7IlG+RUgDLSPwrhOIGOF/LmSEzxn72+c1HKhf//qpmuVBUZhb9y/BQVLbS8mQoLqfqcXIoLveo2j4Ul/eMs1QoLv/VaZpQXGg3rNgBekLvKgN0hyLzXxWTFXs3WrV0sQ9kDVsU/VTinFBcthK9FIrLzKI2g0Nx+atasc+GztdyaSguy4j+aVTIFVghrTH4P2hYN+elzl/0DyHFG1u5DiK+Kzo6zSpBl6o5Q06so0fFhCE9TtJyf8iFkV4VnZZ2I6JDPZ+RXNupazdRSJc987k/ZCJ/FB2QRbHjFdGNBoZMuUn0Yib/Yi4VDduGDNldU92c2RU8El3ZDXT4lapop5AdF0n8x2whA+b2X4mLsq8aJP6cfjnGgv4jcbfBeZQ9on9bIKTIav4v8ajh+fRVbpfodLABqW26VYm7Dc+z8JRouO2XH+5N4S5N0cUG90bl7PfWCL+APfxPVLdT75X+Gp7wq58zlmUpr2tKvGzO3qtd7qVdVPOaLX/8OLIJbOcNDVG7Aw3q/eLrOFFThxtsaMIfmPQN3OrfGqJup5m4L1WPE1Hd/73mKkdYz4KmMdJYU5jT2g52tVf8V01T9GdHm7Dvlb/P91tRS1NNRZcOHdp06NKtrkeU+KNzrKB/367fH+fWL9Xv6/7nDXc5xWZmDKVSqVQqlUqlUqmUkg8A7Xfu66+Q6OYAAAAASUVORK5CYII=');
 }
 
-#at-facebook {
-  background: #3B5998;
-  color: #fff;
-}
-
-#at-facebook.disabled {
-  color: #ddd;
-  background: #666666;
-}
-
-#at-facebook:hover {
-  background: #2C4780;
-}
-
-#at-linkedin {
-  background: #338AB0;
-  color: #fff;
-}
-
-#at-linkedin.disabled {
-  color: #ddd;
-  background: #666666;
-}
-
-#at-linkedin:hover {
-  background: #0571A6;
-}
-
-#at-twitter {
-  background: #4099FF;
-  color: #fff;
-}
-
-#at-twitter.disabled {
-  color: #ddd;
-  background: #666666;
-}
-
-#at-twitter:hover {
-  background: #3288EB;
-}
-
-#at-google {
-  background: #db5a3c;
-  color: #fff;
-}
-
-#at-google.disabled {
-  color: #ddd;
-  background: #666666;
-}
-
-#at-google:hover {
-  background: #CA4C2E;
-}
-
-#at-github {
-  background: #666;
-  color: #fff;
-}
-
-#at-github.disabled {
-  color: #ddd;
-  background: #666666;
-}
-
-#at-github:hover {
-  background: #555;
-}
-
-.at-input.validating * {
-  cursor: progress;
-}
-
 @font-face {
   font-family: 'FontAwesome';
   src: url('packages/fortawesome_fontawesome/upstream/fonts/fontawesome-webfont.eot?v=4.5.0');
@@ -5717,11 +5643,7 @@ MeteorToys_result_button
 }
 
 #loginPanel {
-  position: absolute;
-  right: 5%;
-  left: 5%;
-  top: 10%;
-  background-color: #FF9800;
+  max-width: 800px;
   z-index: 2000;
   margin: auto;
   padding: 20px;
@@ -5749,6 +5671,19 @@ form label {
   overflow: hidden;
 }
 
+.underlinedLink {
+  text-decoration: underline !important;
+  font-weight: bold;
+}
+
+.bert-alert[class*="growl-"] .bert-content p {
+  font-size: 20px !important;
+}
+
+.bert-alert .bert-content > p {
+  font-size: 20px !important;
+}
+
 
 
 html,
@@ -5764,6 +5699,10 @@ body {
   color: white;
   font-family: 'Open Sans', sans-serif;
   font-size: 25px;
+}
+
+h1 {
+  font-size: 1.5em;
 }
 
 h1,
