@@ -910,13 +910,13 @@ var _LoginLogoutButton2 = _interopRequireDefault(_LoginLogoutButton);           
                                                                                                                       //
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }                     //
                                                                                                                       //
-var Header = function (_Component) {                                                                                  //
-	(0, _inherits3['default'])(Header, _Component);                                                                      //
+var Header = function (_TrackerReact) {                                                                               //
+	(0, _inherits3['default'])(Header, _TrackerReact);                                                                   //
                                                                                                                       //
 	function Header(props, context) {                                                                                    // 8
 		(0, _classCallCheck3['default'])(this, Header);                                                                     //
                                                                                                                       //
-		var _this = (0, _possibleConstructorReturn3['default'])(this, _Component.call(this, props, context));               //
+		var _this = (0, _possibleConstructorReturn3['default'])(this, _TrackerReact.call(this, props, context));            //
                                                                                                                       //
 		_this.state = {                                                                                                     // 11
 			navButtonOn: _this.props.navButtonOn,                                                                              // 12
@@ -1017,7 +1017,7 @@ var Header = function (_Component) {                                            
 	}();                                                                                                                 //
                                                                                                                       //
 	return Header;                                                                                                       //
-}(_react.Component);                                                                                                  //
+}((0, _ultimatejsTrackerReact2['default'])(_react.Component));                                                        //
                                                                                                                       //
 exports['default'] = Header;                                                                                          //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1180,7 +1180,7 @@ var MainLayout = exports.MainLayout = function MainLayout(_ref) {               
 };                                                                                                                    //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-}],"MainLayoutWrapper.jsx":["babel-runtime/helpers/classCallCheck","babel-runtime/helpers/possibleConstructorReturn","babel-runtime/helpers/inherits","react","./Header.jsx","./NavSideBar.jsx","./MainContentSection.jsx","./Footer.jsx",function(require,exports){
+}],"MainLayoutWrapper.jsx":["babel-runtime/helpers/classCallCheck","babel-runtime/helpers/possibleConstructorReturn","babel-runtime/helpers/inherits","react","meteor/ultimatejs:tracker-react","./Header.jsx","./NavSideBar.jsx","./MainContentSection.jsx","./Footer.jsx",function(require,exports){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                                                    //
@@ -1206,81 +1206,86 @@ var _react = require('react');                                                  
                                                                                                                       //
 var _react2 = _interopRequireDefault(_react);                                                                         //
                                                                                                                       //
-var _Header = require('./Header.jsx');                                                                                // 2
+var _ultimatejsTrackerReact = require('meteor/ultimatejs:tracker-react');                                             // 2
+                                                                                                                      //
+var _ultimatejsTrackerReact2 = _interopRequireDefault(_ultimatejsTrackerReact);                                       //
+                                                                                                                      //
+var _Header = require('./Header.jsx');                                                                                // 3
                                                                                                                       //
 var _Header2 = _interopRequireDefault(_Header);                                                                       //
                                                                                                                       //
-var _NavSideBar = require('./NavSideBar.jsx');                                                                        // 3
+var _NavSideBar = require('./NavSideBar.jsx');                                                                        // 4
                                                                                                                       //
 var _NavSideBar2 = _interopRequireDefault(_NavSideBar);                                                               //
                                                                                                                       //
-var _MainContentSection = require('./MainContentSection.jsx');                                                        // 4
+var _MainContentSection = require('./MainContentSection.jsx');                                                        // 5
                                                                                                                       //
 var _MainContentSection2 = _interopRequireDefault(_MainContentSection);                                               //
                                                                                                                       //
-var _Footer = require('./Footer.jsx');                                                                                // 5
+var _Footer = require('./Footer.jsx');                                                                                // 6
                                                                                                                       //
 var _Footer2 = _interopRequireDefault(_Footer);                                                                       //
                                                                                                                       //
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }                     //
                                                                                                                       //
-var MainLayoutWrapper = function (_Component) {                                                                       //
-	(0, _inherits3['default'])(MainLayoutWrapper, _Component);                                                           //
+var MainLayoutWrapper = function (_TrackerReact) {                                                                    //
+	(0, _inherits3['default'])(MainLayoutWrapper, _TrackerReact);                                                        //
                                                                                                                       //
-	function MainLayoutWrapper(props, context) {                                                                         // 8
+	function MainLayoutWrapper(props, context) {                                                                         // 9
 		(0, _classCallCheck3['default'])(this, MainLayoutWrapper);                                                          //
                                                                                                                       //
-		var _this = (0, _possibleConstructorReturn3['default'])(this, _Component.call(this, props, context));               //
+		var _this = (0, _possibleConstructorReturn3['default'])(this, _TrackerReact.call(this, props, context));            //
                                                                                                                       //
-		_this.state = {                                                                                                     // 11
-			navButtonOn: false,                                                                                                // 12
-			loginPanelOn: false                                                                                                // 13
+		_this.state = {                                                                                                     // 12
+			navButtonOn: false,                                                                                                // 13
+			loginPanelOn: false                                                                                                // 14
 		};                                                                                                                  //
+                                                                                                                      //
 		return _this;                                                                                                       //
 	}                                                                                                                    //
                                                                                                                       //
-	MainLayoutWrapper.prototype._callBackNav = function () {                                                             // 7
+	MainLayoutWrapper.prototype._callBackNav = function () {                                                             // 8
 		function _callBackNav(data) {                                                                                       //
-			var newState = data;                                                                                               // 18
-			this.setState({ navButtonOn: newState });                                                                          // 19
+			var newState = data;                                                                                               // 21
+			this.setState({ navButtonOn: newState });                                                                          // 22
 		}                                                                                                                   //
                                                                                                                       //
 		return _callBackNav;                                                                                                //
 	}();                                                                                                                 //
                                                                                                                       //
-	MainLayoutWrapper.prototype._callBackLoginPanel = function () {                                                      // 7
+	MainLayoutWrapper.prototype._callBackLoginPanel = function () {                                                      // 8
 		function _callBackLoginPanel(data) {                                                                                //
-			var newState = data;                                                                                               // 23
-			this.setState({ loginPanelOn: newState });                                                                         // 24
-			console.log('response from child on LoginPanel', newState);                                                        // 25
+			var newState = data;                                                                                               // 26
+			this.setState({ loginPanelOn: newState });                                                                         // 27
+			console.log('response from child on LoginPanel', newState);                                                        // 28
 		}                                                                                                                   //
                                                                                                                       //
 		return _callBackLoginPanel;                                                                                         //
 	}();                                                                                                                 //
                                                                                                                       //
-	MainLayoutWrapper.prototype.render = function () {                                                                   // 7
+	MainLayoutWrapper.prototype.render = function () {                                                                   // 8
 		function render() {                                                                                                 //
                                                                                                                       //
-			return _react2['default'].createElement(                                                                           // 31
+			return _react2['default'].createElement(                                                                           // 34
 				'div',                                                                                                            //
 				{ className: 'main-layout' },                                                                                     //
 				_react2['default'].createElement(                                                                                 //
 					'div',                                                                                                           //
 					{ id: 'wrapper' },                                                                                               //
 					_react2['default'].createElement(_Header2['default'], {                                                          //
-						navButtonOn: this.state.navButtonOn,                                                                            // 35
-						loginPanelOn: this.state.loginPanelOn,                                                                          // 36
-						callBackNav: this._callBackNav.bind(this),                                                                      // 37
-						callBackLoginPanel: this._callBackLoginPanel.bind(this) }),                                                     // 38
+						navButtonOn: this.state.navButtonOn,                                                                            // 38
+						loginPanelOn: this.state.loginPanelOn,                                                                          // 39
+						callBackNav: this._callBackNav.bind(this),                                                                      // 40
+						callBackLoginPanel: this._callBackLoginPanel.bind(this) }),                                                     // 41
 					_react2['default'].createElement(_NavSideBar2['default'], {                                                      //
-						navSideBarOn: this.state.navButtonOn,                                                                           // 42
-						loginPanelOn: this.state.loginPanelOn,                                                                          // 43
-						callBackLoginPanel: this._callBackLoginPanel.bind(this) }),                                                     // 44
+						navSideBarOn: this.state.navButtonOn,                                                                           // 45
+						loginPanelOn: this.state.loginPanelOn,                                                                          // 46
+						callBackLoginPanel: this._callBackLoginPanel.bind(this) }),                                                     // 47
 					_react2['default'].createElement(_MainContentSection2['default'], {                                              //
-						navSideBarOn: this.state.navButtonOn,                                                                           // 48
-						loginPanelOn: this.state.loginPanelOn,                                                                          // 49
-						callBackLoginPanel: this._callBackLoginPanel.bind(this),                                                        // 50
-						content: this.props.content }),                                                                                 // 51
+						navSideBarOn: this.state.navButtonOn,                                                                           // 51
+						loginPanelOn: this.state.loginPanelOn,                                                                          // 52
+						callBackLoginPanel: this._callBackLoginPanel.bind(this),                                                        // 53
+						content: this.props.content }),                                                                                 // 54
 					_react2['default'].createElement(_Footer2['default'], { navSideBarOn: this.state.navButtonOn })                  //
 				)                                                                                                                 //
 			);                                                                                                                 //
@@ -1290,7 +1295,7 @@ var MainLayoutWrapper = function (_Component) {                                 
 	}();                                                                                                                 //
                                                                                                                       //
 	return MainLayoutWrapper;                                                                                            //
-}(_react.Component);                                                                                                  //
+}((0, _ultimatejsTrackerReact2['default'])(_react.Component));                                                        //
                                                                                                                       //
 exports['default'] = MainLayoutWrapper;                                                                               //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1968,24 +1973,19 @@ var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTran
                                                                                                                       //
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }                     //
                                                                                                                       //
-var TestPageChild3 = function (_Component) {                                                                          //
-	(0, _inherits3['default'])(TestPageChild3, _Component);                                                              //
+var TestPageChild3 = function (_TrackerReact) {                                                                       //
+	(0, _inherits3['default'])(TestPageChild3, _TrackerReact);                                                           //
                                                                                                                       //
-	function TestPageChild3(props, content) {                                                                            // 6
+	function TestPageChild3(props, context) {                                                                            // 6
 		(0, _classCallCheck3['default'])(this, TestPageChild3);                                                             //
-                                                                                                                      //
-		var _this = (0, _possibleConstructorReturn3['default'])(this, _Component.call(this, props, content));               //
-                                                                                                                      //
-		_this.state = {                                                                                                     // 8
-			colorStyle: 'lightblue_back'                                                                                       // 9
-		};                                                                                                                  //
-		return _this;                                                                                                       //
+		return (0, _possibleConstructorReturn3['default'])(this, _TrackerReact.call(this, props, context));                 //
 	}                                                                                                                    //
                                                                                                                       //
 	TestPageChild3.prototype.blueButton = function () {                                                                  // 5
 		function blueButton() {                                                                                             //
-			this.setState({ colorStyle: "lightblue_back" });                                                                   // 14
-			return this.state.colorStyle;                                                                                      // 15
+			console.log('cicked');                                                                                             // 13
+			Session.set('myColor', "lightblue_back");                                                                          // 14
+			console.log('Session set to: ', Session.get('myColor'));                                                           // 15
 		}                                                                                                                   //
                                                                                                                       //
 		return blueButton;                                                                                                  //
@@ -1993,8 +1993,9 @@ var TestPageChild3 = function (_Component) {                                    
                                                                                                                       //
 	TestPageChild3.prototype.greenButton = function () {                                                                 // 5
 		function greenButton() {                                                                                            //
-			this.setState({ colorStyle: "green_back" });                                                                       // 18
-			return this.state.colorStyle;                                                                                      // 19
+			Session.set('myColor', "green_back");                                                                              // 18
+			console.log('cicked');                                                                                             // 19
+			console.log('Session set to: ', Session.get('myColor'));                                                           // 20
 		}                                                                                                                   //
                                                                                                                       //
 		return greenButton;                                                                                                 //
@@ -2002,11 +2003,13 @@ var TestPageChild3 = function (_Component) {                                    
                                                                                                                       //
 	TestPageChild3.prototype.render = function () {                                                                      // 5
 		function render() {                                                                                                 //
-			var myColor = this.state.colorStyle;                                                                               // 24
-			console.log('ColorState', myColor);                                                                                // 25
-			return _react2['default'].createElement(                                                                           // 26
+			Session.setDefault('myColor', 'red_back');                                                                         // 24
+                                                                                                                      //
+			console.log('Session Color passed to rendering', Session.get('myColor'));                                          // 26
+                                                                                                                      //
+			return _react2['default'].createElement(                                                                           // 29
 				'div',                                                                                                            //
-				{ className: myColor },                                                                                           //
+				{ className: Session.get('myColor') },                                                                            //
 				_react2['default'].createElement(                                                                                 //
 					'h2',                                                                                                            //
 					null,                                                                                                            //
@@ -2021,16 +2024,16 @@ var TestPageChild3 = function (_Component) {                                    
 					'p',                                                                                                             //
 					null,                                                                                                            //
 					'The current color is ',                                                                                         //
-					myColor                                                                                                          //
+					Session.get('myColor')                                                                                           //
 				),                                                                                                                //
 				_react2['default'].createElement(                                                                                 //
 					'button',                                                                                                        //
-					{ onClick: this.blueButton.bind(this) },                                                                         //
+					{ onClick: this.blueButton },                                                                                    //
 					' Make it blue'                                                                                                  //
 				),                                                                                                                //
 				_react2['default'].createElement(                                                                                 //
 					'button',                                                                                                        //
-					{ onClick: this.greenButton.bind(this) },                                                                        //
+					{ onClick: this.greenButton },                                                                                   //
 					' Make it green'                                                                                                 //
 				)                                                                                                                 //
 			);                                                                                                                 //
@@ -2040,7 +2043,7 @@ var TestPageChild3 = function (_Component) {                                    
 	}();                                                                                                                 //
                                                                                                                       //
 	return TestPageChild3;                                                                                               //
-}(_react.Component);                                                                                                  //
+}((0, _ultimatejsTrackerReact2['default'])(_react2['default'].Component));                                            //
                                                                                                                       //
 exports['default'] = TestPageChild3;                                                                                  //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2611,6 +2614,7 @@ var Welcome = function (_Component) {                                           
                                                                                                                       //
 		var _this = (0, _possibleConstructorReturn3['default'])(this, _Component.call(this, props, context));               //
                                                                                                                       //
+		console.log(_this.props);                                                                                           // 8
 		_this.state = {                                                                                                     // 9
 			loginPanelOn: _this.props.loginPanelOn,                                                                            // 10
 			navSideBarOn: _this.props.navSideBarOn                                                                             // 11

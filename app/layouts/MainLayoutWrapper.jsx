@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
+import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import Header from './Header.jsx';
 import NavSideBar from './NavSideBar.jsx';
 import MainContentSection from './MainContentSection.jsx';
 import Footer from './Footer.jsx';
 
-export default class MainLayoutWrapper extends Component {
+export default class MainLayoutWrapper extends TrackerReact(Component) {
 		constructor(props, context) {
 			super(props, context);
 
@@ -12,6 +13,8 @@ export default class MainLayoutWrapper extends Component {
 				navButtonOn: false,
 				loginPanelOn: false
 			};
+
+
 		}
 
     _callBackNav(data) {

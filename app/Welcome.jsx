@@ -5,7 +5,7 @@ import LoginLogoutButton from './accounts/LoginLogoutButton.jsx';
 export default class Welcome extends Component {
 	constructor(props, context) {
 		super(props, context);
-		
+		console.log(this.props);
 		this.state = {
 			loginPanelOn: this.props.loginPanelOn,
 			navSideBarOn: this.props.navSideBarOn

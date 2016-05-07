@@ -31,3 +31,7 @@ I am stuck with below issues with loginPanel.
 The above issue is mostly solved using just react without using blaze.
 But, now too many states(component) to communicate with each other.  I wonder if I am doing right.
 also, I cannot pass and call back props in the Welcome component (content) to from its parent component.  I am trying to make the login button in the Welcome page to work....
+
+7 May, 2016
+I am trying to use Meteor session.  But, I get an error in my console. Error when doing SSR. path:/testpage: Session is not defined
+ReferenceError: Session is not defined
