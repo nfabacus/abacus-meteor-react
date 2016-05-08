@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-export default class TestPageChild3 extends TrackerReact(React.Component) {
+export default class SessionTestSection extends TrackerReact(React.Component) {
 	constructor(props, context) {
 		super(props, context);
 				
@@ -29,7 +29,7 @@ export default class TestPageChild3 extends TrackerReact(React.Component) {
 		return (
 			<div className={Session.get('myColor')} >
 				<h2>SessionTestSection</h2>
-				<p >I am the test child 4.</p>
+				<p >I am SessionTestSection.</p>
 				<p >The current color is {Session.get('myColor')}</p>
 	   			<button onClick={this.blueButton} > Make it blue</button>
 	   			<button onClick={this.greenButton} > Make it green</button>

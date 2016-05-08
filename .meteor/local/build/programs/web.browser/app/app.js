@@ -1973,15 +1973,15 @@ var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTran
                                                                                                                       //
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }                     //
                                                                                                                       //
-var TestPageChild3 = function (_TrackerReact) {                                                                       //
-	(0, _inherits3['default'])(TestPageChild3, _TrackerReact);                                                           //
+var SessionTestSection = function (_TrackerReact) {                                                                   //
+	(0, _inherits3['default'])(SessionTestSection, _TrackerReact);                                                       //
                                                                                                                       //
-	function TestPageChild3(props, context) {                                                                            // 6
-		(0, _classCallCheck3['default'])(this, TestPageChild3);                                                             //
+	function SessionTestSection(props, context) {                                                                        // 6
+		(0, _classCallCheck3['default'])(this, SessionTestSection);                                                         //
 		return (0, _possibleConstructorReturn3['default'])(this, _TrackerReact.call(this, props, context));                 //
 	}                                                                                                                    //
                                                                                                                       //
-	TestPageChild3.prototype.blueButton = function () {                                                                  // 5
+	SessionTestSection.prototype.blueButton = function () {                                                              // 5
 		function blueButton() {                                                                                             //
 			console.log('cicked');                                                                                             // 13
 			Session.set('myColor', "lightblue_back");                                                                          // 14
@@ -1991,7 +1991,7 @@ var TestPageChild3 = function (_TrackerReact) {                                 
 		return blueButton;                                                                                                  //
 	}();                                                                                                                 //
                                                                                                                       //
-	TestPageChild3.prototype.greenButton = function () {                                                                 // 5
+	SessionTestSection.prototype.greenButton = function () {                                                             // 5
 		function greenButton() {                                                                                            //
 			Session.set('myColor', "green_back");                                                                              // 18
 			console.log('cicked');                                                                                             // 19
@@ -2001,7 +2001,7 @@ var TestPageChild3 = function (_TrackerReact) {                                 
 		return greenButton;                                                                                                 //
 	}();                                                                                                                 //
                                                                                                                       //
-	TestPageChild3.prototype.render = function () {                                                                      // 5
+	SessionTestSection.prototype.render = function () {                                                                  // 5
 		function render() {                                                                                                 //
 			Session.setDefault('myColor', 'red_back');                                                                         // 24
                                                                                                                       //
@@ -2018,7 +2018,7 @@ var TestPageChild3 = function (_TrackerReact) {                                 
 				_react2['default'].createElement(                                                                                 //
 					'p',                                                                                                             //
 					null,                                                                                                            //
-					'I am the test child 4.'                                                                                         //
+					'I am SessionTestSection.'                                                                                       //
 				),                                                                                                                //
 				_react2['default'].createElement(                                                                                 //
 					'p',                                                                                                             //
@@ -2042,10 +2042,10 @@ var TestPageChild3 = function (_TrackerReact) {                                 
 		return render;                                                                                                      //
 	}();                                                                                                                 //
                                                                                                                       //
-	return TestPageChild3;                                                                                               //
+	return SessionTestSection;                                                                                           //
 }((0, _ultimatejsTrackerReact2['default'])(_react2['default'].Component));                                            //
                                                                                                                       //
-exports['default'] = TestPageChild3;                                                                                  //
+exports['default'] = SessionTestSection;                                                                              //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 }],"TestPageChild1.jsx":["babel-runtime/helpers/classCallCheck","babel-runtime/helpers/possibleConstructorReturn","babel-runtime/helpers/inherits","react","meteor/ultimatejs:tracker-react","react-addons-css-transition-group",function(require,exports){
@@ -2470,6 +2470,7 @@ var TestPage = function (_Component) {                                          
 				_react2['default'].createElement(_TestPageChild2['default'], { initialPanelState: this.state.panelOn, callBack: this._callBackFunc }),
 				_react2['default'].createElement(_TestPageChild4['default'], { initialPanelState: this.state.panel2On, callBack2: this._callBack2Func }),
 				_react2['default'].createElement(_TestPageChild6['default'], { initialPanelState: this.state.panel2On }),         //
+				_react2['default'].createElement(_SessionTestSection2['default'], { initialPanelState: this.state.panel2On }),    //
 				_react2['default'].createElement(_SessionTestSection2['default'], null)                                           //
 			);                                                                                                                 //
 		}                                                                                                                   //

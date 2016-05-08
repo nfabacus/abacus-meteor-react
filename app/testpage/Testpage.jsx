@@ -54,6 +54,7 @@ export default class TestPage extends Component {
 				<TestPageChild1 initialPanelState = {this.state.panelOn} callBack = {this._callBackFunc}/>
 				<TestPageChild2 initialPanelState = {this.state.panel2On} callBack2 = {this._callBack2Func}/>
 				<TestPageChild3 initialPanelState = {this.state.panel2On} />
+				<SessionTestSection initialPanelState = {this.state.panel2On} />
 				<SessionTestSection />
 			</div>
 
