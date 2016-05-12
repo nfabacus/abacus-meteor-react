@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
-import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import AccountsUI from '../accounts/AccountsUI.jsx';
 
 export default class MainContentSection extends Component {
-	constructor(props, context) {
-		super(props, context);
+	constructor(props, content) {
+		super(props, content);
 			
 		this.state = {
 			navSideBarOn: this.props.navSideBarOn,

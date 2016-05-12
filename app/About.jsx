@@ -4,7 +4,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 export default class About extends Component {
 	
 	setVar() {
-		Session.set('loginToggle', "green_back");
+		Session.set('Meteor.loginButtons.dropdownVisible', true);
 	}
 
 	render() {

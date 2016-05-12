@@ -5,7 +5,7 @@ import NavSideBar from './NavSideBar.jsx';
 import MainContentSection from './MainContentSection.jsx';
 import Footer from './Footer.jsx';
 
-export default class MainLayoutWrapper extends TrackerReact(Component) {
+export default class MainLayoutWrapper extends Component {
 		constructor(props, context) {
 			super(props, context);
 

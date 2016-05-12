@@ -4,7 +4,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import NavButton from './NavButton.jsx';
 import LoginLogoutButton from '../accounts/LoginLogoutButton.jsx';
 
-export default class Header extends TrackerReact(Component) {
+export default class Header extends Component {
 	constructor(props, context) {
 		super(props, context);
 			

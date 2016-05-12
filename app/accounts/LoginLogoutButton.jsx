@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-export default class LoginLogoutButton extends TrackerReact(Component) {
+export default class LoginLogoutButton extends Component {
 	constructor(props, context) {
 		super(props, context);
 		
@@ -25,6 +24,7 @@ export default class LoginLogoutButton extends TrackerReact(Component) {
 
 	_handleLogout() {
 		Meteor.logout();
+		FlowRouter.go('/about');
 		Bert.alert('You are now logged out. Bye for now!', 'success', 'growl-top-right');
 	}
 

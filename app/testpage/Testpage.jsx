@@ -4,7 +4,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import TestPageChild1 from './TestPageChild1.jsx';
 import TestPageChild2 from './TestPageChild2.jsx';
 import TestPageChild3 from './TestPageChild3.jsx';
-import SessionTestSection from './SessionTestSection.jsx';
+import TestPageChild4 from './TestPageChild4.jsx';
 export default class TestPage extends Component {
 	constructor(props) {
 		super(props);
@@ -54,8 +54,8 @@ export default class TestPage extends Component {
 				<TestPageChild1 initialPanelState = {this.state.panelOn} callBack = {this._callBackFunc}/>
 				<TestPageChild2 initialPanelState = {this.state.panel2On} callBack2 = {this._callBack2Func}/>
 				<TestPageChild3 initialPanelState = {this.state.panel2On} />
-				<SessionTestSection initialPanelState = {this.state.panel2On} />
-				<SessionTestSection />
+				<TestPageChild4 />
+
 			</div>
 
 		)

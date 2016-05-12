@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
+import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import LoginLogoutButton from './accounts/LoginLogoutButton.jsx';
 
-export default class Welcome extends Component {
+export default class Welcome extends TrackerReact(Component) {
 	constructor(props, context) {
 		super(props, context);
 		console.log(this.props);
@@ -12,6 +13,10 @@ export default class Welcome extends Component {
 		};
 	}
 
+	componentWillUnmount() {
+
+	}
+	
 	_callBackLoginPanel(data){
 		var newState = data;
 		this.setState({ loginPanelOn: newState });

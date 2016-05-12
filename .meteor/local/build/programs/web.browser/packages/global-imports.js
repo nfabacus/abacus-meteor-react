@@ -9,7 +9,6 @@ Deps = Package.tracker.Deps;
 FlowRouter = Package['kadira:flow-router-ssr'].FlowRouter;
 DocHead = Package['kadira:dochead'].DocHead;
 Accounts = Package['accounts-base'].Accounts;
-Helpers = Package['raix:handlebar-helpers'].Helpers;
 Roles = Package['alanning:roles'].Roles;
 Session = Package.session.Session;
 Bert = Package['themeteorchef:bert'].Bert;

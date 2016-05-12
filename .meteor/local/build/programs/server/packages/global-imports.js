@@ -9,7 +9,6 @@ ECMAScript = Package.ecmascript.ECMAScript;
 FlowRouter = Package['kadira:flow-router-ssr'].FlowRouter;
 DocHead = Package['kadira:dochead'].DocHead;
 Accounts = Package['accounts-base'].Accounts;
-Helpers = Package['raix:handlebar-helpers'].Helpers;
 Roles = Package['alanning:roles'].Roles;
 Bert = Package['themeteorchef:bert'].Bert;
 check = Package.check.check;

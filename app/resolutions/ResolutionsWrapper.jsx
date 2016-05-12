@@ -47,9 +47,11 @@ export default class ResolutionsWrapper extends TrackerReact(React.Component) {
 					transitionName="resolutionLoad"
 					transitionEnterTimeout={600}
 					transitionLeaveTimeout={400}>
+
 					{this.resolutions().map( (resolution)=>{
 						return <ResolutionSingle key={resolution._id} resolution={resolution} />
 					})}
+				
 				</ReactCSSTransitionGroup>
 			</ReactCSSTransitionGroup>
 		)

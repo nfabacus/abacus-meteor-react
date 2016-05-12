@@ -130,11 +130,11 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/packages/modules.js?hash=90e20ab81d9559728581270ed5ba9c0d43cfcfda",
+      "url": "/packages/modules.js?hash=5d35d6efacc4120caea13dc9efa2ec1115231671",
       "sourceMap": "packages/modules.js.map",
-      "sourceMapUrl": "/packages/90e20ab81d9559728581270ed5ba9c0d43cfcfda.map",
-      "size": 3226642,
-      "hash": "90e20ab81d9559728581270ed5ba9c0d43cfcfda"
+      "sourceMapUrl": "/packages/5d35d6efacc4120caea13dc9efa2ec1115231671.map",
+      "size": 3226390,
+      "hash": "5d35d6efacc4120caea13dc9efa2ec1115231671"
     },
     {
       "path": "packages/es5-shim.js",
@@ -792,17 +792,6 @@
       "hash": "18a16ff1bcf59e6f7ecb492786a478a079e51ea2"
     },
     {
-      "path": "packages/aldeed_template-extension.js",
-      "where": "client",
-      "type": "js",
-      "cacheable": true,
-      "url": "/packages/aldeed_template-extension.js?hash=06fc9ee132133077d4d69a60be7710fa6d97a7d1",
-      "sourceMap": "packages/aldeed_template-extension.js.map",
-      "sourceMapUrl": "/packages/06fc9ee132133077d4d69a60be7710fa6d97a7d1.map",
-      "size": 65700,
-      "hash": "06fc9ee132133077d4d69a60be7710fa6d97a7d1"
-    },
-    {
       "path": "packages/npm-bcrypt.js",
       "where": "client",
       "type": "js",
@@ -843,26 +832,6 @@
       "sourceMapUrl": "/packages/f4db56613b5b091ebde42e273ac5be66f3ebceed.map",
       "size": 31927,
       "hash": "f4db56613b5b091ebde42e273ac5be66f3ebceed"
-    },
-    {
-      "path": "packages/ui.js",
-      "where": "client",
-      "type": "js",
-      "cacheable": true,
-      "url": "/packages/ui.js?hash=d0665bbf032532e2284f8843b30500babb10dd4d",
-      "size": 523,
-      "hash": "d0665bbf032532e2284f8843b30500babb10dd4d"
-    },
-    {
-      "path": "packages/raix_handlebar-helpers.js",
-      "where": "client",
-      "type": "js",
-      "cacheable": true,
-      "url": "/packages/raix_handlebar-helpers.js?hash=d4495494d785afb74c9d9e9d9ed76f895ef03f70",
-      "sourceMap": "packages/raix_handlebar-helpers.js.map",
-      "sourceMapUrl": "/packages/d4495494d785afb74c9d9e9d9ed76f895ef03f70.map",
-      "size": 29143,
-      "hash": "d4495494d785afb74c9d9e9d9ed76f895ef03f70"
     },
     {
       "path": "packages/alanning_roles.js",
@@ -945,6 +914,15 @@
       "hash": "bc0fd472cf89d0c9b8146f07ba048efcc11ef9ee"
     },
     {
+      "path": "packages/ui.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/ui.js?hash=d0665bbf032532e2284f8843b30500babb10dd4d",
+      "size": 523,
+      "hash": "d0665bbf032532e2284f8843b30500babb10dd4d"
+    },
+    {
       "path": "packages/autoupdate.js",
       "where": "client",
       "type": "js",
@@ -960,20 +938,20 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/packages/global-imports.js?hash=9df1fdc112e9cbb6e072499e9508360b5b1154b1",
-      "size": 1470,
-      "hash": "9df1fdc112e9cbb6e072499e9508360b5b1154b1"
+      "url": "/packages/global-imports.js?hash=96513d2f98f0a4148e3766f4e8d16a3e1ca2445d",
+      "size": 1417,
+      "hash": "96513d2f98f0a4148e3766f4e8d16a3e1ca2445d"
     },
     {
       "path": "app/app.js",
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/app/app.js?hash=cb943e156f8a03279a60fdea37fa950db7632fae",
+      "url": "/app/app.js?hash=257edc7cccc08e07af5827d5efbf8d0a754c1f68",
       "sourceMap": "app/app.js.map",
-      "sourceMapUrl": "/app/cb943e156f8a03279a60fdea37fa950db7632fae.map",
-      "size": 348962,
-      "hash": "cb943e156f8a03279a60fdea37fa950db7632fae"
+      "sourceMapUrl": "/app/257edc7cccc08e07af5827d5efbf8d0a754c1f68.map",
+      "size": 350425,
+      "hash": "257edc7cccc08e07af5827d5efbf8d0a754c1f68"
     },
     {
       "path": "packages/service-configuration.js",

@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import LoginForm from './LoginForm.jsx';
 import SignupForm from './SignupForm.jsx';
@@ -70,6 +69,7 @@ export default class AccountsUI extends Component {
 	       	<center>
 	       	{ panelSelected } 
 	       	</center>
+	       <span ref="container" />
        	</div>
        	)
 	}

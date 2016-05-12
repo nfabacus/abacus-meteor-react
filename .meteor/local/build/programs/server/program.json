@@ -353,9 +353,6 @@
       "path": "packages/ultimatejs_tracker-react.js"
     },
     {
-      "path": "packages/aldeed_template-extension.js"
-    },
-    {
       "node_modules": "npm/node_modules/meteor/npm-bcrypt/node_modules",
       "sourceMap": "packages/npm-bcrypt.js.map",
       "path": "packages/npm-bcrypt.js"
@@ -371,10 +368,6 @@
     {
       "sourceMap": "packages/accounts-password.js.map",
       "path": "packages/accounts-password.js"
-    },
-    {
-      "sourceMap": "packages/raix_handlebar-helpers.js.map",
-      "path": "packages/raix_handlebar-helpers.js"
     },
     {
       "sourceMap": "packages/alanning_roles.js.map",

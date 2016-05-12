@@ -35,3 +35,6 @@ also, I cannot pass and call back props in the Welcome component (content) to fr
 7 May, 2016
 I am trying to use Meteor session.  But, I get an error in my console. Error when doing SSR. path:/testpage: Session is not defined
 ReferenceError: Session is not defined
+
+12 May, 2016
+The issue above was caused by use of Meteor session on the server side rendering.  There was also error with TrackerReact.  Somehow I learnt that I need to put componentWillUnmount() { within the component, otherwise, it caused routing not to work properly.

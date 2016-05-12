@@ -1,4 +1,4 @@
-var require = meteorInstall({"app":{"accounts":{"AccountsUI.jsx":["babel-runtime/helpers/classCallCheck","babel-runtime/helpers/possibleConstructorReturn","babel-runtime/helpers/inherits","react","react-dom","meteor/ultimatejs:tracker-react","react-addons-css-transition-group","./LoginForm.jsx","./SignupForm.jsx",function(require,exports){
+var require = meteorInstall({"app":{"accounts":{"AccountsUI.jsx":["babel-runtime/helpers/classCallCheck","babel-runtime/helpers/possibleConstructorReturn","babel-runtime/helpers/inherits","react","react-dom","react-addons-css-transition-group","./LoginForm.jsx","./SignupForm.jsx",function(require,exports){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                                                    //
@@ -28,19 +28,15 @@ var _reactDom = require('react-dom');                                           
                                                                                                                       //
 var _reactDom2 = _interopRequireDefault(_reactDom);                                                                   //
                                                                                                                       //
-var _ultimatejsTrackerReact = require('meteor/ultimatejs:tracker-react');                                             // 3
-                                                                                                                      //
-var _ultimatejsTrackerReact2 = _interopRequireDefault(_ultimatejsTrackerReact);                                       //
-                                                                                                                      //
-var _reactAddonsCssTransitionGroup = require('react-addons-css-transition-group');                                    // 4
+var _reactAddonsCssTransitionGroup = require('react-addons-css-transition-group');                                    // 3
                                                                                                                       //
 var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);                         //
                                                                                                                       //
-var _LoginForm = require('./LoginForm.jsx');                                                                          // 5
+var _LoginForm = require('./LoginForm.jsx');                                                                          // 4
                                                                                                                       //
 var _LoginForm2 = _interopRequireDefault(_LoginForm);                                                                 //
                                                                                                                       //
-var _SignupForm = require('./SignupForm.jsx');                                                                        // 6
+var _SignupForm = require('./SignupForm.jsx');                                                                        // 5
                                                                                                                       //
 var _SignupForm2 = _interopRequireDefault(_SignupForm);                                                               //
                                                                                                                       //
@@ -49,81 +45,82 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
 var AccountsUI = function (_Component) {                                                                              //
 	(0, _inherits3['default'])(AccountsUI, _Component);                                                                  //
                                                                                                                       //
-	function AccountsUI(props, context) {                                                                                // 10
+	function AccountsUI(props, context) {                                                                                // 9
 		(0, _classCallCheck3['default'])(this, AccountsUI);                                                                 //
                                                                                                                       //
 		var _this = (0, _possibleConstructorReturn3['default'])(this, _Component.call(this, props, context));               //
                                                                                                                       //
-		_this.state = {                                                                                                     // 13
-			navSideBarOn: _this.props.navSideBarOn,                                                                            // 14
-			loginPanelOn: _this.props.loginPanelOn,                                                                            // 15
-			loginPanelSelected: 'loginForm'                                                                                    // 16
+		_this.state = {                                                                                                     // 12
+			navSideBarOn: _this.props.navSideBarOn,                                                                            // 13
+			loginPanelOn: _this.props.loginPanelOn,                                                                            // 14
+			loginPanelSelected: 'loginForm'                                                                                    // 15
 		};                                                                                                                  //
 		return _this;                                                                                                       //
 	}                                                                                                                    //
                                                                                                                       //
-	AccountsUI.prototype._callBackLPanelSelected = function () {                                                         // 8
+	AccountsUI.prototype._callBackLPanelSelected = function () {                                                         // 7
 		function _callBackLPanelSelected(data) {                                                                            //
-			var newState = data;                                                                                               // 22
-			this.setState({                                                                                                    // 23
-				loginPanelSelected: newState                                                                                      // 24
+			var newState = data;                                                                                               // 21
+			this.setState({                                                                                                    // 22
+				loginPanelSelected: newState                                                                                      // 23
 			});                                                                                                                //
-			this.props.callBackLoginPanel(newState);                                                                           // 26
+			this.props.callBackLoginPanel(newState);                                                                           // 25
 		}                                                                                                                   //
                                                                                                                       //
 		return _callBackLPanelSelected;                                                                                     //
 	}();                                                                                                                 //
                                                                                                                       //
-	AccountsUI.prototype._callBackLoginPanel = function () {                                                             // 8
+	AccountsUI.prototype._callBackLoginPanel = function () {                                                             // 7
 		function _callBackLoginPanel(data) {                                                                                //
-			var newState = data;                                                                                               // 30
-			this.setState({ loginPanelOn: newState });                                                                         // 31
-			this.props.callBackLoginPanel(newState);                                                                           // 32
+			var newState = data;                                                                                               // 29
+			this.setState({ loginPanelOn: newState });                                                                         // 30
+			this.props.callBackLoginPanel(newState);                                                                           // 31
 		}                                                                                                                   //
                                                                                                                       //
 		return _callBackLoginPanel;                                                                                         //
 	}();                                                                                                                 //
                                                                                                                       //
-	AccountsUI.prototype.render = function () {                                                                          // 8
+	AccountsUI.prototype.render = function () {                                                                          // 7
 		function render() {                                                                                                 //
-			console.log('props for LoginPanel in Account UI is :', this.props.loginPanelOn);                                   // 37
-			console.log('state for loginPanelSelected is: ', this.state.loginPanelSelected);                                   // 38
-			var panelSelected = void 0;                                                                                        // 39
+			console.log('props for LoginPanel in Account UI is :', this.props.loginPanelOn);                                   // 36
+			console.log('state for loginPanelSelected is: ', this.state.loginPanelSelected);                                   // 37
+			var panelSelected = void 0;                                                                                        // 38
                                                                                                                       //
 			// hide and show loginPanel                                                                                        //
-			if (this.props.loginPanelOn) {                                                                                     // 36
-				var loginPanelClass = "";                                                                                         // 43
+			if (this.props.loginPanelOn) {                                                                                     // 35
+				var loginPanelClass = "";                                                                                         // 42
 			} else {                                                                                                           //
-				var loginPanelClass = "hidden";                                                                                   // 45
+				var loginPanelClass = "hidden";                                                                                   // 44
 			}                                                                                                                  //
                                                                                                                       //
 			// show loginForm or SignupForm                                                                                    //
-			if (this.state.loginPanelSelected == "loginForm") {                                                                // 36
-				panelSelected = _react2['default'].createElement(_LoginForm2['default'], {                                        // 50
-					navSideBarOn: this.props.navSideBarOn,                                                                           // 51
-					loginPanelOn: this.state.loginPanelOn,                                                                           // 52
-					callBackLoginPanel: this._callBackLoginPanel.bind(this),                                                         // 53
-					loginPanelSelected: this.state.loginPanelSelected,                                                               // 54
-					callBackLPanelSelected: this._callBackLPanelSelected.bind(this) });                                              // 55
+			if (this.state.loginPanelSelected == "loginForm") {                                                                // 35
+				panelSelected = _react2['default'].createElement(_LoginForm2['default'], {                                        // 49
+					navSideBarOn: this.props.navSideBarOn,                                                                           // 50
+					loginPanelOn: this.state.loginPanelOn,                                                                           // 51
+					callBackLoginPanel: this._callBackLoginPanel.bind(this),                                                         // 52
+					loginPanelSelected: this.state.loginPanelSelected,                                                               // 53
+					callBackLPanelSelected: this._callBackLPanelSelected.bind(this) });                                              // 54
 			}                                                                                                                  //
                                                                                                                       //
-			if (this.state.loginPanelSelected == "signupForm") {                                                               // 58
-				panelSelected = _react2['default'].createElement(_SignupForm2['default'], {                                       // 59
-					navSideBarOn: this.props.navSideBarOn,                                                                           // 60
-					loginPanelOn: this.state.loginPanelOn,                                                                           // 61
-					callBackLoginPanel: this._callBackLoginPanel.bind(this),                                                         // 62
-					loginPanelSelected: this.state.loginPanelSelected,                                                               // 63
-					callBackLPanelSelected: this._callBackLPanelSelected.bind(this) });                                              // 64
+			if (this.state.loginPanelSelected == "signupForm") {                                                               // 57
+				panelSelected = _react2['default'].createElement(_SignupForm2['default'], {                                       // 58
+					navSideBarOn: this.props.navSideBarOn,                                                                           // 59
+					loginPanelOn: this.state.loginPanelOn,                                                                           // 60
+					callBackLoginPanel: this._callBackLoginPanel.bind(this),                                                         // 61
+					loginPanelSelected: this.state.loginPanelSelected,                                                               // 62
+					callBackLPanelSelected: this._callBackLPanelSelected.bind(this) });                                              // 63
 			}                                                                                                                  //
                                                                                                                       //
-			return _react2['default'].createElement(                                                                           // 68
+			return _react2['default'].createElement(                                                                           // 67
 				'div',                                                                                                            //
 				{ id: 'loginPanel', className: loginPanelClass },                                                                 //
 				_react2['default'].createElement(                                                                                 //
 					'center',                                                                                                        //
 					null,                                                                                                            //
 					panelSelected                                                                                                    //
-				)                                                                                                                 //
+				),                                                                                                                //
+				_react2['default'].createElement('span', { ref: 'container' })                                                    //
 			);                                                                                                                 //
 		}                                                                                                                   //
                                                                                                                       //
@@ -306,7 +303,7 @@ var LoginForm = function (_Component) {                                         
 exports['default'] = LoginForm;                                                                                       //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-}],"LoginLogoutButton.jsx":["babel-runtime/helpers/classCallCheck","babel-runtime/helpers/possibleConstructorReturn","babel-runtime/helpers/inherits","react","react-dom","meteor/ultimatejs:tracker-react","react-addons-css-transition-group",function(require,exports){
+}],"LoginLogoutButton.jsx":["babel-runtime/helpers/classCallCheck","babel-runtime/helpers/possibleConstructorReturn","babel-runtime/helpers/inherits","react","react-dom","react-addons-css-transition-group",function(require,exports){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                                                    //
@@ -336,59 +333,56 @@ var _reactDom = require('react-dom');                                           
                                                                                                                       //
 var _reactDom2 = _interopRequireDefault(_reactDom);                                                                   //
                                                                                                                       //
-var _ultimatejsTrackerReact = require('meteor/ultimatejs:tracker-react');                                             // 3
-                                                                                                                      //
-var _ultimatejsTrackerReact2 = _interopRequireDefault(_ultimatejsTrackerReact);                                       //
-                                                                                                                      //
-var _reactAddonsCssTransitionGroup = require('react-addons-css-transition-group');                                    // 4
+var _reactAddonsCssTransitionGroup = require('react-addons-css-transition-group');                                    // 3
                                                                                                                       //
 var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);                         //
                                                                                                                       //
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }                     //
                                                                                                                       //
-var LoginLogoutButton = function (_TrackerReact) {                                                                    //
-	(0, _inherits3['default'])(LoginLogoutButton, _TrackerReact);                                                        //
+var LoginLogoutButton = function (_Component) {                                                                       //
+	(0, _inherits3['default'])(LoginLogoutButton, _Component);                                                           //
                                                                                                                       //
-	function LoginLogoutButton(props, context) {                                                                         // 7
+	function LoginLogoutButton(props, context) {                                                                         // 6
 		(0, _classCallCheck3['default'])(this, LoginLogoutButton);                                                          //
                                                                                                                       //
-		var _this = (0, _possibleConstructorReturn3['default'])(this, _TrackerReact.call(this, props, context));            //
+		var _this = (0, _possibleConstructorReturn3['default'])(this, _Component.call(this, props, context));               //
                                                                                                                       //
-		_this.state = {                                                                                                     // 10
-			loginPanelOn: _this.props.loginPanelOn                                                                             // 11
+		_this.state = {                                                                                                     // 9
+			loginPanelOn: _this.props.loginPanelOn                                                                             // 10
 		};                                                                                                                  //
 		return _this;                                                                                                       //
 	}                                                                                                                    //
                                                                                                                       //
-	LoginLogoutButton.prototype.getUserData = function () {                                                              // 6
+	LoginLogoutButton.prototype.getUserData = function () {                                                              // 5
 		function getUserData() {                                                                                            //
-			var currentUser = Meteor.user();                                                                                   // 16
-			return currentUser;                                                                                                // 17
+			var currentUser = Meteor.user();                                                                                   // 15
+			return currentUser;                                                                                                // 16
 		}                                                                                                                   //
                                                                                                                       //
 		return getUserData;                                                                                                 //
 	}();                                                                                                                 //
                                                                                                                       //
-	LoginLogoutButton.prototype._callBackLoginPanel = function () {                                                      // 6
+	LoginLogoutButton.prototype._callBackLoginPanel = function () {                                                      // 5
 		function _callBackLoginPanel() {                                                                                    //
-			var newState = !this.state.loginPanelOn;                                                                           // 21
-			this.setState({ loginPanelOn: newState });                                                                         // 22
-			this.props.callBackLoginPanel(newState);                                                                           // 23
+			var newState = !this.state.loginPanelOn;                                                                           // 20
+			this.setState({ loginPanelOn: newState });                                                                         // 21
+			this.props.callBackLoginPanel(newState);                                                                           // 22
 		}                                                                                                                   //
                                                                                                                       //
 		return _callBackLoginPanel;                                                                                         //
 	}();                                                                                                                 //
                                                                                                                       //
-	LoginLogoutButton.prototype._handleLogout = function () {                                                            // 6
+	LoginLogoutButton.prototype._handleLogout = function () {                                                            // 5
 		function _handleLogout() {                                                                                          //
-			Meteor.logout();                                                                                                   // 27
+			Meteor.logout();                                                                                                   // 26
+			FlowRouter.go('/about');                                                                                           // 27
 			Bert.alert('You are now logged out. Bye for now!', 'success', 'growl-top-right');                                  // 28
 		}                                                                                                                   //
                                                                                                                       //
 		return _handleLogout;                                                                                               //
 	}();                                                                                                                 //
                                                                                                                       //
-	LoginLogoutButton.prototype.render = function () {                                                                   // 6
+	LoginLogoutButton.prototype.render = function () {                                                                   // 5
 		function render() {                                                                                                 //
 			var currentUser = this.getUserData();                                                                              // 32
                                                                                                                       //
@@ -428,7 +422,7 @@ var LoginLogoutButton = function (_TrackerReact) {                              
 	}();                                                                                                                 //
                                                                                                                       //
 	return LoginLogoutButton;                                                                                            //
-}((0, _ultimatejsTrackerReact2['default'])(_react.Component));                                                        //
+}(_react.Component);                                                                                                  //
                                                                                                                       //
 exports['default'] = LoginLogoutButton;                                                                               //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -756,7 +750,7 @@ var SignupForm = function (_Component) {                                        
 exports['default'] = SignupForm;                                                                                      //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-}]},"layouts":{"Footer.jsx":["babel-runtime/helpers/classCallCheck","babel-runtime/helpers/possibleConstructorReturn","babel-runtime/helpers/inherits","react","meteor/ultimatejs:tracker-react","react-addons-css-transition-group",function(require,exports){
+}]},"layouts":{"Footer.jsx":["babel-runtime/helpers/classCallCheck","babel-runtime/helpers/possibleConstructorReturn","babel-runtime/helpers/inherits","react","react-addons-css-transition-group",function(require,exports){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                                                    //
@@ -782,11 +776,7 @@ var _react = require('react');                                                  
                                                                                                                       //
 var _react2 = _interopRequireDefault(_react);                                                                         //
                                                                                                                       //
-var _ultimatejsTrackerReact = require('meteor/ultimatejs:tracker-react');                                             // 2
-                                                                                                                      //
-var _ultimatejsTrackerReact2 = _interopRequireDefault(_ultimatejsTrackerReact);                                       //
-                                                                                                                      //
-var _reactAddonsCssTransitionGroup = require('react-addons-css-transition-group');                                    // 3
+var _reactAddonsCssTransitionGroup = require('react-addons-css-transition-group');                                    // 2
                                                                                                                       //
 var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);                         //
                                                                                                                       //
@@ -802,13 +792,13 @@ var Footer = function (_Component) {                                            
                                                                                                                       //
 	Footer.prototype.render = function () {                                                                              //
 		function render() {                                                                                                 //
-			if (this.props.navSideBarOn) {                                                                                     // 8
-				footerClass = "";                                                                                                 // 9
+			if (this.props.navSideBarOn) {                                                                                     // 7
+				footerClass = "";                                                                                                 // 8
 			} else {                                                                                                           //
-				footerClass = "footerNoNav";                                                                                      // 11
+				footerClass = "footerNoNav";                                                                                      // 10
 			}                                                                                                                  //
                                                                                                                       //
-			return _react2['default'].createElement(                                                                           // 14
+			return _react2['default'].createElement(                                                                           // 13
 				'footer',                                                                                                         //
 				{ id: 'footer', className: footerClass },                                                                         //
 				_react2['default'].createElement(                                                                                 //
@@ -910,13 +900,13 @@ var _LoginLogoutButton2 = _interopRequireDefault(_LoginLogoutButton);           
                                                                                                                       //
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }                     //
                                                                                                                       //
-var Header = function (_TrackerReact) {                                                                               //
-	(0, _inherits3['default'])(Header, _TrackerReact);                                                                   //
+var Header = function (_Component) {                                                                                  //
+	(0, _inherits3['default'])(Header, _Component);                                                                      //
                                                                                                                       //
 	function Header(props, context) {                                                                                    // 8
 		(0, _classCallCheck3['default'])(this, Header);                                                                     //
                                                                                                                       //
-		var _this = (0, _possibleConstructorReturn3['default'])(this, _TrackerReact.call(this, props, context));            //
+		var _this = (0, _possibleConstructorReturn3['default'])(this, _Component.call(this, props, context));               //
                                                                                                                       //
 		_this.state = {                                                                                                     // 11
 			navButtonOn: _this.props.navButtonOn,                                                                              // 12
@@ -1017,12 +1007,12 @@ var Header = function (_TrackerReact) {                                         
 	}();                                                                                                                 //
                                                                                                                       //
 	return Header;                                                                                                       //
-}((0, _ultimatejsTrackerReact2['default'])(_react.Component));                                                        //
+}(_react.Component);                                                                                                  //
                                                                                                                       //
 exports['default'] = Header;                                                                                          //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-}],"MainContentSection.jsx":["babel-runtime/helpers/classCallCheck","babel-runtime/helpers/possibleConstructorReturn","babel-runtime/helpers/inherits","react","meteor/ultimatejs:tracker-react","react-addons-css-transition-group","../accounts/AccountsUI.jsx",function(require,exports){
+}],"MainContentSection.jsx":["babel-runtime/helpers/classCallCheck","babel-runtime/helpers/possibleConstructorReturn","babel-runtime/helpers/inherits","react","react-addons-css-transition-group","../accounts/AccountsUI.jsx",function(require,exports){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                                                    //
@@ -1048,15 +1038,11 @@ var _react = require('react');                                                  
                                                                                                                       //
 var _react2 = _interopRequireDefault(_react);                                                                         //
                                                                                                                       //
-var _ultimatejsTrackerReact = require('meteor/ultimatejs:tracker-react');                                             // 2
-                                                                                                                      //
-var _ultimatejsTrackerReact2 = _interopRequireDefault(_ultimatejsTrackerReact);                                       //
-                                                                                                                      //
-var _reactAddonsCssTransitionGroup = require('react-addons-css-transition-group');                                    // 3
+var _reactAddonsCssTransitionGroup = require('react-addons-css-transition-group');                                    // 2
                                                                                                                       //
 var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);                         //
                                                                                                                       //
-var _AccountsUI = require('../accounts/AccountsUI.jsx');                                                              // 4
+var _AccountsUI = require('../accounts/AccountsUI.jsx');                                                              // 3
                                                                                                                       //
 var _AccountsUI2 = _interopRequireDefault(_AccountsUI);                                                               //
                                                                                                                       //
@@ -1065,55 +1051,55 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
 var MainContentSection = function (_Component) {                                                                      //
 	(0, _inherits3['default'])(MainContentSection, _Component);                                                          //
                                                                                                                       //
-	function MainContentSection(props, context) {                                                                        // 7
+	function MainContentSection(props, content) {                                                                        // 6
 		(0, _classCallCheck3['default'])(this, MainContentSection);                                                         //
                                                                                                                       //
-		var _this = (0, _possibleConstructorReturn3['default'])(this, _Component.call(this, props, context));               //
+		var _this = (0, _possibleConstructorReturn3['default'])(this, _Component.call(this, props, content));               //
                                                                                                                       //
-		_this.state = {                                                                                                     // 10
-			navSideBarOn: _this.props.navSideBarOn,                                                                            // 11
-			loginPanelOn: _this.props.loginPanelOn                                                                             // 12
+		_this.state = {                                                                                                     // 9
+			navSideBarOn: _this.props.navSideBarOn,                                                                            // 10
+			loginPanelOn: _this.props.loginPanelOn                                                                             // 11
 		};                                                                                                                  //
                                                                                                                       //
 		return _this;                                                                                                       //
 	}                                                                                                                    //
                                                                                                                       //
-	MainContentSection.prototype._callBackLoginPanel = function () {                                                     // 6
+	MainContentSection.prototype._callBackLoginPanel = function () {                                                     // 5
 		function _callBackLoginPanel(data) {                                                                                //
-			var newState = data;                                                                                               // 18
-			this.setState({ loginPanelOn: newState });                                                                         // 19
-			this.props.callBackLoginPanel(newState);                                                                           // 20
+			var newState = data;                                                                                               // 17
+			this.setState({ loginPanelOn: newState });                                                                         // 18
+			this.props.callBackLoginPanel(newState);                                                                           // 19
 		}                                                                                                                   //
                                                                                                                       //
 		return _callBackLoginPanel;                                                                                         //
 	}();                                                                                                                 //
                                                                                                                       //
-	MainContentSection.prototype.render = function () {                                                                  // 6
+	MainContentSection.prototype.render = function () {                                                                  // 5
 		function render() {                                                                                                 //
-			var contentClass;                                                                                                  // 24
-			var content_inner_actual_class;                                                                                    // 25
+			var contentClass;                                                                                                  // 23
+			var content_inner_actual_class;                                                                                    // 24
                                                                                                                       //
-			if (this.props.navSideBarOn) {                                                                                     // 27
-				contentClass = "";                                                                                                // 28
+			if (this.props.navSideBarOn) {                                                                                     // 26
+				contentClass = "";                                                                                                // 27
 			} else {                                                                                                           //
-				contentClass = "contentNoNav";                                                                                    // 30
+				contentClass = "contentNoNav";                                                                                    // 29
 			}                                                                                                                  //
                                                                                                                       //
-			if (this.props.loginPanelOn) {                                                                                     // 33
-				content_inner_actual_class = "hidden";                                                                            // 34
+			if (this.props.loginPanelOn) {                                                                                     // 32
+				content_inner_actual_class = "hidden";                                                                            // 33
 			} else {                                                                                                           //
-				content_inner_actual_class = "";                                                                                  // 36
+				content_inner_actual_class = "";                                                                                  // 35
 			}                                                                                                                  //
                                                                                                                       //
-			return _react2['default'].createElement(                                                                           // 39
+			return _react2['default'].createElement(                                                                           // 38
 				_reactAddonsCssTransitionGroup2['default'],                                                                       //
 				{                                                                                                                 //
-					component: 'div',                                                                                                // 41
-					transitionName: 'route',                                                                                         // 42
-					transitionEnterTimeout: 600,                                                                                     // 43
-					transitionAppearTimeout: 600,                                                                                    // 44
-					transitionLeaveTimeout: 400,                                                                                     // 45
-					transitionAppear: true },                                                                                        // 46
+					component: 'div',                                                                                                // 40
+					transitionName: 'route',                                                                                         // 41
+					transitionEnterTimeout: 600,                                                                                     // 42
+					transitionAppearTimeout: 600,                                                                                    // 43
+					transitionLeaveTimeout: 400,                                                                                     // 44
+					transitionAppear: true },                                                                                        // 45
 				_react2['default'].createElement(                                                                                 //
 					'section',                                                                                                       //
 					{ id: 'content', className: contentClass },                                                                      //
@@ -1121,9 +1107,9 @@ var MainContentSection = function (_Component) {                                
 						'div',                                                                                                          //
 						{ id: 'content_inner' },                                                                                        //
 						_react2['default'].createElement(_AccountsUI2['default'], {                                                     //
-							navSideBarOn: this.state.navButtonOn,                                                                          // 54
-							loginPanelOn: this.props.loginPanelOn,                                                                         // 55
-							callBackLoginPanel: this._callBackLoginPanel.bind(this) }),                                                    // 56
+							navSideBarOn: this.state.navButtonOn,                                                                          // 53
+							loginPanelOn: this.props.loginPanelOn,                                                                         // 54
+							callBackLoginPanel: this._callBackLoginPanel.bind(this) }),                                                    // 55
 						_react2['default'].createElement('div', { id: 'spinner', className: 'spinner1' }),                              //
 						_react2['default'].createElement(                                                                               //
 							'div',                                                                                                         //
@@ -1175,7 +1161,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
                                                                                                                       //
 var MainLayout = exports.MainLayout = function MainLayout(_ref) {                                                     // 4
 	var content = _ref.content;                                                                                          //
-	var props = _ref.props;                                                                                              //
 	return _react2['default'].createElement(_MainLayoutWrapper2['default'], { content: content });                       //
 };                                                                                                                    //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1228,13 +1213,13 @@ var _Footer2 = _interopRequireDefault(_Footer);                                 
                                                                                                                       //
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }                     //
                                                                                                                       //
-var MainLayoutWrapper = function (_TrackerReact) {                                                                    //
-	(0, _inherits3['default'])(MainLayoutWrapper, _TrackerReact);                                                        //
+var MainLayoutWrapper = function (_Component) {                                                                       //
+	(0, _inherits3['default'])(MainLayoutWrapper, _Component);                                                           //
                                                                                                                       //
 	function MainLayoutWrapper(props, context) {                                                                         // 9
 		(0, _classCallCheck3['default'])(this, MainLayoutWrapper);                                                          //
                                                                                                                       //
-		var _this = (0, _possibleConstructorReturn3['default'])(this, _TrackerReact.call(this, props, context));            //
+		var _this = (0, _possibleConstructorReturn3['default'])(this, _Component.call(this, props, context));               //
                                                                                                                       //
 		_this.state = {                                                                                                     // 12
 			navButtonOn: false,                                                                                                // 13
@@ -1295,7 +1280,7 @@ var MainLayoutWrapper = function (_TrackerReact) {                              
 	}();                                                                                                                 //
                                                                                                                       //
 	return MainLayoutWrapper;                                                                                            //
-}((0, _ultimatejsTrackerReact2['default'])(_react.Component));                                                        //
+}(_react.Component);                                                                                                  //
                                                                                                                       //
 exports['default'] = MainLayoutWrapper;                                                                               //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1937,118 +1922,7 @@ var ResolutionsWrapper = function (_TrackerReact) {                             
 exports['default'] = ResolutionsWrapper;                                                                              //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-}]},"testpage":{"SessionTestSection.jsx":["babel-runtime/helpers/classCallCheck","babel-runtime/helpers/possibleConstructorReturn","babel-runtime/helpers/inherits","react","meteor/ultimatejs:tracker-react","react-addons-css-transition-group",function(require,exports){
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//                                                                                                                    //
-// app/testpage/SessionTestSection.jsx                                                                                //
-//                                                                                                                    //
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                                                                                                                      //
-exports.__esModule = true;                                                                                            //
-                                                                                                                      //
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');                                               //
-                                                                                                                      //
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);                                                      //
-                                                                                                                      //
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');                         //
-                                                                                                                      //
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);                                //
-                                                                                                                      //
-var _inherits2 = require('babel-runtime/helpers/inherits');                                                           //
-                                                                                                                      //
-var _inherits3 = _interopRequireDefault(_inherits2);                                                                  //
-                                                                                                                      //
-var _react = require('react');                                                                                        // 1
-                                                                                                                      //
-var _react2 = _interopRequireDefault(_react);                                                                         //
-                                                                                                                      //
-var _ultimatejsTrackerReact = require('meteor/ultimatejs:tracker-react');                                             // 2
-                                                                                                                      //
-var _ultimatejsTrackerReact2 = _interopRequireDefault(_ultimatejsTrackerReact);                                       //
-                                                                                                                      //
-var _reactAddonsCssTransitionGroup = require('react-addons-css-transition-group');                                    // 3
-                                                                                                                      //
-var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);                         //
-                                                                                                                      //
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }                     //
-                                                                                                                      //
-var SessionTestSection = function (_TrackerReact) {                                                                   //
-	(0, _inherits3['default'])(SessionTestSection, _TrackerReact);                                                       //
-                                                                                                                      //
-	function SessionTestSection(props, context) {                                                                        // 6
-		(0, _classCallCheck3['default'])(this, SessionTestSection);                                                         //
-		return (0, _possibleConstructorReturn3['default'])(this, _TrackerReact.call(this, props, context));                 //
-	}                                                                                                                    //
-                                                                                                                      //
-	SessionTestSection.prototype.blueButton = function () {                                                              // 5
-		function blueButton() {                                                                                             //
-			console.log('cicked');                                                                                             // 13
-			Session.set('myColor', "lightblue_back");                                                                          // 14
-			console.log('Session set to: ', Session.get('myColor'));                                                           // 15
-		}                                                                                                                   //
-                                                                                                                      //
-		return blueButton;                                                                                                  //
-	}();                                                                                                                 //
-                                                                                                                      //
-	SessionTestSection.prototype.greenButton = function () {                                                             // 5
-		function greenButton() {                                                                                            //
-			Session.set('myColor', "green_back");                                                                              // 18
-			console.log('cicked');                                                                                             // 19
-			console.log('Session set to: ', Session.get('myColor'));                                                           // 20
-		}                                                                                                                   //
-                                                                                                                      //
-		return greenButton;                                                                                                 //
-	}();                                                                                                                 //
-                                                                                                                      //
-	SessionTestSection.prototype.render = function () {                                                                  // 5
-		function render() {                                                                                                 //
-			Session.setDefault('myColor', 'red_back');                                                                         // 24
-                                                                                                                      //
-			console.log('Session Color passed to rendering', Session.get('myColor'));                                          // 26
-                                                                                                                      //
-			return _react2['default'].createElement(                                                                           // 29
-				'div',                                                                                                            //
-				{ className: Session.get('myColor') },                                                                            //
-				_react2['default'].createElement(                                                                                 //
-					'h2',                                                                                                            //
-					null,                                                                                                            //
-					'SessionTestSection'                                                                                             //
-				),                                                                                                                //
-				_react2['default'].createElement(                                                                                 //
-					'p',                                                                                                             //
-					null,                                                                                                            //
-					'I am SessionTestSection.'                                                                                       //
-				),                                                                                                                //
-				_react2['default'].createElement(                                                                                 //
-					'p',                                                                                                             //
-					null,                                                                                                            //
-					'The current color is ',                                                                                         //
-					Session.get('myColor')                                                                                           //
-				),                                                                                                                //
-				_react2['default'].createElement(                                                                                 //
-					'button',                                                                                                        //
-					{ onClick: this.blueButton },                                                                                    //
-					' Make it blue'                                                                                                  //
-				),                                                                                                                //
-				_react2['default'].createElement(                                                                                 //
-					'button',                                                                                                        //
-					{ onClick: this.greenButton },                                                                                   //
-					' Make it green'                                                                                                 //
-				)                                                                                                                 //
-			);                                                                                                                 //
-		}                                                                                                                   //
-                                                                                                                      //
-		return render;                                                                                                      //
-	}();                                                                                                                 //
-                                                                                                                      //
-	return SessionTestSection;                                                                                           //
-}((0, _ultimatejsTrackerReact2['default'])(_react2['default'].Component));                                            //
-                                                                                                                      //
-exports['default'] = SessionTestSection;                                                                              //
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-}],"TestPageChild1.jsx":["babel-runtime/helpers/classCallCheck","babel-runtime/helpers/possibleConstructorReturn","babel-runtime/helpers/inherits","react","meteor/ultimatejs:tracker-react","react-addons-css-transition-group",function(require,exports){
+}]},"testpage":{"TestPageChild1.jsx":["babel-runtime/helpers/classCallCheck","babel-runtime/helpers/possibleConstructorReturn","babel-runtime/helpers/inherits","react","meteor/ultimatejs:tracker-react","react-addons-css-transition-group",function(require,exports){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                                                    //
@@ -2335,7 +2209,137 @@ var TestPageChild3 = function (_Component) {                                    
 exports['default'] = TestPageChild3;                                                                                  //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-}],"Testpage.jsx":["babel-runtime/helpers/classCallCheck","babel-runtime/helpers/possibleConstructorReturn","babel-runtime/helpers/inherits","react","meteor/ultimatejs:tracker-react","react-addons-css-transition-group","./TestPageChild1.jsx","./TestPageChild2.jsx","./TestPageChild3.jsx","./SessionTestSection.jsx",function(require,exports){
+}],"TestPageChild4.jsx":["babel-runtime/helpers/classCallCheck","babel-runtime/helpers/possibleConstructorReturn","babel-runtime/helpers/inherits","react","meteor/ultimatejs:tracker-react","react-addons-css-transition-group",function(require,exports){
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                                    //
+// app/testpage/TestPageChild4.jsx                                                                                    //
+//                                                                                                                    //
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                                                                                      //
+exports.__esModule = true;                                                                                            //
+                                                                                                                      //
+var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');                                               //
+                                                                                                                      //
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);                                                      //
+                                                                                                                      //
+var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');                         //
+                                                                                                                      //
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);                                //
+                                                                                                                      //
+var _inherits2 = require('babel-runtime/helpers/inherits');                                                           //
+                                                                                                                      //
+var _inherits3 = _interopRequireDefault(_inherits2);                                                                  //
+                                                                                                                      //
+var _react = require('react');                                                                                        // 1
+                                                                                                                      //
+var _react2 = _interopRequireDefault(_react);                                                                         //
+                                                                                                                      //
+var _ultimatejsTrackerReact = require('meteor/ultimatejs:tracker-react');                                             // 2
+                                                                                                                      //
+var _ultimatejsTrackerReact2 = _interopRequireDefault(_ultimatejsTrackerReact);                                       //
+                                                                                                                      //
+var _reactAddonsCssTransitionGroup = require('react-addons-css-transition-group');                                    // 3
+                                                                                                                      //
+var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);                         //
+                                                                                                                      //
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }                     //
+                                                                                                                      //
+var TestPageChild4 = function (_TrackerReact) {                                                                       //
+	(0, _inherits3['default'])(TestPageChild4, _TrackerReact);                                                           //
+                                                                                                                      //
+	function TestPageChild4(props, context) {                                                                            // 7
+		(0, _classCallCheck3['default'])(this, TestPageChild4);                                                             //
+                                                                                                                      //
+		var _this = (0, _possibleConstructorReturn3['default'])(this, _TrackerReact.call(this, props, context));            //
+                                                                                                                      //
+		_this.state = {                                                                                                     // 10
+			myColor: "red_back"                                                                                                // 11
+		};                                                                                                                  //
+		return _this;                                                                                                       //
+	}                                                                                                                    //
+                                                                                                                      //
+	TestPageChild4.prototype.componentWillUnmount = function () {                                                        // 6
+		function componentWillUnmount() {}                                                                                  //
+                                                                                                                      //
+		return componentWillUnmount;                                                                                        //
+	}();                                                                                                                 //
+                                                                                                                      //
+	TestPageChild4.prototype.myColor = function () {                                                                     // 6
+		function myColor() {                                                                                                //
+			console.log('myColor is '['this'].state.myColor);                                                                  // 21
+			return this.state.myColor;                                                                                         // 22
+		}                                                                                                                   //
+                                                                                                                      //
+		return myColor;                                                                                                     //
+	}();                                                                                                                 //
+                                                                                                                      //
+	TestPageChild4.prototype.blueButton = function () {                                                                  // 6
+		function blueButton() {                                                                                             //
+			console.log('cicked blueButton');                                                                                  // 26
+			this.setState({ myColor: "lightblue_back" });                                                                      // 27
+		}                                                                                                                   //
+                                                                                                                      //
+		return blueButton;                                                                                                  //
+	}();                                                                                                                 //
+                                                                                                                      //
+	TestPageChild4.prototype.greenButton = function () {                                                                 // 6
+		function greenButton() {                                                                                            //
+			console.log('cicked greenButton');                                                                                 // 30
+			this.setState({ myColor: "green_back" });                                                                          // 31
+		}                                                                                                                   //
+                                                                                                                      //
+		return greenButton;                                                                                                 //
+	}();                                                                                                                 //
+                                                                                                                      //
+	TestPageChild4.prototype.render = function () {                                                                      // 6
+		function render() {                                                                                                 //
+                                                                                                                      //
+			// console.log('Session Color passed to rendering', );                                                             //
+			console.log('SessionTestSection rendering');                                                                       // 37
+                                                                                                                      //
+			return _react2['default'].createElement(                                                                           // 40
+				'div',                                                                                                            //
+				{ className: this.state.myColor },                                                                                //
+				_react2['default'].createElement(                                                                                 //
+					'h2',                                                                                                            //
+					null,                                                                                                            //
+					'Test Child 4'                                                                                                   //
+				),                                                                                                                //
+				_react2['default'].createElement(                                                                                 //
+					'p',                                                                                                             //
+					null,                                                                                                            //
+					'I am Test Child 4.'                                                                                             //
+				),                                                                                                                //
+				_react2['default'].createElement(                                                                                 //
+					'p',                                                                                                             //
+					null,                                                                                                            //
+					'The current color is ',                                                                                         //
+					this.state.myColor                                                                                               //
+				),                                                                                                                //
+				_react2['default'].createElement(                                                                                 //
+					'button',                                                                                                        //
+					{ onClick: this.blueButton.bind(this) },                                                                         //
+					' Make it blue'                                                                                                  //
+				),                                                                                                                //
+				_react2['default'].createElement(                                                                                 //
+					'button',                                                                                                        //
+					{ onClick: this.greenButton.bind(this) },                                                                        //
+					' Make it green'                                                                                                 //
+				)                                                                                                                 //
+			);                                                                                                                 //
+		}                                                                                                                   //
+                                                                                                                      //
+		return render;                                                                                                      //
+	}();                                                                                                                 //
+                                                                                                                      //
+	return TestPageChild4;                                                                                               //
+}((0, _ultimatejsTrackerReact2['default'])(_react2['default'].Component));                                            //
+                                                                                                                      //
+exports['default'] = TestPageChild4;                                                                                  //
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+}],"Testpage.jsx":["babel-runtime/helpers/classCallCheck","babel-runtime/helpers/possibleConstructorReturn","babel-runtime/helpers/inherits","react","meteor/ultimatejs:tracker-react","react-addons-css-transition-group","./TestPageChild1.jsx","./TestPageChild2.jsx","./TestPageChild3.jsx","./TestPageChild4.jsx",function(require,exports){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                                                    //
@@ -2381,9 +2385,9 @@ var _TestPageChild5 = require('./TestPageChild3.jsx');                          
                                                                                                                       //
 var _TestPageChild6 = _interopRequireDefault(_TestPageChild5);                                                        //
                                                                                                                       //
-var _SessionTestSection = require('./SessionTestSection.jsx');                                                        // 7
+var _TestPageChild7 = require('./TestPageChild4.jsx');                                                                // 7
                                                                                                                       //
-var _SessionTestSection2 = _interopRequireDefault(_SessionTestSection);                                               //
+var _TestPageChild8 = _interopRequireDefault(_TestPageChild7);                                                        //
                                                                                                                       //
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }                     //
                                                                                                                       //
@@ -2470,8 +2474,7 @@ var TestPage = function (_Component) {                                          
 				_react2['default'].createElement(_TestPageChild2['default'], { initialPanelState: this.state.panelOn, callBack: this._callBackFunc }),
 				_react2['default'].createElement(_TestPageChild4['default'], { initialPanelState: this.state.panel2On, callBack2: this._callBack2Func }),
 				_react2['default'].createElement(_TestPageChild6['default'], { initialPanelState: this.state.panel2On }),         //
-				_react2['default'].createElement(_SessionTestSection2['default'], { initialPanelState: this.state.panel2On }),    //
-				_react2['default'].createElement(_SessionTestSection2['default'], null)                                           //
+				_react2['default'].createElement(_TestPageChild8['default'], null)                                                //
 			);                                                                                                                 //
 		}                                                                                                                   //
                                                                                                                       //
@@ -2526,7 +2529,7 @@ var About = function (_Component) {                                             
                                                                                                                       //
 	About.prototype.setVar = function () {                                                                               //
 		function setVar() {                                                                                                 //
-			Session.set('loginToggle', "green_back");                                                                          // 7
+			Session.set('Meteor.loginButtons.dropdownVisible', true);                                                          // 7
 		}                                                                                                                   //
                                                                                                                       //
 		return setVar;                                                                                                      //
@@ -2571,7 +2574,7 @@ var About = function (_Component) {                                             
 exports['default'] = About;                                                                                           //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-}],"Welcome.jsx":["babel-runtime/helpers/classCallCheck","babel-runtime/helpers/possibleConstructorReturn","babel-runtime/helpers/inherits","react","react-addons-css-transition-group","./accounts/LoginLogoutButton.jsx",function(require,exports){
+}],"Welcome.jsx":["babel-runtime/helpers/classCallCheck","babel-runtime/helpers/possibleConstructorReturn","babel-runtime/helpers/inherits","react","meteor/ultimatejs:tracker-react","react-addons-css-transition-group","./accounts/LoginLogoutButton.jsx",function(require,exports){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                                                    //
@@ -2597,58 +2600,68 @@ var _react = require('react');                                                  
                                                                                                                       //
 var _react2 = _interopRequireDefault(_react);                                                                         //
                                                                                                                       //
-var _reactAddonsCssTransitionGroup = require('react-addons-css-transition-group');                                    // 2
+var _ultimatejsTrackerReact = require('meteor/ultimatejs:tracker-react');                                             // 2
+                                                                                                                      //
+var _ultimatejsTrackerReact2 = _interopRequireDefault(_ultimatejsTrackerReact);                                       //
+                                                                                                                      //
+var _reactAddonsCssTransitionGroup = require('react-addons-css-transition-group');                                    // 3
                                                                                                                       //
 var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);                         //
                                                                                                                       //
-var _LoginLogoutButton = require('./accounts/LoginLogoutButton.jsx');                                                 // 3
+var _LoginLogoutButton = require('./accounts/LoginLogoutButton.jsx');                                                 // 4
                                                                                                                       //
 var _LoginLogoutButton2 = _interopRequireDefault(_LoginLogoutButton);                                                 //
                                                                                                                       //
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }                     //
                                                                                                                       //
-var Welcome = function (_Component) {                                                                                 //
-	(0, _inherits3['default'])(Welcome, _Component);                                                                     //
+var Welcome = function (_TrackerReact) {                                                                              //
+	(0, _inherits3['default'])(Welcome, _TrackerReact);                                                                  //
                                                                                                                       //
-	function Welcome(props, context) {                                                                                   // 6
+	function Welcome(props, context) {                                                                                   // 7
 		(0, _classCallCheck3['default'])(this, Welcome);                                                                    //
                                                                                                                       //
-		var _this = (0, _possibleConstructorReturn3['default'])(this, _Component.call(this, props, context));               //
+		var _this = (0, _possibleConstructorReturn3['default'])(this, _TrackerReact.call(this, props, context));            //
                                                                                                                       //
-		console.log(_this.props);                                                                                           // 8
-		_this.state = {                                                                                                     // 9
-			loginPanelOn: _this.props.loginPanelOn,                                                                            // 10
-			navSideBarOn: _this.props.navSideBarOn                                                                             // 11
+		console.log(_this.props);                                                                                           // 9
+		_this.state = {                                                                                                     // 10
+			loginPanelOn: _this.props.loginPanelOn,                                                                            // 11
+			navSideBarOn: _this.props.navSideBarOn                                                                             // 12
 		};                                                                                                                  //
 		return _this;                                                                                                       //
 	}                                                                                                                    //
                                                                                                                       //
-	Welcome.prototype._callBackLoginPanel = function () {                                                                // 5
+	Welcome.prototype.componentWillUnmount = function () {                                                               // 6
+		function componentWillUnmount() {}                                                                                  //
+                                                                                                                      //
+		return componentWillUnmount;                                                                                        //
+	}();                                                                                                                 //
+                                                                                                                      //
+	Welcome.prototype._callBackLoginPanel = function () {                                                                // 6
 		function _callBackLoginPanel(data) {                                                                                //
-			var newState = data;                                                                                               // 16
-			this.setState({ loginPanelOn: newState });                                                                         // 17
-			this.props.callBackLoginPanel(newState);                                                                           // 18
+			var newState = data;                                                                                               // 21
+			this.setState({ loginPanelOn: newState });                                                                         // 22
+			this.props.callBackLoginPanel(newState);                                                                           // 23
 		}                                                                                                                   //
                                                                                                                       //
 		return _callBackLoginPanel;                                                                                         //
 	}();                                                                                                                 //
                                                                                                                       //
-	Welcome.prototype.render = function () {                                                                             // 5
+	Welcome.prototype.render = function () {                                                                             // 6
 		function render() {                                                                                                 //
-			DocHead.setTitle('Welcome | Abacus Learing Lab');                                                                  // 22
+			DocHead.setTitle('Welcome | Abacus Learing Lab');                                                                  // 27
                                                                                                                       //
-			console.log('LoginPanelOn props in Welcome', this.props.loginpanelOn);                                             // 24
-			console.log('navSideBarOn state in Welcome', this.state.loginpanelOn);                                             // 25
+			console.log('LoginPanelOn props in Welcome', this.props.loginpanelOn);                                             // 29
+			console.log('navSideBarOn state in Welcome', this.state.loginpanelOn);                                             // 30
                                                                                                                       //
-			return _react2['default'].createElement(                                                                           // 27
+			return _react2['default'].createElement(                                                                           // 32
 				_reactAddonsCssTransitionGroup2['default'],                                                                       //
 				{                                                                                                                 //
-					component: 'div',                                                                                                // 29
-					transitionName: 'route',                                                                                         // 30
-					transitionEnterTimeout: 600,                                                                                     // 31
-					transitionAppearTimeout: 600,                                                                                    // 32
-					transitionLeaveTimeout: 400,                                                                                     // 33
-					transitionAppear: true },                                                                                        // 34
+					component: 'div',                                                                                                // 34
+					transitionName: 'route',                                                                                         // 35
+					transitionEnterTimeout: 600,                                                                                     // 36
+					transitionAppearTimeout: 600,                                                                                    // 37
+					transitionLeaveTimeout: 400,                                                                                     // 38
+					transitionAppear: true },                                                                                        // 39
 				_react2['default'].createElement(                                                                                 //
 					'header',                                                                                                        //
 					{ id: 'big_header' },                                                                                            //
@@ -2747,9 +2760,9 @@ var Welcome = function (_Component) {                                           
 									'a',                                                                                                         //
 									{ href: 'javascript:void(0);', className: 'sub_option ghost-button lightblue_back introButtonWidth' },       //
 									_react2['default'].createElement(_LoginLogoutButton2['default'], {                                           //
-										loginPanelOn: this.state.loginPanelOn,                                                                      // 56
-										callBackLoginPanel: this._callBackLoginPanel.bind(this),                                                    // 57
-										title: "Log In" })                                                                                          // 58
+										loginPanelOn: this.state.loginPanelOn,                                                                      // 61
+										callBackLoginPanel: this._callBackLoginPanel.bind(this),                                                    // 62
+										title: "Log In" })                                                                                          // 63
 								)                                                                                                             //
 							)                                                                                                              //
 						)                                                                                                               //
@@ -2762,7 +2775,7 @@ var Welcome = function (_Component) {                                           
 	}();                                                                                                                 //
                                                                                                                       //
 	return Welcome;                                                                                                      //
-}(_react.Component);                                                                                                  //
+}((0, _ultimatejsTrackerReact2['default'])(_react.Component));                                                        //
                                                                                                                       //
 exports['default'] = Welcome;                                                                                         //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2983,10 +2996,10 @@ require("./app/resolutions/ResolutionDetail.jsx");
 require("./app/resolutions/ResolutionSingle.jsx");
 require("./app/resolutions/ResolutionsForm.jsx");
 require("./app/resolutions/ResolutionsWrapper.jsx");
-require("./app/testpage/SessionTestSection.jsx");
 require("./app/testpage/TestPageChild1.jsx");
 require("./app/testpage/TestPageChild2.jsx");
 require("./app/testpage/TestPageChild3.jsx");
+require("./app/testpage/TestPageChild4.jsx");
 require("./app/testpage/Testpage.jsx");
 require("./app/About.jsx");
 require("./app/Welcome.jsx");
